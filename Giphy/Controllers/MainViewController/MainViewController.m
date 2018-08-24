@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+#import "Giphy-Swift.h"
 
 @interface MainViewController ()
 

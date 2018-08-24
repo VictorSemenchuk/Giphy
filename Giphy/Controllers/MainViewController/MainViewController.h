@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GiphyCollectionViewLayout.h"
 
 @interface MainViewController : UIViewController
 

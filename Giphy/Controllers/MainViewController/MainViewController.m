@@ -7,8 +7,11 @@
 //
 
 #import "MainViewController.h"
+#import "MainViewController+GiphyCollectionViewLayout.h"
 
 @interface MainViewController ()
+
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end
 
@@ -16,6 +19,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    GiphyCollectionViewLayout *layout = (GiphyCollectionViewLayout *)self.collectionView.collectionViewLayout;
+    if (layout != nil) {
+        layout.delegate = self;
+    }
 }
 
 @end

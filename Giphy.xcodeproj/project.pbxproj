@@ -14,6 +14,10 @@
 		DA4684FE21303DC700BCC31A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA4684FC21303DC700BCC31A /* LaunchScreen.storyboard */; };
 		DA46850921303DC700BCC31A /* GiphyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA46850821303DC700BCC31A /* GiphyTests.swift */; };
 		DA46852421303F1800BCC31A /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA46852321303F1800BCC31A /* MainViewController.m */; };
+		DA468527213040BB00BCC31A /* MainViewController+CollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA468526213040BB00BCC31A /* MainViewController+CollectionView.m */; };
+		DA46852E2130417700BCC31A /* GiphyCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DA46852D2130417700BCC31A /* GiphyCollectionViewLayout.m */; };
+		DA468531213041B300BCC31A /* MainViewController+GiphyCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DA468530213041B300BCC31A /* MainViewController+GiphyCollectionViewLayout.m */; };
+		DA46853421304B9F00BCC31A /* UIColor+ThemeColors.m in Sources */ = {isa = PBXBuildFile; fileRef = DA46853321304B9F00BCC31A /* UIColor+ThemeColors.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,14 @@
 		DA46851D21303E6700BCC31A /* Giphy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Giphy-Bridging-Header.h"; sourceTree = "<group>"; };
 		DA46852221303F1800BCC31A /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		DA46852321303F1800BCC31A /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		DA468525213040BB00BCC31A /* MainViewController+CollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MainViewController+CollectionView.h"; sourceTree = "<group>"; };
+		DA468526213040BB00BCC31A /* MainViewController+CollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MainViewController+CollectionView.m"; sourceTree = "<group>"; };
+		DA46852C2130417700BCC31A /* GiphyCollectionViewLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GiphyCollectionViewLayout.h; sourceTree = "<group>"; };
+		DA46852D2130417700BCC31A /* GiphyCollectionViewLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GiphyCollectionViewLayout.m; sourceTree = "<group>"; };
+		DA46852F213041B300BCC31A /* MainViewController+GiphyCollectionViewLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MainViewController+GiphyCollectionViewLayout.h"; sourceTree = "<group>"; };
+		DA468530213041B300BCC31A /* MainViewController+GiphyCollectionViewLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MainViewController+GiphyCollectionViewLayout.m"; sourceTree = "<group>"; };
+		DA46853221304B9F00BCC31A /* UIColor+ThemeColors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+ThemeColors.h"; sourceTree = "<group>"; };
+		DA46853321304B9F00BCC31A /* UIColor+ThemeColors.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ThemeColors.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +93,7 @@
 		DA4684EF21303DC600BCC31A /* Giphy */ = {
 			isa = PBXGroup;
 			children = (
+				DA468528213040FB00BCC31A /* Categories */,
 				DA46851C21303E5800BCC31A /* Parsers */,
 				DA46851B21303E5400BCC31A /* Services */,
 				DA46851A21303E4F00BCC31A /* Managers */,
@@ -179,8 +192,23 @@
 			children = (
 				DA46852221303F1800BCC31A /* MainViewController.h */,
 				DA46852321303F1800BCC31A /* MainViewController.m */,
+				DA468525213040BB00BCC31A /* MainViewController+CollectionView.h */,
+				DA468526213040BB00BCC31A /* MainViewController+CollectionView.m */,
+				DA46852F213041B300BCC31A /* MainViewController+GiphyCollectionViewLayout.h */,
+				DA468530213041B300BCC31A /* MainViewController+GiphyCollectionViewLayout.m */,
+				DA46852C2130417700BCC31A /* GiphyCollectionViewLayout.h */,
+				DA46852D2130417700BCC31A /* GiphyCollectionViewLayout.m */,
 			);
 			path = MainViewController;
+			sourceTree = "<group>";
+		};
+		DA468528213040FB00BCC31A /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				DA46853221304B9F00BCC31A /* UIColor+ThemeColors.h */,
+				DA46853321304B9F00BCC31A /* UIColor+ThemeColors.m */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,8 +313,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA468531213041B300BCC31A /* MainViewController+GiphyCollectionViewLayout.m in Sources */,
+				DA468527213040BB00BCC31A /* MainViewController+CollectionView.m in Sources */,
 				DA4684F121303DC600BCC31A /* AppDelegate.swift in Sources */,
 				DA46852421303F1800BCC31A /* MainViewController.m in Sources */,
+				DA46853421304B9F00BCC31A /* UIColor+ThemeColors.m in Sources */,
+				DA46852E2130417700BCC31A /* GiphyCollectionViewLayout.m in Sources */,
 				DA4684F921303DC600BCC31A /* Giphy.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

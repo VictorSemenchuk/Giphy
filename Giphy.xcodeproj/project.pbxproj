@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		DA4684F121303DC600BCC31A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4684F021303DC600BCC31A /* AppDelegate.swift */; };
-		DA4684F321303DC600BCC31A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4684F221303DC600BCC31A /* ViewController.swift */; };
 		DA4684F621303DC600BCC31A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA4684F421303DC600BCC31A /* Main.storyboard */; };
 		DA4684F921303DC600BCC31A /* Giphy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA4684F721303DC600BCC31A /* Giphy.xcdatamodeld */; };
 		DA4684FB21303DC700BCC31A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA4684FA21303DC700BCC31A /* Assets.xcassets */; };
 		DA4684FE21303DC700BCC31A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA4684FC21303DC700BCC31A /* LaunchScreen.storyboard */; };
 		DA46850921303DC700BCC31A /* GiphyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA46850821303DC700BCC31A /* GiphyTests.swift */; };
+		DA46852421303F1800BCC31A /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA46852321303F1800BCC31A /* MainViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +29,6 @@
 /* Begin PBXFileReference section */
 		DA4684ED21303DC600BCC31A /* Giphy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Giphy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA4684F021303DC600BCC31A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DA4684F221303DC600BCC31A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DA4684F521303DC600BCC31A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DA4684F821303DC600BCC31A /* Giphy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Giphy.xcdatamodel; sourceTree = "<group>"; };
 		DA4684FA21303DC700BCC31A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -39,6 +38,8 @@
 		DA46850821303DC700BCC31A /* GiphyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyTests.swift; sourceTree = "<group>"; };
 		DA46850A21303DC700BCC31A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA46851D21303E6700BCC31A /* Giphy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Giphy-Bridging-Header.h"; sourceTree = "<group>"; };
+		DA46852221303F1800BCC31A /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		DA46852321303F1800BCC31A /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +134,7 @@
 		DA46851721303E2F00BCC31A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				DA4684F221303DC600BCC31A /* ViewController.swift */,
+				DA46852121303F0900BCC31A /* MainViewController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -171,6 +172,15 @@
 			children = (
 			);
 			path = Parsers;
+			sourceTree = "<group>";
+		};
+		DA46852121303F0900BCC31A /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DA46852221303F1800BCC31A /* MainViewController.h */,
+				DA46852321303F1800BCC31A /* MainViewController.m */,
+			);
+			path = MainViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,8 +285,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA4684F321303DC600BCC31A /* ViewController.swift in Sources */,
 				DA4684F121303DC600BCC31A /* AppDelegate.swift in Sources */,
+				DA46852421303F1800BCC31A /* MainViewController.m in Sources */,
 				DA4684F921303DC600BCC31A /* Giphy.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

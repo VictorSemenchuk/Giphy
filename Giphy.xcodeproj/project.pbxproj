@@ -38,6 +38,7 @@
 		DA46850421303DC700BCC31A /* GiphyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GiphyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA46850821303DC700BCC31A /* GiphyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyTests.swift; sourceTree = "<group>"; };
 		DA46850A21303DC700BCC31A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA46851D21303E6700BCC31A /* Giphy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Giphy-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,13 +80,18 @@
 		DA4684EF21303DC600BCC31A /* Giphy */ = {
 			isa = PBXGroup;
 			children = (
-				DA4684F021303DC600BCC31A /* AppDelegate.swift */,
-				DA4684F221303DC600BCC31A /* ViewController.swift */,
-				DA4684F421303DC600BCC31A /* Main.storyboard */,
-				DA4684FA21303DC700BCC31A /* Assets.xcassets */,
-				DA4684FC21303DC700BCC31A /* LaunchScreen.storyboard */,
+				DA46851C21303E5800BCC31A /* Parsers */,
+				DA46851B21303E5400BCC31A /* Services */,
+				DA46851A21303E4F00BCC31A /* Managers */,
+				DA46851921303E4B00BCC31A /* Models */,
+				DA46851821303E3F00BCC31A /* Presenters */,
+				DA46851721303E2F00BCC31A /* Controllers */,
+				DA46851621303E2B00BCC31A /* Views */,
+				DA46851521303E1C00BCC31A /* Storyboards */,
+				DA46851421303E0600BCC31A /* Support Files */,
 				DA4684FF21303DC700BCC31A /* Info.plist */,
 				DA4684F721303DC600BCC31A /* Giphy.xcdatamodeld */,
+				DA46851D21303E6700BCC31A /* Giphy-Bridging-Header.h */,
 			);
 			path = Giphy;
 			sourceTree = "<group>";
@@ -97,6 +103,74 @@
 				DA46850A21303DC700BCC31A /* Info.plist */,
 			);
 			path = GiphyTests;
+			sourceTree = "<group>";
+		};
+		DA46851421303E0600BCC31A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DA4684F021303DC600BCC31A /* AppDelegate.swift */,
+				DA4684FA21303DC700BCC31A /* Assets.xcassets */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		DA46851521303E1C00BCC31A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				DA4684F421303DC600BCC31A /* Main.storyboard */,
+				DA4684FC21303DC700BCC31A /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		DA46851621303E2B00BCC31A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DA46851721303E2F00BCC31A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DA4684F221303DC600BCC31A /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DA46851821303E3F00BCC31A /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		DA46851921303E4B00BCC31A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DA46851A21303E4F00BCC31A /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		DA46851B21303E5400BCC31A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		DA46851C21303E5800BCC31A /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Parsers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +223,7 @@
 				TargetAttributes = {
 					DA4684EC21303DC600BCC31A = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 					DA46850321303DC700BCC31A = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -362,6 +437,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Giphy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -370,6 +446,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vicmac.Giphy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Giphy/Giphy-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -379,6 +457,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Giphy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -387,6 +466,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vicmac.Giphy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Giphy/Giphy-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

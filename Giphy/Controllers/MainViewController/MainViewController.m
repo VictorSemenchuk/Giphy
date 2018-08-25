@@ -32,6 +32,8 @@
     if ([segue.identifier isEqualToString:kSearchResultSegueIdentifier]) {
         SearchResultsViewController *searchVC = segue.destinationViewController;
         searchVC.title = @"Search request";
+    } else if ([segue.identifier isEqualToString:kDetailsSegueIdentifier]) {
+        //some preparing
     }
 }
 

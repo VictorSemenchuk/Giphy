@@ -13,5 +13,6 @@
 
 extern NSString * const kCollectionViewCellIdentifier;
 extern NSString * const kSearchResultSegueIdentifier;
+extern NSString * const kDetailsSegueIdentifier;
 
 #endif /* IdentifierConstants_h */

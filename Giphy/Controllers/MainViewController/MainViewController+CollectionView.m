@@ -24,4 +24,10 @@
     return cell;
 }
 
+//MARK:- UICollectionViewDelegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:kDetailsSegueIdentifier sender:indexPath];
+}
+
 @end

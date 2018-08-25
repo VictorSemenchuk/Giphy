@@ -13,3 +13,4 @@
 
 NSString * const kCollectionViewCellIdentifier = @"GiphyCollectionViewCell";
 NSString * const kSearchResultSegueIdentifier = @"SearchResultSegueIdentifier";
+NSString * const kDetailsSegueIdentifier = @"DetailsSegueIdentifier";

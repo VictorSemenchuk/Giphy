@@ -11,6 +11,8 @@
 
 @implementation SearchResultsViewController (CollectionView)
 
+//MARK:- UICollectionViewDataSource
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return 100;
 }
@@ -20,6 +22,12 @@
     cell.backgroundColor = [UIColor randomThemeColor];
     [cell startActivityIndicator];
     return cell;
+}
+
+//MARK:- UICollectionViewDelegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:kDetailsSegueIdentifier sender:indexPath];
 }
 
 @end

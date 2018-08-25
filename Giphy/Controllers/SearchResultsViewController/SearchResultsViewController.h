@@ -1,8 +1,8 @@
 //
-//  MainViewController.h
+//  SearchResultsViewController.h
 //  Giphy
 //
-//  Created by Viktar Semianchuk on 8/24/18.
+//  Created by Victor Macintosh on 25/08/2018.
 //  Copyright © 2018 Viktar Semianchuk. All rights reserved.
 //
 
@@ -11,9 +11,8 @@
 #import "GiphyCollectionViewCell.h"
 #import "IdentifierConstants.h"
 
-@interface MainViewController : UIViewController
+@interface SearchResultsViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UITextField *searhTextField;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end

@@ -18,6 +18,10 @@
 		DA46852E2130417700BCC31A /* GiphyCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DA46852D2130417700BCC31A /* GiphyCollectionViewLayout.m */; };
 		DA468531213041B300BCC31A /* MainViewController+GiphyCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DA468530213041B300BCC31A /* MainViewController+GiphyCollectionViewLayout.m */; };
 		DA46853421304B9F00BCC31A /* UIColor+ThemeColors.m in Sources */ = {isa = PBXBuildFile; fileRef = DA46853321304B9F00BCC31A /* UIColor+ThemeColors.m */; };
+		EF7C433B213172D3009DFFE1 /* SearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C433A213172D3009DFFE1 /* SearchResultsViewController.m */; };
+		EF7C433F213173D0009DFFE1 /* IdentifierConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C433D213173D0009DFFE1 /* IdentifierConstants.m */; };
+		EF7C434221317485009DFFE1 /* SearchResultsViewController+GiphyCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C434121317485009DFFE1 /* SearchResultsViewController+GiphyCollectionViewLayout.m */; };
+		EF7C434521317643009DFFE1 /* SearchResultsViewController+CollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C434421317643009DFFE1 /* SearchResultsViewController+CollectionView.m */; };
 		EFE17AC5213152B50037F57D /* MainViewController+Appearance.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE17AC4213152B50037F57D /* MainViewController+Appearance.m */; };
 		EFE17AC72131582D0037F57D /* UITextField+Paddings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE17AC62131582D0037F57D /* UITextField+Paddings.swift */; };
 		EFE17ACD213164560037F57D /* GiphyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE17ACB213164560037F57D /* GiphyCollectionViewCell.m */; };
@@ -56,6 +60,14 @@
 		DA468530213041B300BCC31A /* MainViewController+GiphyCollectionViewLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MainViewController+GiphyCollectionViewLayout.m"; sourceTree = "<group>"; };
 		DA46853221304B9F00BCC31A /* UIColor+ThemeColors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+ThemeColors.h"; sourceTree = "<group>"; };
 		DA46853321304B9F00BCC31A /* UIColor+ThemeColors.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ThemeColors.m"; sourceTree = "<group>"; };
+		EF7C4339213172D3009DFFE1 /* SearchResultsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResultsViewController.h; sourceTree = "<group>"; };
+		EF7C433A213172D3009DFFE1 /* SearchResultsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResultsViewController.m; sourceTree = "<group>"; };
+		EF7C433D213173D0009DFFE1 /* IdentifierConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdentifierConstants.m; sourceTree = "<group>"; };
+		EF7C433E213173D0009DFFE1 /* IdentifierConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdentifierConstants.h; sourceTree = "<group>"; };
+		EF7C434021317485009DFFE1 /* SearchResultsViewController+GiphyCollectionViewLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SearchResultsViewController+GiphyCollectionViewLayout.h"; sourceTree = "<group>"; };
+		EF7C434121317485009DFFE1 /* SearchResultsViewController+GiphyCollectionViewLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SearchResultsViewController+GiphyCollectionViewLayout.m"; sourceTree = "<group>"; };
+		EF7C434321317643009DFFE1 /* SearchResultsViewController+CollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SearchResultsViewController+CollectionView.h"; sourceTree = "<group>"; };
+		EF7C434421317643009DFFE1 /* SearchResultsViewController+CollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SearchResultsViewController+CollectionView.m"; sourceTree = "<group>"; };
 		EFE17AC3213152B50037F57D /* MainViewController+Appearance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MainViewController+Appearance.h"; sourceTree = "<group>"; };
 		EFE17AC4213152B50037F57D /* MainViewController+Appearance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MainViewController+Appearance.m"; sourceTree = "<group>"; };
 		EFE17AC62131582D0037F57D /* UITextField+Paddings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Paddings.swift"; sourceTree = "<group>"; };
@@ -149,6 +161,8 @@
 		DA46851621303E2B00BCC31A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DA46852C2130417700BCC31A /* GiphyCollectionViewLayout.h */,
+				DA46852D2130417700BCC31A /* GiphyCollectionViewLayout.m */,
 				EFE17ACF213164600037F57D /* GiphyCollectionViewCell */,
 			);
 			path = Views;
@@ -157,6 +171,8 @@
 		DA46851721303E2F00BCC31A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				EF7C433C2131739B009DFFE1 /* IdentifierConstants */,
+				EF7C43382131729C009DFFE1 /* SearchResultsViewController */,
 				DA46852121303F0900BCC31A /* MainViewController */,
 			);
 			path = Controllers;
@@ -201,8 +217,6 @@
 				DA468530213041B300BCC31A /* MainViewController+GiphyCollectionViewLayout.m */,
 				EFE17AC3213152B50037F57D /* MainViewController+Appearance.h */,
 				EFE17AC4213152B50037F57D /* MainViewController+Appearance.m */,
-				DA46852C2130417700BCC31A /* GiphyCollectionViewLayout.h */,
-				DA46852D2130417700BCC31A /* GiphyCollectionViewLayout.m */,
 			);
 			path = MainViewController;
 			sourceTree = "<group>";
@@ -215,6 +229,28 @@
 				EFE17AC62131582D0037F57D /* UITextField+Paddings.swift */,
 			);
 			path = Categories;
+			sourceTree = "<group>";
+		};
+		EF7C43382131729C009DFFE1 /* SearchResultsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EF7C4339213172D3009DFFE1 /* SearchResultsViewController.h */,
+				EF7C433A213172D3009DFFE1 /* SearchResultsViewController.m */,
+				EF7C434021317485009DFFE1 /* SearchResultsViewController+GiphyCollectionViewLayout.h */,
+				EF7C434121317485009DFFE1 /* SearchResultsViewController+GiphyCollectionViewLayout.m */,
+				EF7C434321317643009DFFE1 /* SearchResultsViewController+CollectionView.h */,
+				EF7C434421317643009DFFE1 /* SearchResultsViewController+CollectionView.m */,
+			);
+			path = SearchResultsViewController;
+			sourceTree = "<group>";
+		};
+		EF7C433C2131739B009DFFE1 /* IdentifierConstants */ = {
+			isa = PBXGroup;
+			children = (
+				EF7C433E213173D0009DFFE1 /* IdentifierConstants.h */,
+				EF7C433D213173D0009DFFE1 /* IdentifierConstants.m */,
+			);
+			path = IdentifierConstants;
 			sourceTree = "<group>";
 		};
 		EFE17ACF213164600037F57D /* GiphyCollectionViewCell */ = {
@@ -332,14 +368,18 @@
 			files = (
 				EFE17ACD213164560037F57D /* GiphyCollectionViewCell.m in Sources */,
 				EFE17AC72131582D0037F57D /* UITextField+Paddings.swift in Sources */,
+				EF7C434521317643009DFFE1 /* SearchResultsViewController+CollectionView.m in Sources */,
 				DA468531213041B300BCC31A /* MainViewController+GiphyCollectionViewLayout.m in Sources */,
 				EFE17AC5213152B50037F57D /* MainViewController+Appearance.m in Sources */,
+				EF7C433B213172D3009DFFE1 /* SearchResultsViewController.m in Sources */,
 				DA468527213040BB00BCC31A /* MainViewController+CollectionView.m in Sources */,
 				DA4684F121303DC600BCC31A /* AppDelegate.swift in Sources */,
+				EF7C434221317485009DFFE1 /* SearchResultsViewController+GiphyCollectionViewLayout.m in Sources */,
 				DA46852421303F1800BCC31A /* MainViewController.m in Sources */,
 				DA46853421304B9F00BCC31A /* UIColor+ThemeColors.m in Sources */,
 				DA46852E2130417700BCC31A /* GiphyCollectionViewLayout.m in Sources */,
 				DA4684F921303DC600BCC31A /* Giphy.xcdatamodeld in Sources */,
+				EF7C433F213173D0009DFFE1 /* IdentifierConstants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

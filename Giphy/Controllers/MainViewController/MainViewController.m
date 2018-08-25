@@ -8,6 +8,9 @@
 
 #import "MainViewController.h"
 #import "Giphy-Swift.h"
+#import "MainViewController+GiphyCollectionViewLayout.h"
+#import "MainViewController+Appearance.h"
+#import "SearchResultsViewController.h"
 
 @interface MainViewController ()
 
@@ -17,6 +20,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.collectionView registerNib:[UINib nibWithNibName:@"GiphyCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:kCollectionViewCellIdentifier];
+    GiphyCollectionViewLayout *layout = (GiphyCollectionViewLayout *)self.collectionView.collectionViewLayout;
+    if (layout != nil) {
+        layout.delegate = self;
+    }
+    [self setupViews];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:kSearchResultSegueIdentifier]) {
+        SearchResultsViewController *searchVC = segue.destinationViewController;
+        searchVC.title = @"Search request";
+    } else if ([segue.identifier isEqualToString:kDetailsSegueIdentifier]) {
+        //some preparing
+    }
 }
 
 @end

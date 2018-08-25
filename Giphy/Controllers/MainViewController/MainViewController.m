@@ -8,10 +8,9 @@
 
 #import "MainViewController.h"
 #import "MainViewController+GiphyCollectionViewLayout.h"
+#import "MainViewController+Appearance.h"
 
 @interface MainViewController ()
-
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end
 
@@ -20,10 +19,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.collectionView registerNib:[UINib nibWithNibName:@"GiphyCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:kCellIdentifier];
     GiphyCollectionViewLayout *layout = (GiphyCollectionViewLayout *)self.collectionView.collectionViewLayout;
     if (layout != nil) {
         layout.delegate = self;
     }
+    [self setupViews];
 }
 
 @end

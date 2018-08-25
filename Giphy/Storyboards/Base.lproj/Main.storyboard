@@ -19,11 +19,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ceh-8F-zIG">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="45" width="375" height="558"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewLayout key="collectionViewLayout" id="Kfb-jM-lqI" customClass="GiphyCollectionViewLayout"/>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="on0-0q-ki5">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GiphyCollectionViewCell" id="on0-0q-ki5" customClass="GiphyCollectionViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -37,24 +37,51 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="mg0-4k-CRi"/>
                                 </connections>
                             </collectionView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ec8-qA-aKA">
+                                <rect key="frame" x="5" y="0.0" width="365" height="40"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="498-bx-6Af">
+                                        <rect key="frame" x="0.0" y="0.0" width="325" height="40"/>
+                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sh9-I6-XEg">
+                                        <rect key="frame" x="325" y="0.0" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="VFV-yu-tQ8"/>
+                                            <constraint firstAttribute="height" constant="40" id="ovH-qv-B3O"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="SearchIcon"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="i2m-nz-BQK"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ceh-8F-zIG" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="JJe-V0-fjh"/>
-                            <constraint firstItem="ceh-8F-zIG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="e9q-tO-Feg"/>
-                            <constraint firstItem="ceh-8F-zIG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iUT-ay-Nk5"/>
-                            <constraint firstItem="ceh-8F-zIG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="nOY-O5-6oH"/>
+                            <constraint firstItem="Ec8-qA-aKA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="7qj-TW-ooB"/>
+                            <constraint firstItem="ceh-8F-zIG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Y7b-o0-ock"/>
+                            <constraint firstItem="ceh-8F-zIG" firstAttribute="top" secondItem="Ec8-qA-aKA" secondAttribute="bottom" constant="5" id="ZDd-9B-IFF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ec8-qA-aKA" secondAttribute="trailing" constant="5" id="j16-RV-53A"/>
+                            <constraint firstItem="ceh-8F-zIG" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="r73-Fh-zef"/>
+                            <constraint firstItem="ceh-8F-zIG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="w6m-xd-ktK"/>
+                            <constraint firstItem="Ec8-qA-aKA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="xDc-4O-CPv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="Sv3-6u-YoE"/>
                     <connections>
-                        <outlet property="collectionView" destination="ceh-8F-zIG" id="LxT-bd-Irp"/>
+                        <outlet property="collectionView" destination="ceh-8F-zIG" id="ytJ-3O-5LO"/>
+                        <outlet property="searhTextField" destination="498-bx-6Af" id="igu-EO-FFC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="972" y="33.733133433283363"/>
+            <point key="canvasLocation" x="802" y="34"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1Iv-aw-bR6">
@@ -77,4 +104,7 @@
             <point key="canvasLocation" x="32.799999999999997" y="33.733133433283363"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="SearchIcon" width="40" height="40"/>
+    </resources>
 </document>

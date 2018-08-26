@@ -7,7 +7,7 @@
 //
 
 #import "MainViewController.h"
-#import "Giphy-Swift.h"
+#import "MainViewController+MainViewPresenterDelegate.h"
 #import "MainViewController+GiphyCollectionViewLayout.h"
 #import "MainViewController+Appearance.h"
 #import "SearchResultsViewController.h"
@@ -21,12 +21,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.items = [[NSMutableArray alloc] init];
+    self.presenter = [[MainViewPresenter alloc] initWithView: self];
+    
     [self.collectionView registerNib:[UINib nibWithNibName:@"GiphyCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:kCollectionViewCellIdentifier];
     GiphyCollectionViewLayout *layout = (GiphyCollectionViewLayout *)self.collectionView.collectionViewLayout;
     if (layout != nil) {
         layout.delegate = self;
     }
     [self setupViews];
+    [self.presenter fetchItemsWith:0];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

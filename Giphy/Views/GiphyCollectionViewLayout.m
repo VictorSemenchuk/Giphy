@@ -47,7 +47,7 @@
 }
 
 - (void)prepareLayout {
-    if (self.cache.count != 0 || self.collectionView == nil) {
+    if (self.collectionView == nil) {
         return;
     } else {
         CGFloat columnWidth = self.contentWidth / self.numberOfColumns;

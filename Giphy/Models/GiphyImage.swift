@@ -12,6 +12,11 @@ import Foundation
     var original: GiphyImageMeta?
     var preview: GiphyImageMeta?
     
+    init(original: GiphyImageMeta, preview: GiphyImageMeta) {
+        self.original = original
+        self.preview = preview
+    }
+    
     enum CodingKeys: String, CodingKey {
         case original = "original"
         case preview = "preview_gif"

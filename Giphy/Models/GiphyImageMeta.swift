@@ -11,4 +11,13 @@ import Foundation
 @objc public class GiphyImageMeta: NSObject, Codable {
     var url: String?
     var size: String?
+    var width: String?
+    var height: String?
+    
+    init(url: String, size: String, width: String, height: String) {
+        self.url = url
+        self.size = size
+        self.width = width
+        self.height = height
+    }
 }

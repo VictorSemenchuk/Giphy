@@ -16,6 +16,15 @@ import Foundation
     var trendingDatetime: String?
     var image: GiphyImage?
     
+    init(values: [String: Any]) {
+        self.dataId = values["dataId"] as? String
+        self.title = values["title"] as? String
+        self.rating = values["rating"] as? String
+        self.importDatetime = values["importDatetime"] as? String
+        self.trendingDatetime = values["trendingDatetime"] as? String
+        self.image = values["image"] as? GiphyImage
+    }
+    
     enum CodingKeys: String, CodingKey {
         case title, rating
         case dataId = "id"

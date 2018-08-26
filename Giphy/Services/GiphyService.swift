@@ -8,7 +8,8 @@
 
 import Foundation
 
-enum GiphyServiceError: Error {
+@objc enum GiphyServiceError: Int {
+    case NoError
     case FetchingDataError
 }
 
@@ -16,30 +17,21 @@ enum GiphyServiceError: Error {
     private var apiKey: String = "znWbf6XFLaogUUU7wI6fPEOPxkGIO7cH"
     private var limit: Int = 25
     
-//    init(limit: Int = 25, apiKey: String = "znWbf6XFLaogUUU7wI6fPEOPxkGIO7cH") {
-//        self.apiKey = apiKey
-//        self.limit = limit
-//    }
-    
-    @objc public func test() {
-        
-    }
-    
-    func fetchTrends(with offset: Int, completion: @escaping ([GiphyData]?, GiphyServiceError?) -> Swift.Void) {
+    @objc func fetchTrends(with offset: Int, completion: @escaping ([GiphyData]?, GiphyServiceError) -> Void) {
         let url = "https://api.giphy.com/v1/gifs/trending?api_key=\(apiKey)&limit=\(limit)&offset=\(offset)"
         fetchData(from: url) { (data, error) in
             completion(data, error)
         }
     }
     
-    func fetchItemsBySearchRequest(_ searchRequest: String, with offset: Int, completion: @escaping ([GiphyData]?, GiphyServiceError?) -> Swift.Void) {
+    @objc func fetchItemsBySearchRequest(_ searchRequest: String, with offset: Int, completion: @escaping ([GiphyData]?, GiphyServiceError) -> Void) {
         let url = "https://api.giphy.com/v1/gifs/search?api_key=\(apiKey)&q=\(searchRequest)&limit=\(limit)&offset=\(offset)"
         fetchData(from: url) { (data, error) in
             completion(data, error)
         }
     }
     
-    private func fetchData(from url: String, completion: @escaping ([GiphyData]?, GiphyServiceError?) -> Swift.Void) {
+    private func fetchData(from url: String, completion: @escaping ([GiphyData]?, GiphyServiceError) -> Void) {
         let donwloadManager = DownloadManager()
         donwloadManager.fetchData(fromURL: url) { (data) in
             guard let data = data else {
@@ -50,7 +42,7 @@ enum GiphyServiceError: Error {
             snapshot.values = snapshot.setValuesBy(data: data)
             let parserService = ParserService()
             parserService.parse(snapshot: snapshot, completion: { (results) in
-                completion(results, nil)
+                completion(results, GiphyServiceError.NoError)
             })
         }
     }

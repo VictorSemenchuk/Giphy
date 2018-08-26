@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct GiphyData: Codable {
-    let dataId: String?
-    let title: String?
-    let rating: String?
-    let importDatetime: String?
-    let trendingDatetime: String?
-    let image: GiphyImage?
+@objc public class GiphyData: NSObject, Codable {
+    var dataId: String?
+    var title: String?
+    var rating: String?
+    var importDatetime: String?
+    var trendingDatetime: String?
+    var image: GiphyImage?
     
     enum CodingKeys: String, CodingKey {
         case title, rating

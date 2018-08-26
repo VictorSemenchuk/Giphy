@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct GiphyImage: Codable {
-    let original: GiphyImageMeta?
-    let preview: GiphyImageMeta?
+@objc public class GiphyImage: NSObject, Codable {
+    var original: GiphyImageMeta?
+    var preview: GiphyImageMeta?
     
     enum CodingKeys: String, CodingKey {
         case original = "original"

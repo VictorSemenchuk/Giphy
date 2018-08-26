@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DataSnapshot {
+@objc public class DataSnapshot: NSObject {
     var values: [Any]?
     
     func setValuesBy(data: Data) -> [Any]? {

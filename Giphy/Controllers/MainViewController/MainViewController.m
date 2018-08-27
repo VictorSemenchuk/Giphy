@@ -11,6 +11,7 @@
 #import "MainViewController+GiphyCollectionViewLayout.h"
 #import "MainViewController+Appearance.h"
 #import "SearchResultsViewController.h"
+#import "DetailsViewController.h"
 
 @interface MainViewController ()
 
@@ -43,7 +44,9 @@
             return;
         }
     } else if ([segue.identifier isEqualToString:kDetailsSegueIdentifier]) {
-        //some preparing
+        DetailsViewController *detailVC = segue.destinationViewController;
+        NSIndexPath *indexPath = sender;
+        detailVC.giphyItem = self.items[indexPath.row];
     }
 }
 

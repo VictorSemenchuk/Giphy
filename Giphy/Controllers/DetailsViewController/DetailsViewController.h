@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Giphy-Swift.h"
 
 @interface DetailsViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet UIButton *stopPlayButton;
+@property (nonatomic) GiphyData *giphyItem;
 
 @end

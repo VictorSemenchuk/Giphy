@@ -35,7 +35,7 @@ import UIKit
     
     @objc public func fetchPreviewImageForGiphyItem(_ giphyItem: GiphyData, completion: @escaping (UIImage?) -> Void) {
         let dataService = DataService()
-        dataService.getAnimatedImageFor(giphyData: giphyItem) { (image) in
+        dataService.getAnimatedPreviewImageFor(giphyData: giphyItem) { (image) in
             DispatchQueue.main.async {
                 completion(image)
             }

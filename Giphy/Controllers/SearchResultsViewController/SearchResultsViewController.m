@@ -29,7 +29,7 @@
         layout.delegate = self;
     }
     [self.presenter setTitleWithText:self.searchRequest];
-    
+
     [self.presenter fetchItemsBySearchRequest:self.searchRequest with:0];
 }
 

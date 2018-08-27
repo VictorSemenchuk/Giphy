@@ -24,6 +24,10 @@
 		DA4685452130770300BCC31A /* ParserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4685442130770300BCC31A /* ParserService.swift */; };
 		DA7EB3D92133FF1C005AF12E /* SearchResultsViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7EB3D82133FF1C005AF12E /* SearchResultsViewPresenter.swift */; };
 		DA7EB3DC213400E9005AF12E /* SearchResultsViewController+SearchResultsViewPresenterDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA7EB3DB213400E9005AF12E /* SearchResultsViewController+SearchResultsViewPresenterDelegate.m */; };
+		DA8FC8022134244A00DE8F0D /* DetailsViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8FC8012134244A00DE8F0D /* DetailsViewPresenter.swift */; };
+		DA8FC8052134271700DE8F0D /* DetailsViewController+DetailsViewPresenterDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8FC8042134271700DE8F0D /* DetailsViewController+DetailsViewPresenterDelegate.m */; };
+		DA8FC80D21342DCA00DE8F0D /* Date+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8FC80C21342DCA00DE8F0D /* Date+Format.swift */; };
+		DA8FC80F21342E4200DE8F0D /* String+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8FC80E21342E4200DE8F0D /* String+Format.swift */; };
 		EF2D44C82132E1A000E70990 /* FileManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2D44C72132E1A000E70990 /* FileManagerTests.swift */; };
 		EF72773C2131CF950036C638 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF72773B2131CF950036C638 /* DetailsViewController.m */; };
 		EF7C433B213172D3009DFFE1 /* SearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C433A213172D3009DFFE1 /* SearchResultsViewController.m */; };
@@ -87,6 +91,11 @@
 		DA7EB3D82133FF1C005AF12E /* SearchResultsViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewPresenter.swift; sourceTree = "<group>"; };
 		DA7EB3DA213400E9005AF12E /* SearchResultsViewController+SearchResultsViewPresenterDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SearchResultsViewController+SearchResultsViewPresenterDelegate.h"; sourceTree = "<group>"; };
 		DA7EB3DB213400E9005AF12E /* SearchResultsViewController+SearchResultsViewPresenterDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SearchResultsViewController+SearchResultsViewPresenterDelegate.m"; sourceTree = "<group>"; };
+		DA8FC8012134244A00DE8F0D /* DetailsViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewPresenter.swift; sourceTree = "<group>"; };
+		DA8FC8032134271700DE8F0D /* DetailsViewController+DetailsViewPresenterDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DetailsViewController+DetailsViewPresenterDelegate.h"; sourceTree = "<group>"; };
+		DA8FC8042134271700DE8F0D /* DetailsViewController+DetailsViewPresenterDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "DetailsViewController+DetailsViewPresenterDelegate.m"; sourceTree = "<group>"; };
+		DA8FC80C21342DCA00DE8F0D /* Date+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Format.swift"; sourceTree = "<group>"; };
+		DA8FC80E21342E4200DE8F0D /* String+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Format.swift"; sourceTree = "<group>"; };
 		EF2D44C72132E1A000E70990 /* FileManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerTests.swift; sourceTree = "<group>"; };
 		EF72773A2131CF950036C638 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		EF72773B2131CF950036C638 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
@@ -248,6 +257,7 @@
 			children = (
 				EF89CDF6213338BF00721C90 /* MainViewPresenter.swift */,
 				DA7EB3D82133FF1C005AF12E /* SearchResultsViewPresenter.swift */,
+				DA8FC8012134244A00DE8F0D /* DetailsViewPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -295,6 +305,8 @@
 				DA46853321304B9F00BCC31A /* UIColor+ThemeColors.m */,
 				EFE17AC62131582D0037F57D /* UITextField+Paddings.swift */,
 				EFA200A02132BE78007A075D /* UIImage+Gif.swift */,
+				DA8FC80C21342DCA00DE8F0D /* Date+Format.swift */,
+				DA8FC80E21342E4200DE8F0D /* String+Format.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -338,6 +350,8 @@
 			children = (
 				EF72773A2131CF950036C638 /* DetailsViewController.h */,
 				EF72773B2131CF950036C638 /* DetailsViewController.m */,
+				DA8FC8032134271700DE8F0D /* DetailsViewController+DetailsViewPresenterDelegate.h */,
+				DA8FC8042134271700DE8F0D /* DetailsViewController+DetailsViewPresenterDelegate.m */,
 			);
 			path = DetailsViewController;
 			sourceTree = "<group>";
@@ -456,11 +470,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA7EB3DC213400E9005AF12E /* SearchResultsViewController+SearchResultsViewPresenterDelegate.m in Sources */,
+				DA8FC80F21342E4200DE8F0D /* String+Format.swift in Sources */,
 				EFE17ACD213164560037F57D /* GiphyCollectionViewCell.m in Sources */,
 				EFA2008D2132A66A007A075D /* JSONParser.swift in Sources */,
 				EFA200922132A678007A075D /* GiphyImageMeta.swift in Sources */,
 				EFE17AC72131582D0037F57D /* UITextField+Paddings.swift in Sources */,
 				EFA200A12132BE78007A075D /* UIImage+Gif.swift in Sources */,
+				DA8FC80D21342DCA00DE8F0D /* Date+Format.swift in Sources */,
 				EFA2009D2132B225007A075D /* DataService.swift in Sources */,
 				EF7C434521317643009DFFE1 /* SearchResultsViewController+CollectionView.m in Sources */,
 				DA468531213041B300BCC31A /* MainViewController+GiphyCollectionViewLayout.m in Sources */,
@@ -470,9 +486,11 @@
 				DA7EB3D92133FF1C005AF12E /* SearchResultsViewPresenter.swift in Sources */,
 				EF7C433B213172D3009DFFE1 /* SearchResultsViewController.m in Sources */,
 				EFA2009B2132B1EA007A075D /* GiphyFileManager.swift in Sources */,
+				DA8FC8022134244A00DE8F0D /* DetailsViewPresenter.swift in Sources */,
 				EF72773C2131CF950036C638 /* DetailsViewController.m in Sources */,
 				DA468527213040BB00BCC31A /* MainViewController+CollectionView.m in Sources */,
 				DA4684F121303DC600BCC31A /* AppDelegate.swift in Sources */,
+				DA8FC8052134271700DE8F0D /* DetailsViewController+DetailsViewPresenterDelegate.m in Sources */,
 				DA4685452130770300BCC31A /* ParserService.swift in Sources */,
 				EF7C434221317485009DFFE1 /* SearchResultsViewController+GiphyCollectionViewLayout.m in Sources */,
 				DA46852421303F1800BCC31A /* MainViewController.m in Sources */,

@@ -16,14 +16,14 @@
     NSURLSessionConfiguration* configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     configuration.waitsForConnectivity = YES;
     configuration.allowsCellularAccess = YES;
-    
+
     NSURLSession* session = [NSURLSession sessionWithConfiguration: configuration];
     NSURLSessionDataTask* task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         dispatch_async(dispatch_get_global_queue(QOS_CLASS_UTILITY, 0), ^{
             completionBlock(data);
         });
     }];
-    
+
     [task resume];
 }
 

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Social
 
 @objc protocol DetailsViewPresenterDelegate {
     
@@ -35,4 +36,11 @@ import UIKit
         return String.string(with: "dd MMM yyyy", from: date)
     }
     
+    @objc public func shareGiphyItem(_ giphyItem: GiphyData, image: UIImage) {
+        let vc = self.view as! UIViewController
+        let activityViewController = UIActivityViewController(activityItems: [giphyItem.title!, giphyItem.image?.original?.url, image], applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = vc.view
+        vc.present(activityViewController, animated: true, completion: nil)
+    }
+
 }

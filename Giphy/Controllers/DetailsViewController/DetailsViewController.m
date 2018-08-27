@@ -44,4 +44,9 @@
     self.publishedLabel.text = [@"Published on " stringByAppendingString:[self.presenter convertDateWithInputDate:self.giphyItem.importDatetime]];
 }
 
+- (IBAction)share:(id)sender {
+    [self.presenter shareGiphyItem:self.giphyItem image:self.imageView.image];
+}
+
+
 @end

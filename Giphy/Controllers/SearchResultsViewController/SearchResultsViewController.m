@@ -9,6 +9,7 @@
 #import "SearchResultsViewController.h"
 #import "SearchResultsViewController+GiphyCollectionViewLayout.h"
 #import "SearchResultsViewController+SearchResultsViewPresenterDelegate.h"
+#import "DetailsViewController.h"
 
 @interface SearchResultsViewController ()
 
@@ -31,6 +32,14 @@
     [self.presenter setTitleWithText:self.searchRequest];
 
     [self.presenter fetchItemsBySearchRequest:self.searchRequest with:0];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:kDetailsSegueIdentifier]) {
+        DetailsViewController *detailVC = segue.destinationViewController;
+        NSIndexPath *indexPath = sender;
+        detailVC.giphyItem = self.items[indexPath.row];
+    }
 }
 
 @end

@@ -10,4 +10,12 @@
 
 @implementation DetailsViewController (DetailsViewPresenterDelegate)
 
+- (void)setPlayIconForStopPlayButton {
+    [self.stopPlayButton setImage:[UIImage imageNamed:@"PlayIcon"] forState:UIControlStateNormal];
+}
+
+- (void)setStopIconForStopPlayButton {
+    [self.stopPlayButton setImage:[UIImage imageNamed:@"StopIcon"] forState:UIControlStateNormal];
+}
+
 @end

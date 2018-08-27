@@ -11,12 +11,14 @@ import UIKit
 import Social
 
 @objc protocol DetailsViewPresenterDelegate {
-    
+    @objc func setPlayIconForStopPlayButton();
+    @objc func setStopIconForStopPlayButton();
 }
 
 @objc class DetailsViewPresenter: NSObject {
     
     var view: DetailsViewPresenterDelegate!
+    var animatedImage: UIImage?
     
     @objc init(view: DetailsViewPresenterDelegate) {
         self.view = view
@@ -41,6 +43,19 @@ import Social
         let activityViewController = UIActivityViewController(activityItems: [giphyItem.title!, giphyItem.image?.original?.url, image], applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = vc.view
         vc.present(activityViewController, animated: true, completion: nil)
+    }
+    
+    @objc public func stopPlay(imageView: UIImageView) {
+        if (self.animatedImage != nil) {
+            imageView.image = self.animatedImage;
+            self.animatedImage = nil
+            self.view.setStopIconForStopPlayButton()
+        } else {
+            self.animatedImage = imageView.image
+            imageView.image = nil;
+            imageView.image = self.animatedImage?.images![0];
+            self.view.setPlayIconForStopPlayButton()
+        }
     }
 
 }

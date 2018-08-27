@@ -42,11 +42,17 @@
     }];
     self.titleLabel.text = self.giphyItem.title;
     self.publishedLabel.text = [@"Published on " stringByAppendingString:[self.presenter convertDateWithInputDate:self.giphyItem.importDatetime]];
+    self.trandingView.hidden = [self.giphyItem.trendingDatetime isEqualToString:@"0000-00-00 00:00:00"];
 }
 
 - (IBAction)share:(id)sender {
     [self.presenter shareGiphyItem:self.giphyItem image:self.imageView.image];
 }
+
+- (IBAction)stopPlay:(id)sender {
+    [self.presenter stopPlayWithImageView:self.imageView];
+}
+
 
 
 @end

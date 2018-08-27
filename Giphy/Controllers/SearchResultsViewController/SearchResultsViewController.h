@@ -14,5 +14,6 @@
 @interface SearchResultsViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (nonatomic) NSString *searchRequest;
 
 @end

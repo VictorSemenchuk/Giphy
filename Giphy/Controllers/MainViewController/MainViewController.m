@@ -35,8 +35,12 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:kSearchResultSegueIdentifier]) {
-        SearchResultsViewController *searchVC = segue.destinationViewController;
-        searchVC.title = @"Search request";
+        if (![self.searhTextField.text isEqualToString:@""]) {
+            SearchResultsViewController *searchVC = segue.destinationViewController;
+            searchVC.searchRequest = self.searhTextField.text;
+        } else {
+            return;
+        }
     } else if ([segue.identifier isEqualToString:kDetailsSegueIdentifier]) {
         //some preparing
     }

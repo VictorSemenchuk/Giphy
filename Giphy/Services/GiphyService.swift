@@ -15,7 +15,7 @@ import Foundation
 
 @objc public class GiphyService: NSObject {
     private var apiKey: String = "dc6zaTOxFJmzC"
-    private var limit: Int = 25
+    private var limit: Int = 24
     
     @objc func fetchTrends(with offset: Int, completion: @escaping ([GiphyData]?, GiphyServiceError) -> Void) {
         let url = "https://api.giphy.com/v1/gifs/trending?api_key=\(apiKey)&limit=\(limit)&offset=\(offset)"

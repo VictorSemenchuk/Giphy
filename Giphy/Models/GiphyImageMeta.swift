@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc public class GiphyImageMeta: NSObject, Codable {
+@objcMembers public class GiphyImageMeta: NSObject, Codable {
     var url: String?
     var size: String?
     var width: String?

@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc public class GiphyImage: NSObject, Codable {
+@objcMembers public class GiphyImage: NSObject, Codable {
     var original: GiphyImageMeta?
     var preview: GiphyImageMeta?
     

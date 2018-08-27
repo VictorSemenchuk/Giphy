@@ -24,6 +24,10 @@
     GiphyCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCollectionViewCellIdentifier forIndexPath:indexPath];
     cell.backgroundColor = [UIColor randomThemeColor];
     [cell startActivityIndicator];
+    [self.presenter fetchPreviewImageForGiphyItem:self.items[indexPath.row] completion:^(UIImage * _Nullable image) {
+        cell.imageView.image = image;
+        [cell stopActivityIndicator];
+    }];
     return cell;
 }
 

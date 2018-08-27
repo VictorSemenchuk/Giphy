@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 @objc protocol MainViewPresenterDelegate {
     @objc func itemsWasFetched(_ items: [GiphyData]?);
@@ -31,4 +32,12 @@ import Foundation
         }
     }
     
+    @objc public func fetchPreviewImageForGiphyItem(_ giphyItem: GiphyData, completion: @escaping (UIImage?) -> Void) {
+        let dataService = DataService()
+        dataService.getAnimatedImageFor(giphyData: giphyItem) { (image) in
+            DispatchQueue.main.async {
+                completion(image)
+            }
+        }
+    }
 }

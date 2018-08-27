@@ -39,6 +39,7 @@
             <size key="customSize" width="227" height="234"/>
             <connections>
                 <outlet property="activityIndicator" destination="erB-bA-HMJ" id="xPp-HC-tRy"/>
+                <outlet property="imageView" destination="XDX-kd-VPX" id="pJi-o5-iLG"/>
             </connections>
             <point key="canvasLocation" x="122.5" y="245"/>
         </collectionViewCell>

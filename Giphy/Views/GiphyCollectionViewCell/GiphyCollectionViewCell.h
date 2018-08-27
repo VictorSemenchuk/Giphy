@@ -10,6 +10,8 @@
 
 @interface GiphyCollectionViewCell : UICollectionViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
 - (void)startActivityIndicator;
 - (void)stopActivityIndicator;
 

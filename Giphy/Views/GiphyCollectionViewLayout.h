@@ -10,7 +10,7 @@
 
 @protocol GiphyCollectionViewLayoutDelegate <NSObject>
 
-- (CGFloat)collectionView:(UICollectionView *)collectionView heightForContentAtIndexPath:(NSIndexPath *)indexPath;
+- (CGFloat)collectionView:(UICollectionView *)collectionView heightForContentAtIndexPath:(NSIndexPath *)indexPath withWidth:(CGFloat)width;
 
 @end
 

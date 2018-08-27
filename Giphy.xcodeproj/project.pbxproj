@@ -28,6 +28,8 @@
 		EF7C433F213173D0009DFFE1 /* IdentifierConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C433D213173D0009DFFE1 /* IdentifierConstants.m */; };
 		EF7C434221317485009DFFE1 /* SearchResultsViewController+GiphyCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C434121317485009DFFE1 /* SearchResultsViewController+GiphyCollectionViewLayout.m */; };
 		EF7C434521317643009DFFE1 /* SearchResultsViewController+CollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C434421317643009DFFE1 /* SearchResultsViewController+CollectionView.m */; };
+		EF89CDF7213338BF00721C90 /* MainViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89CDF6213338BF00721C90 /* MainViewPresenter.swift */; };
+		EF89CDFA213339C400721C90 /* MainViewController+MainViewPresenterDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF89CDF9213339C400721C90 /* MainViewController+MainViewPresenterDelegate.m */; };
 		EFA2008D2132A66A007A075D /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA2008C2132A66A007A075D /* JSONParser.swift */; };
 		EFA200922132A678007A075D /* GiphyImageMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA2008E2132A678007A075D /* GiphyImageMeta.swift */; };
 		EFA200932132A678007A075D /* DataSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA2008F2132A678007A075D /* DataSnapshot.swift */; };
@@ -91,6 +93,9 @@
 		EF7C434121317485009DFFE1 /* SearchResultsViewController+GiphyCollectionViewLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SearchResultsViewController+GiphyCollectionViewLayout.m"; sourceTree = "<group>"; };
 		EF7C434321317643009DFFE1 /* SearchResultsViewController+CollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SearchResultsViewController+CollectionView.h"; sourceTree = "<group>"; };
 		EF7C434421317643009DFFE1 /* SearchResultsViewController+CollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SearchResultsViewController+CollectionView.m"; sourceTree = "<group>"; };
+		EF89CDF6213338BF00721C90 /* MainViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewPresenter.swift; sourceTree = "<group>"; };
+		EF89CDF8213339C400721C90 /* MainViewController+MainViewPresenterDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MainViewController+MainViewPresenterDelegate.h"; sourceTree = "<group>"; };
+		EF89CDF9213339C400721C90 /* MainViewController+MainViewPresenterDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MainViewController+MainViewPresenterDelegate.m"; sourceTree = "<group>"; };
 		EFA2008C2132A66A007A075D /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		EFA2008E2132A678007A075D /* GiphyImageMeta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiphyImageMeta.swift; sourceTree = "<group>"; };
 		EFA2008F2132A678007A075D /* DataSnapshot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSnapshot.swift; sourceTree = "<group>"; };
@@ -236,6 +241,7 @@
 		DA46851821303E3F00BCC31A /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				EF89CDF6213338BF00721C90 /* MainViewPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -270,6 +276,8 @@
 				DA468530213041B300BCC31A /* MainViewController+GiphyCollectionViewLayout.m */,
 				EFE17AC3213152B50037F57D /* MainViewController+Appearance.h */,
 				EFE17AC4213152B50037F57D /* MainViewController+Appearance.m */,
+				EF89CDF8213339C400721C90 /* MainViewController+MainViewPresenterDelegate.h */,
+				EF89CDF9213339C400721C90 /* MainViewController+MainViewPresenterDelegate.m */,
 			);
 			path = MainViewController;
 			sourceTree = "<group>";
@@ -447,6 +455,7 @@
 				EFA2009D2132B225007A075D /* DataService.swift in Sources */,
 				EF7C434521317643009DFFE1 /* SearchResultsViewController+CollectionView.m in Sources */,
 				DA468531213041B300BCC31A /* MainViewController+GiphyCollectionViewLayout.m in Sources */,
+				EF89CDF7213338BF00721C90 /* MainViewPresenter.swift in Sources */,
 				EFE17AC5213152B50037F57D /* MainViewController+Appearance.m in Sources */,
 				EFA200942132A678007A075D /* GiphyImage.swift in Sources */,
 				EF7C433B213172D3009DFFE1 /* SearchResultsViewController.m in Sources */,
@@ -461,6 +470,7 @@
 				EFA200952132A678007A075D /* GiphyData.swift in Sources */,
 				EFA200932132A678007A075D /* DataSnapshot.swift in Sources */,
 				DA46852E2130417700BCC31A /* GiphyCollectionViewLayout.m in Sources */,
+				EF89CDFA213339C400721C90 /* MainViewController+MainViewPresenterDelegate.m in Sources */,
 				DA4684F921303DC600BCC31A /* Giphy.xcdatamodeld in Sources */,
 				2EA54883213060EE00159821 /* DownloadManager.m in Sources */,
 				DA46853821306E5400BCC31A /* GiphyService.swift in Sources */,

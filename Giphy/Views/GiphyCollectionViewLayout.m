@@ -47,7 +47,8 @@
 }
 
 - (void)prepareLayout {
-    if (self.cache.count != 0 || self.collectionView == nil) {
+    [self.cache removeAllObjects];
+    if (self.collectionView == nil) {
         return;
     } else {
         CGFloat columnWidth = self.contentWidth / self.numberOfColumns;
@@ -66,7 +67,7 @@
         for (int i = 0; i < [self.collectionView numberOfItemsInSection:0]; i++) {
             NSIndexPath *indexPath = [NSIndexPath indexPathForItem:i inSection:0];
             
-            CGFloat currentContentHeight = [self.delegate collectionView:self.collectionView heightForContentAtIndexPath:indexPath];
+            CGFloat currentContentHeight = [self.delegate collectionView:self.collectionView heightForContentAtIndexPath:indexPath withWidth:columnWidth];
             CGFloat height = self.cellPadding * 2 + currentContentHeight;
             CGRect frame = CGRectMake(xOffset[column].floatValue, yOffset[column].floatValue, columnWidth, height);
             CGRect insetFrame = CGRectInset(frame, self.cellPadding, self.cellPadding);

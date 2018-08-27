@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc public class GiphyData: NSObject, Codable {
+@objcMembers public class GiphyData: NSObject, Codable {
     var dataId: String?
     var title: String?
     var rating: String?

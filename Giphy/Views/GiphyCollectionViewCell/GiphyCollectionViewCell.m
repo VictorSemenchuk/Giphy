@@ -31,4 +31,10 @@
     self.activityIndicator.hidden = YES;
 }
 
+- (void)prepareForReuse {
+    [super prepareForReuse];
+    self.imageView.image = [[UIImage alloc] init];
+    [self startActivityIndicator];
+}
+
 @end

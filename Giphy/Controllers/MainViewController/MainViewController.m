@@ -38,12 +38,22 @@
         if (![self.searhTextField.text isEqualToString:@""]) {
             SearchResultsViewController *searchVC = segue.destinationViewController;
             searchVC.searchRequest = self.searhTextField.text;
+            [self.searhTextField resignFirstResponder];
         } else {
             return;
         }
     } else if ([segue.identifier isEqualToString:kDetailsSegueIdentifier]) {
         //some preparing
     }
+}
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    if ([identifier isEqualToString:kSearchResultSegueIdentifier]) {
+        if ([self.searhTextField.text isEqualToString:@""]) {
+            return NO;
+        }
+    }
+    return YES;
 }
 
 @end

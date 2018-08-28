@@ -12,6 +12,7 @@
 @interface DetailsViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIButton *stopPlayButton;
+@property (weak, nonatomic) IBOutlet UIButton *saveButton;
 @property (nonatomic) GiphyData *giphyItem;
 
 @end

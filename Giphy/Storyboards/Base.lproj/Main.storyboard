@@ -91,6 +91,7 @@
                     <connections>
                         <outlet property="collectionView" destination="ceh-8F-zIG" id="ytJ-3O-5LO"/>
                         <outlet property="searhTextField" destination="498-bx-6Af" id="igu-EO-FFC"/>
+                        <outlet property="showSaved" destination="DBz-L2-PHk" id="2c9-7H-LMv"/>
                         <segue destination="0cL-jJ-mAI" kind="show" identifier="DetailsSegueIdentifier" id="2Uh-mp-5G1"/>
                     </connections>
                 </viewController>

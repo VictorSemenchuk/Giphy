@@ -13,8 +13,10 @@
 #import "Giphy-Swift.h"
 
 @interface MainViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *showSaved;
 
 @property (weak, nonatomic) IBOutlet UITextField *searhTextField;
+
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic) NSMutableArray<GiphyData *> *items;
 @property (nonatomic) MainViewPresenter *presenter;

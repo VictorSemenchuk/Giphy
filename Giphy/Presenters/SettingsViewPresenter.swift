@@ -34,4 +34,10 @@ import Foundation
         return value
     }
     
+    @objc public func clearCache() {
+        let fileManager = GiphyFileManager()
+        let path = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true) [0]
+        _ = fileManager.removeAppDirectory(from: path)
+    }
+    
 }

@@ -210,12 +210,12 @@
             </objects>
             <point key="canvasLocation" x="1694" y="508"/>
         </scene>
-        <!--Settings Table View Controller-->
+        <!--Settings-->
         <scene sceneID="FZq-Rc-nUD">
             <objects>
                 <tableViewController id="y9X-Eg-F1N" customClass="SettingsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="50" sectionFooterHeight="28" id="REV-wI-zmj">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -226,7 +226,7 @@
                             <outlet property="delegate" destination="y9X-Eg-F1N" id="7Ag-VO-Ze5"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="dA0-QY-uW9">
+                    <navigationItem key="navigationItem" title="Settings" id="dA0-QY-uW9">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="BIp-VC-00Z">
                             <connections>
                                 <action selector="dismissController:" destination="y9X-Eg-F1N" id="nSO-J4-6V0"/>
@@ -317,9 +317,14 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="X1E-k8-iRG" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="jbT-y6-ufc"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="230-Pu-WXI">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="230-Pu-WXI">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.74901960784313726" green="0.0" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

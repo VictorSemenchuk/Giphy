@@ -22,6 +22,9 @@
 		DA46853821306E5400BCC31A /* GiphyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA46853721306E5400BCC31A /* GiphyService.swift */; };
 		DA46853A21306EC600BCC31A /* GiphyServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA46853921306EC600BCC31A /* GiphyServiceTests.swift */; };
 		DA4685452130770300BCC31A /* ParserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4685442130770300BCC31A /* ParserService.swift */; };
+		DA50C2522135560A00F06FDE /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA50C2512135560A00F06FDE /* SettingsTableViewController.m */; };
+		DA50C255213574A700F06FDE /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA50C254213574A700F06FDE /* Rating.swift */; };
+		DA50C25721357CCC00F06FDE /* SettingsViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA50C25621357CCC00F06FDE /* SettingsViewPresenter.swift */; };
 		DA7EB3D92133FF1C005AF12E /* SearchResultsViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7EB3D82133FF1C005AF12E /* SearchResultsViewPresenter.swift */; };
 		DA7EB3DC213400E9005AF12E /* SearchResultsViewController+SearchResultsViewPresenterDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA7EB3DB213400E9005AF12E /* SearchResultsViewController+SearchResultsViewPresenterDelegate.m */; };
 		DA8FC8022134244A00DE8F0D /* DetailsViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8FC8012134244A00DE8F0D /* DetailsViewPresenter.swift */; };
@@ -88,6 +91,10 @@
 		DA46853721306E5400BCC31A /* GiphyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyService.swift; sourceTree = "<group>"; };
 		DA46853921306EC600BCC31A /* GiphyServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyServiceTests.swift; sourceTree = "<group>"; };
 		DA4685442130770300BCC31A /* ParserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserService.swift; sourceTree = "<group>"; };
+		DA50C2502135560A00F06FDE /* SettingsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
+		DA50C2512135560A00F06FDE /* SettingsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
+		DA50C254213574A700F06FDE /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
+		DA50C25621357CCC00F06FDE /* SettingsViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewPresenter.swift; sourceTree = "<group>"; };
 		DA7EB3D82133FF1C005AF12E /* SearchResultsViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewPresenter.swift; sourceTree = "<group>"; };
 		DA7EB3DA213400E9005AF12E /* SearchResultsViewController+SearchResultsViewPresenterDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SearchResultsViewController+SearchResultsViewPresenterDelegate.h"; sourceTree = "<group>"; };
 		DA7EB3DB213400E9005AF12E /* SearchResultsViewController+SearchResultsViewPresenterDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SearchResultsViewController+SearchResultsViewPresenterDelegate.m"; sourceTree = "<group>"; };
@@ -244,6 +251,7 @@
 		DA46851721303E2F00BCC31A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DA50C24F2135513E00F06FDE /* SettingViewController */,
 				EF7C433C2131739B009DFFE1 /* IdentifierConstants */,
 				EF7C434621318FB1009DFFE1 /* DetailsViewController */,
 				EF7C43382131729C009DFFE1 /* SearchResultsViewController */,
@@ -258,6 +266,7 @@
 				EF89CDF6213338BF00721C90 /* MainViewPresenter.swift */,
 				DA7EB3D82133FF1C005AF12E /* SearchResultsViewPresenter.swift */,
 				DA8FC8012134244A00DE8F0D /* DetailsViewPresenter.swift */,
+				DA50C25621357CCC00F06FDE /* SettingsViewPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -265,6 +274,7 @@
 		DA46851921303E4B00BCC31A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DA50C2532135741E00F06FDE /* ServiceModels */,
 				EFA2008F2132A678007A075D /* DataSnapshot.swift */,
 				EFA200912132A678007A075D /* GiphyData.swift */,
 				EFA200902132A678007A075D /* GiphyImage.swift */,
@@ -319,6 +329,23 @@
 				EFA2009C2132B225007A075D /* DataService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		DA50C24F2135513E00F06FDE /* SettingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DA50C2502135560A00F06FDE /* SettingsTableViewController.h */,
+				DA50C2512135560A00F06FDE /* SettingsTableViewController.m */,
+			);
+			path = SettingViewController;
+			sourceTree = "<group>";
+		};
+		DA50C2532135741E00F06FDE /* ServiceModels */ = {
+			isa = PBXGroup;
+			children = (
+				DA50C254213574A700F06FDE /* Rating.swift */,
+			);
+			path = ServiceModels;
 			sourceTree = "<group>";
 		};
 		EF7C43382131729C009DFFE1 /* SearchResultsViewController */ = {
@@ -476,6 +503,7 @@
 				EFA200922132A678007A075D /* GiphyImageMeta.swift in Sources */,
 				EFE17AC72131582D0037F57D /* UITextField+Paddings.swift in Sources */,
 				EFA200A12132BE78007A075D /* UIImage+Gif.swift in Sources */,
+				DA50C2522135560A00F06FDE /* SettingsTableViewController.m in Sources */,
 				DA8FC80D21342DCA00DE8F0D /* Date+Format.swift in Sources */,
 				EFA2009D2132B225007A075D /* DataService.swift in Sources */,
 				EF7C434521317643009DFFE1 /* SearchResultsViewController+CollectionView.m in Sources */,
@@ -490,8 +518,10 @@
 				EF72773C2131CF950036C638 /* DetailsViewController.m in Sources */,
 				DA468527213040BB00BCC31A /* MainViewController+CollectionView.m in Sources */,
 				DA4684F121303DC600BCC31A /* AppDelegate.swift in Sources */,
+				DA50C25721357CCC00F06FDE /* SettingsViewPresenter.swift in Sources */,
 				DA8FC8052134271700DE8F0D /* DetailsViewController+DetailsViewPresenterDelegate.m in Sources */,
 				DA4685452130770300BCC31A /* ParserService.swift in Sources */,
+				DA50C255213574A700F06FDE /* Rating.swift in Sources */,
 				EF7C434221317485009DFFE1 /* SearchResultsViewController+GiphyCollectionViewLayout.m in Sources */,
 				DA46852421303F1800BCC31A /* MainViewController.m in Sources */,
 				DA46853421304B9F00BCC31A /* UIColor+ThemeColors.m in Sources */,

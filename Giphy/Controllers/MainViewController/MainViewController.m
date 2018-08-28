@@ -59,4 +59,8 @@
     return YES;
 }
 
+- (IBAction)toggleSavedFlag:(id)sender {
+    NSLog(@"Saved flag was toggled");
+}
+
 @end

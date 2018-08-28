@@ -163,6 +163,9 @@
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Save" image="FavoriteIcon"/>
+                                <connections>
+                                    <action selector="save:" destination="0cL-jJ-mAI" eventType="touchUpInside" id="8Dh-l2-2XS"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQr-qv-1WH">
                                 <rect key="frame" x="335" y="226.5" width="30" height="30"/>
@@ -197,6 +200,7 @@
                         <outlet property="imageView" destination="Hjc-BG-hzn" id="dTp-CB-Mhe"/>
                         <outlet property="imageViewHeightConstraint" destination="pOb-Nx-pOQ" id="kzm-rf-Izu"/>
                         <outlet property="publishedLabel" destination="OcG-c0-poe" id="v5r-ic-p4g"/>
+                        <outlet property="saveButton" destination="8xl-aQ-T5j" id="nv4-Af-l8J"/>
                         <outlet property="stopPlayButton" destination="eQr-qv-1WH" id="Ua5-oW-2Th"/>
                         <outlet property="titleLabel" destination="gHu-FO-bET" id="Jsa-PC-f72"/>
                         <outlet property="trandingView" destination="Ewv-yw-uN2" id="usa-0d-QrF"/>
@@ -206,12 +210,12 @@
             </objects>
             <point key="canvasLocation" x="1694" y="508"/>
         </scene>
-        <!--Settings Table View Controller-->
+        <!--Settings-->
         <scene sceneID="FZq-Rc-nUD">
             <objects>
                 <tableViewController id="y9X-Eg-F1N" customClass="SettingsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="50" sectionFooterHeight="28" id="REV-wI-zmj">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -222,7 +226,7 @@
                             <outlet property="delegate" destination="y9X-Eg-F1N" id="7Ag-VO-Ze5"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="dA0-QY-uW9">
+                    <navigationItem key="navigationItem" title="Settings" id="dA0-QY-uW9">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="BIp-VC-00Z">
                             <connections>
                                 <action selector="dismissController:" destination="y9X-Eg-F1N" id="nSO-J4-6V0"/>
@@ -313,9 +317,14 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="X1E-k8-iRG" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="jbT-y6-ufc"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="230-Pu-WXI">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="230-Pu-WXI">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.74901960784313726" green="0.0" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

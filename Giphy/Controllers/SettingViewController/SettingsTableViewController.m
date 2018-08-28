@@ -9,7 +9,7 @@
 #import "SettingsTableViewController.h"
 #import "Giphy-Swift.h"
 
-@interface SettingsTableViewController ()
+@interface SettingsTableViewController () <SettingsViewPresenterDelegate>
 
 @property (nonatomic) SettingsViewPresenter *presenter;
 
@@ -43,7 +43,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    
+    cell.backgroundColor = UIColor.blackColor;
+    cell.textLabel.textColor = UIColor.whiteColor;
     switch (indexPath.section) {
         case 0: {
             NSInteger checkedRow = [self.presenter getRattingSetting];
@@ -66,7 +67,28 @@
         NSInteger oldCheckedRow = [self.presenter updateRatingSettingWithNewValue:indexPath.row];
         [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:oldCheckedRow inSection:indexPath.section], [NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section]] withRowAnimation:UITableViewRowAnimationNone];
     } else {
-        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    }
+    switch (indexPath.section) {
+        case 0: {
+            NSInteger oldCheckedRow = [self.presenter updateRatingSettingWithNewValue:indexPath.row];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:oldCheckedRow inSection:indexPath.section], [NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section]] withRowAnimation:UITableViewRowAnimationNone];
+            break;
+        }
+        case 1: {
+            [self.presenter clearCache];
+        }
+    }
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    switch (section) {
+    case 0:
+        return @"Rating";
+    case 1:
+        return @"Options";
+    default:
+        return @"";
     }
 }
 

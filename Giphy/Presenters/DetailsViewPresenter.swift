@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Social
+import CoreData
 
 @objc protocol DetailsViewPresenterDelegate {
     @objc func setPlayIconForStopPlayButton();
@@ -23,6 +24,7 @@ import Social
     @objc init(view: DetailsViewPresenterDelegate) {
         self.view = view
     }
+
     
     @objc public func fetchOriginalImageForGiphyItem(_ giphyItem: GiphyData, completion: @escaping (UIImage?) -> Void) {
         let dataService = DataService()
@@ -32,6 +34,8 @@ import Social
             }
         }
     }
+    
+    
     
     @objc public func convertDate(inputDate: String) -> String {
         let date = Date.date(with: "yyyy-MM-dd HH:mm:ss", from: inputDate)
@@ -56,6 +60,49 @@ import Social
             imageView.image = self.animatedImage?.images![0];
             self.view.setPlayIconForStopPlayButton()
         }
+    }
+    
+    @objc public func saveGiphiItem(_ giphyItem: GiphyData){
+        
+        GifPreview.saveToPersistance(giphyItem)
+    }
+    
+    @objc public func checkIfItemExists(_ giphyItem: GiphyData) -> Bool{
+
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        let backgroundContext = appDelegate?.persistentContainer.newBackgroundContext()
+        
+            let request: NSFetchRequest<NSFetchRequestResult> = GifPreview.fetchRequest()
+            request.predicate = NSPredicate(format: "dataId = %@", giphyItem.dataId!)
+            
+           var result: Bool = false
+            
+            do {
+                result = (try backgroundContext?.count(for: request))! > 0
+            } catch {
+                NSLog("My Error: %@", error as NSError)
+            }
+            
+            return result
+        }
+    
+    @objc public func getExistingImage(_ giphyItem: GiphyData) -> UIImage{
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        let backgroundContext = appDelegate?.persistentContainer.newBackgroundContext()
+        
+        let request: NSFetchRequest<GifPreview> = GifPreview.fetchRequest()
+        request.predicate = NSPredicate(format: "dataId = %@", giphyItem.dataId!)
+        
+        var result:[GifPreview] = []
+        
+            do {
+                result = (try backgroundContext?.fetch(request))!
+             } catch {
+                    NSLog("My Error: %@", error as NSError)
+            }
+        
+        return UIImage.animatedImage(data: (result.first?.fullGif?.image)!)!
+        
     }
 
 }

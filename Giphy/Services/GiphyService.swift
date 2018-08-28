@@ -25,9 +25,15 @@ import Foundation
     }
     
     @objc func fetchItemsBySearchRequest(_ searchRequest: String, with offset: Int, completion: @escaping ([GiphyData]?, GiphyServiceError) -> Void) {
-        let url = "https://api.giphy.com/v1/gifs/search?api_key=\(apiKey)&q=\(searchRequest)&limit=\(limit)&offset=\(offset)"
-        fetchData(from: url) { (data, error) in
-            completion(data, error)
+        let ratingCode = UserDefaults.standard.integer(forKey: "ratingSetting")
+        if let ratingType = RatingType(rawValue: ratingCode) {
+            let rating = Rating.stringDescription(typeFor: ratingType)
+            let url = "https://api.giphy.com/v1/gifs/search?api_key=\(apiKey)&q=\(searchRequest)&limit=\(limit)&offset=\(offset)&g=\(rating)"
+            fetchData(from: url) { (data, error) in
+                completion(data, error)
+            }
+        } else {
+            completion(nil, GiphyServiceError.FetchingDataError)
         }
     }
     

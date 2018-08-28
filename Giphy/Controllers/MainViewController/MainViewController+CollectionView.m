@@ -14,13 +14,20 @@
 //MARK:- UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 200;
+    return self.items.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == (self.items.count - 1)) {
+        [self.presenter fetchItemsWith: indexPath.row + 1];
+    }
     GiphyCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCollectionViewCellIdentifier forIndexPath:indexPath];
     cell.backgroundColor = [UIColor randomThemeColor];
     [cell startActivityIndicator];
+    [self.presenter fetchPreviewImageForGiphyItem:self.items[indexPath.row] completion:^(UIImage * _Nullable image) {
+        cell.imageView.image = image;
+        [cell stopActivityIndicator];
+    }];
     return cell;
 }
 

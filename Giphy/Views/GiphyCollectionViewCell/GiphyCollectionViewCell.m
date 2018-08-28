@@ -7,10 +7,16 @@
 //
 
 #import "GiphyCollectionViewCell.h"
+#import "SearchResultsViewController.h"
+#import "UIColor+ThemeColors.h"
 
 @interface GiphyCollectionViewCell ()
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UIImageView *trendingImage;
+
+- (void)showTrendingIndicator;
+- (void)hideTrendingIndicator;
 
 @end
 
@@ -18,7 +24,6 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
 }
 
 - (void)startActivityIndicator {
@@ -29,6 +34,30 @@
 - (void)stopActivityIndicator {
     [self.activityIndicator stopAnimating];
     self.activityIndicator.hidden = YES;
+}
+
+- (void)setupViewsForGiphyItem:(GiphyData *)giphyItem sender:(NSObject *)sender {
+    if ([sender isKindOfClass:SearchResultsViewController.class] && ![giphyItem.trendingDatetime isEqualToString:@"0000-00-00 00:00:00"]) {
+        self.trendingImage.hidden = NO;
+    } else {
+        self.trendingImage.hidden = YES;
+    }
+    self.backgroundColor = [UIColor randomThemeColor];
+}
+
+- (void)showTrendingIndicator {
+    self.trendingImage.hidden = NO;
+}
+
+- (void)hideTrendingIndicator {
+    self.trendingImage.hidden = YES;
+}
+
+- (void)prepareForReuse {
+    [super prepareForReuse];
+    self.imageView.image = [[UIImage alloc] init];
+    self.trendingImage.hidden = YES;
+    [self startActivityIndicator];
 }
 
 @end

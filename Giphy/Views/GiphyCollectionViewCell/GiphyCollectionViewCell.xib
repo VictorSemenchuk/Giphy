@@ -25,22 +25,36 @@
                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="erB-bA-HMJ">
                         <rect key="frame" x="103" y="107" width="20" height="20"/>
                     </activityIndicatorView>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TrendingIcon" translatesAutoresizingMaskIntoConstraints="NO" id="OzV-jy-QfJ">
+                        <rect key="frame" x="204" y="207" width="13" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="WWO-Rl-deJ"/>
+                            <constraint firstAttribute="width" constant="13" id="ncf-Nq-oO5"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstItem="erB-bA-HMJ" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="DrM-Ad-mb7"/>
+                <constraint firstAttribute="bottom" secondItem="OzV-jy-QfJ" secondAttribute="bottom" constant="10" id="G27-VS-Fhv"/>
                 <constraint firstItem="erB-bA-HMJ" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="IHX-OL-Jdr"/>
                 <constraint firstAttribute="bottom" secondItem="XDX-kd-VPX" secondAttribute="bottom" id="V8O-qo-0XP"/>
                 <constraint firstAttribute="trailing" secondItem="XDX-kd-VPX" secondAttribute="trailing" id="YOG-Q5-QBg"/>
                 <constraint firstItem="XDX-kd-VPX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="hm7-BI-bxo"/>
                 <constraint firstItem="XDX-kd-VPX" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="qAc-ZA-agp"/>
+                <constraint firstAttribute="trailing" secondItem="OzV-jy-QfJ" secondAttribute="trailing" constant="10" id="qo7-3g-Jzr"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
             <size key="customSize" width="227" height="234"/>
             <connections>
                 <outlet property="activityIndicator" destination="erB-bA-HMJ" id="xPp-HC-tRy"/>
+                <outlet property="imageView" destination="XDX-kd-VPX" id="pJi-o5-iLG"/>
+                <outlet property="trendingImage" destination="OzV-jy-QfJ" id="7pj-hC-tAp"/>
             </connections>
             <point key="canvasLocation" x="122.5" y="245"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="TrendingIcon" width="13" height="17"/>
+    </resources>
 </document>

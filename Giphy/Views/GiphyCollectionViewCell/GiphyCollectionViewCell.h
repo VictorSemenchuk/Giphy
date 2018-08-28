@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Giphy-Swift.h"
 
 @interface GiphyCollectionViewCell : UICollectionViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
 - (void)startActivityIndicator;
 - (void)stopActivityIndicator;
+- (void)setupViewsForGiphyItem:(GiphyData *)giphyItem sender:(NSObject *)sender;
 
 @end

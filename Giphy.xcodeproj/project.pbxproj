@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2EA54883213060EE00159821 /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA54882213060EE00159821 /* DownloadManager.m */; };
 		DA4684F121303DC600BCC31A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4684F021303DC600BCC31A /* AppDelegate.swift */; };
 		DA4684F621303DC600BCC31A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA4684F421303DC600BCC31A /* Main.storyboard */; };
 		DA4684F921303DC600BCC31A /* Giphy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA4684F721303DC600BCC31A /* Giphy.xcdatamodeld */; };
@@ -18,11 +19,32 @@
 		DA46852E2130417700BCC31A /* GiphyCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DA46852D2130417700BCC31A /* GiphyCollectionViewLayout.m */; };
 		DA468531213041B300BCC31A /* MainViewController+GiphyCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DA468530213041B300BCC31A /* MainViewController+GiphyCollectionViewLayout.m */; };
 		DA46853421304B9F00BCC31A /* UIColor+ThemeColors.m in Sources */ = {isa = PBXBuildFile; fileRef = DA46853321304B9F00BCC31A /* UIColor+ThemeColors.m */; };
+		DA46853821306E5400BCC31A /* GiphyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA46853721306E5400BCC31A /* GiphyService.swift */; };
+		DA46853A21306EC600BCC31A /* GiphyServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA46853921306EC600BCC31A /* GiphyServiceTests.swift */; };
+		DA4685452130770300BCC31A /* ParserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4685442130770300BCC31A /* ParserService.swift */; };
+		DA7EB3D92133FF1C005AF12E /* SearchResultsViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7EB3D82133FF1C005AF12E /* SearchResultsViewPresenter.swift */; };
+		DA7EB3DC213400E9005AF12E /* SearchResultsViewController+SearchResultsViewPresenterDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA7EB3DB213400E9005AF12E /* SearchResultsViewController+SearchResultsViewPresenterDelegate.m */; };
+		DA8FC8022134244A00DE8F0D /* DetailsViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8FC8012134244A00DE8F0D /* DetailsViewPresenter.swift */; };
+		DA8FC8052134271700DE8F0D /* DetailsViewController+DetailsViewPresenterDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8FC8042134271700DE8F0D /* DetailsViewController+DetailsViewPresenterDelegate.m */; };
+		DA8FC80D21342DCA00DE8F0D /* Date+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8FC80C21342DCA00DE8F0D /* Date+Format.swift */; };
+		DA8FC80F21342E4200DE8F0D /* String+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8FC80E21342E4200DE8F0D /* String+Format.swift */; };
+		EF2D44C82132E1A000E70990 /* FileManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2D44C72132E1A000E70990 /* FileManagerTests.swift */; };
 		EF72773C2131CF950036C638 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF72773B2131CF950036C638 /* DetailsViewController.m */; };
 		EF7C433B213172D3009DFFE1 /* SearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C433A213172D3009DFFE1 /* SearchResultsViewController.m */; };
 		EF7C433F213173D0009DFFE1 /* IdentifierConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C433D213173D0009DFFE1 /* IdentifierConstants.m */; };
 		EF7C434221317485009DFFE1 /* SearchResultsViewController+GiphyCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C434121317485009DFFE1 /* SearchResultsViewController+GiphyCollectionViewLayout.m */; };
 		EF7C434521317643009DFFE1 /* SearchResultsViewController+CollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C434421317643009DFFE1 /* SearchResultsViewController+CollectionView.m */; };
+		EF89CDF7213338BF00721C90 /* MainViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89CDF6213338BF00721C90 /* MainViewPresenter.swift */; };
+		EF89CDFA213339C400721C90 /* MainViewController+MainViewPresenterDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF89CDF9213339C400721C90 /* MainViewController+MainViewPresenterDelegate.m */; };
+		EFA2008D2132A66A007A075D /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA2008C2132A66A007A075D /* JSONParser.swift */; };
+		EFA200922132A678007A075D /* GiphyImageMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA2008E2132A678007A075D /* GiphyImageMeta.swift */; };
+		EFA200932132A678007A075D /* DataSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA2008F2132A678007A075D /* DataSnapshot.swift */; };
+		EFA200942132A678007A075D /* GiphyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA200902132A678007A075D /* GiphyImage.swift */; };
+		EFA200952132A678007A075D /* GiphyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA200912132A678007A075D /* GiphyData.swift */; };
+		EFA2009B2132B1EA007A075D /* GiphyFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA2009A2132B1EA007A075D /* GiphyFileManager.swift */; };
+		EFA2009D2132B225007A075D /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA2009C2132B225007A075D /* DataService.swift */; };
+		EFA200A12132BE78007A075D /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA200A02132BE78007A075D /* UIImage+Gif.swift */; };
+		EFA200A52132C4BA007A075D /* DataServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA200A42132C4BA007A075D /* DataServiceTests.swift */; };
 		EFE17AC5213152B50037F57D /* MainViewController+Appearance.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE17AC4213152B50037F57D /* MainViewController+Appearance.m */; };
 		EFE17AC72131582D0037F57D /* UITextField+Paddings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE17AC62131582D0037F57D /* UITextField+Paddings.swift */; };
 		EFE17ACD213164560037F57D /* GiphyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE17ACB213164560037F57D /* GiphyCollectionViewCell.m */; };
@@ -40,6 +62,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2EA54881213060EE00159821 /* DownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadManager.h; sourceTree = "<group>"; };
+		2EA54882213060EE00159821 /* DownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadManager.m; sourceTree = "<group>"; };
 		DA4684ED21303DC600BCC31A /* Giphy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Giphy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA4684F021303DC600BCC31A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA4684F521303DC600BCC31A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -61,6 +85,18 @@
 		DA468530213041B300BCC31A /* MainViewController+GiphyCollectionViewLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MainViewController+GiphyCollectionViewLayout.m"; sourceTree = "<group>"; };
 		DA46853221304B9F00BCC31A /* UIColor+ThemeColors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+ThemeColors.h"; sourceTree = "<group>"; };
 		DA46853321304B9F00BCC31A /* UIColor+ThemeColors.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ThemeColors.m"; sourceTree = "<group>"; };
+		DA46853721306E5400BCC31A /* GiphyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyService.swift; sourceTree = "<group>"; };
+		DA46853921306EC600BCC31A /* GiphyServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyServiceTests.swift; sourceTree = "<group>"; };
+		DA4685442130770300BCC31A /* ParserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserService.swift; sourceTree = "<group>"; };
+		DA7EB3D82133FF1C005AF12E /* SearchResultsViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewPresenter.swift; sourceTree = "<group>"; };
+		DA7EB3DA213400E9005AF12E /* SearchResultsViewController+SearchResultsViewPresenterDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SearchResultsViewController+SearchResultsViewPresenterDelegate.h"; sourceTree = "<group>"; };
+		DA7EB3DB213400E9005AF12E /* SearchResultsViewController+SearchResultsViewPresenterDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SearchResultsViewController+SearchResultsViewPresenterDelegate.m"; sourceTree = "<group>"; };
+		DA8FC8012134244A00DE8F0D /* DetailsViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewPresenter.swift; sourceTree = "<group>"; };
+		DA8FC8032134271700DE8F0D /* DetailsViewController+DetailsViewPresenterDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DetailsViewController+DetailsViewPresenterDelegate.h"; sourceTree = "<group>"; };
+		DA8FC8042134271700DE8F0D /* DetailsViewController+DetailsViewPresenterDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "DetailsViewController+DetailsViewPresenterDelegate.m"; sourceTree = "<group>"; };
+		DA8FC80C21342DCA00DE8F0D /* Date+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Format.swift"; sourceTree = "<group>"; };
+		DA8FC80E21342E4200DE8F0D /* String+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Format.swift"; sourceTree = "<group>"; };
+		EF2D44C72132E1A000E70990 /* FileManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerTests.swift; sourceTree = "<group>"; };
 		EF72773A2131CF950036C638 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		EF72773B2131CF950036C638 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		EF7C4339213172D3009DFFE1 /* SearchResultsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResultsViewController.h; sourceTree = "<group>"; };
@@ -71,6 +107,18 @@
 		EF7C434121317485009DFFE1 /* SearchResultsViewController+GiphyCollectionViewLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SearchResultsViewController+GiphyCollectionViewLayout.m"; sourceTree = "<group>"; };
 		EF7C434321317643009DFFE1 /* SearchResultsViewController+CollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SearchResultsViewController+CollectionView.h"; sourceTree = "<group>"; };
 		EF7C434421317643009DFFE1 /* SearchResultsViewController+CollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SearchResultsViewController+CollectionView.m"; sourceTree = "<group>"; };
+		EF89CDF6213338BF00721C90 /* MainViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewPresenter.swift; sourceTree = "<group>"; };
+		EF89CDF8213339C400721C90 /* MainViewController+MainViewPresenterDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MainViewController+MainViewPresenterDelegate.h"; sourceTree = "<group>"; };
+		EF89CDF9213339C400721C90 /* MainViewController+MainViewPresenterDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MainViewController+MainViewPresenterDelegate.m"; sourceTree = "<group>"; };
+		EFA2008C2132A66A007A075D /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
+		EFA2008E2132A678007A075D /* GiphyImageMeta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiphyImageMeta.swift; sourceTree = "<group>"; };
+		EFA2008F2132A678007A075D /* DataSnapshot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSnapshot.swift; sourceTree = "<group>"; };
+		EFA200902132A678007A075D /* GiphyImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiphyImage.swift; sourceTree = "<group>"; };
+		EFA200912132A678007A075D /* GiphyData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiphyData.swift; sourceTree = "<group>"; };
+		EFA2009A2132B1EA007A075D /* GiphyFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyFileManager.swift; sourceTree = "<group>"; };
+		EFA2009C2132B225007A075D /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		EFA200A02132BE78007A075D /* UIImage+Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
+		EFA200A42132C4BA007A075D /* DataServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServiceTests.swift; sourceTree = "<group>"; };
 		EFE17AC3213152B50037F57D /* MainViewController+Appearance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MainViewController+Appearance.h"; sourceTree = "<group>"; };
 		EFE17AC4213152B50037F57D /* MainViewController+Appearance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MainViewController+Appearance.m"; sourceTree = "<group>"; };
 		EFE17AC62131582D0037F57D /* UITextField+Paddings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Paddings.swift"; sourceTree = "<group>"; };
@@ -97,6 +145,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2EA5487C2130606500159821 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				EFA2009A2132B1EA007A075D /* GiphyFileManager.swift */,
+				2EA5487D2130608000159821 /* Downloading */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		2EA5487D2130608000159821 /* Downloading */ = {
+			isa = PBXGroup;
+			children = (
+				2EA54881213060EE00159821 /* DownloadManager.h */,
+				2EA54882213060EE00159821 /* DownloadManager.m */,
+			);
+			path = Downloading;
+			sourceTree = "<group>";
+		};
 		DA4684E421303DC600BCC31A = {
 			isa = PBXGroup;
 			children = (
@@ -118,9 +184,10 @@
 		DA4684EF21303DC600BCC31A /* Giphy */ = {
 			isa = PBXGroup;
 			children = (
+				DA46853521306DFA00BCC31A /* Services */,
+				2EA5487C2130606500159821 /* Managers */,
 				DA468528213040FB00BCC31A /* Categories */,
 				DA46851C21303E5800BCC31A /* Parsers */,
-				DA46851B21303E5400BCC31A /* Services */,
 				DA46851921303E4B00BCC31A /* Models */,
 				DA46851821303E3F00BCC31A /* Presenters */,
 				DA46851721303E2F00BCC31A /* Controllers */,
@@ -137,8 +204,11 @@
 		DA46850721303DC700BCC31A /* GiphyTests */ = {
 			isa = PBXGroup;
 			children = (
-				DA46850821303DC700BCC31A /* GiphyTests.swift */,
 				DA46850A21303DC700BCC31A /* Info.plist */,
+				DA46850821303DC700BCC31A /* GiphyTests.swift */,
+				DA46853921306EC600BCC31A /* GiphyServiceTests.swift */,
+				EFA200A42132C4BA007A075D /* DataServiceTests.swift */,
+				EF2D44C72132E1A000E70990 /* FileManagerTests.swift */,
 			);
 			path = GiphyTests;
 			sourceTree = "<group>";
@@ -185,6 +255,9 @@
 		DA46851821303E3F00BCC31A /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				EF89CDF6213338BF00721C90 /* MainViewPresenter.swift */,
+				DA7EB3D82133FF1C005AF12E /* SearchResultsViewPresenter.swift */,
+				DA8FC8012134244A00DE8F0D /* DetailsViewPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -192,20 +265,18 @@
 		DA46851921303E4B00BCC31A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EFA2008F2132A678007A075D /* DataSnapshot.swift */,
+				EFA200912132A678007A075D /* GiphyData.swift */,
+				EFA200902132A678007A075D /* GiphyImage.swift */,
+				EFA2008E2132A678007A075D /* GiphyImageMeta.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		DA46851B21303E5400BCC31A /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 		DA46851C21303E5800BCC31A /* Parsers */ = {
 			isa = PBXGroup;
 			children = (
+				EFA2008C2132A66A007A075D /* JSONParser.swift */,
 			);
 			path = Parsers;
 			sourceTree = "<group>";
@@ -221,6 +292,8 @@
 				DA468530213041B300BCC31A /* MainViewController+GiphyCollectionViewLayout.m */,
 				EFE17AC3213152B50037F57D /* MainViewController+Appearance.h */,
 				EFE17AC4213152B50037F57D /* MainViewController+Appearance.m */,
+				EF89CDF8213339C400721C90 /* MainViewController+MainViewPresenterDelegate.h */,
+				EF89CDF9213339C400721C90 /* MainViewController+MainViewPresenterDelegate.m */,
 			);
 			path = MainViewController;
 			sourceTree = "<group>";
@@ -231,8 +304,21 @@
 				DA46853221304B9F00BCC31A /* UIColor+ThemeColors.h */,
 				DA46853321304B9F00BCC31A /* UIColor+ThemeColors.m */,
 				EFE17AC62131582D0037F57D /* UITextField+Paddings.swift */,
+				EFA200A02132BE78007A075D /* UIImage+Gif.swift */,
+				DA8FC80C21342DCA00DE8F0D /* Date+Format.swift */,
+				DA8FC80E21342E4200DE8F0D /* String+Format.swift */,
 			);
 			path = Categories;
+			sourceTree = "<group>";
+		};
+		DA46853521306DFA00BCC31A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DA46853721306E5400BCC31A /* GiphyService.swift */,
+				DA4685442130770300BCC31A /* ParserService.swift */,
+				EFA2009C2132B225007A075D /* DataService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		EF7C43382131729C009DFFE1 /* SearchResultsViewController */ = {
@@ -244,6 +330,8 @@
 				EF7C434121317485009DFFE1 /* SearchResultsViewController+GiphyCollectionViewLayout.m */,
 				EF7C434321317643009DFFE1 /* SearchResultsViewController+CollectionView.h */,
 				EF7C434421317643009DFFE1 /* SearchResultsViewController+CollectionView.m */,
+				DA7EB3DA213400E9005AF12E /* SearchResultsViewController+SearchResultsViewPresenterDelegate.h */,
+				DA7EB3DB213400E9005AF12E /* SearchResultsViewController+SearchResultsViewPresenterDelegate.m */,
 			);
 			path = SearchResultsViewController;
 			sourceTree = "<group>";
@@ -262,6 +350,8 @@
 			children = (
 				EF72773A2131CF950036C638 /* DetailsViewController.h */,
 				EF72773B2131CF950036C638 /* DetailsViewController.m */,
+				DA8FC8032134271700DE8F0D /* DetailsViewController+DetailsViewPresenterDelegate.h */,
+				DA8FC8042134271700DE8F0D /* DetailsViewController+DetailsViewPresenterDelegate.m */,
 			);
 			path = DetailsViewController;
 			sourceTree = "<group>";
@@ -379,20 +469,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA7EB3DC213400E9005AF12E /* SearchResultsViewController+SearchResultsViewPresenterDelegate.m in Sources */,
+				DA8FC80F21342E4200DE8F0D /* String+Format.swift in Sources */,
 				EFE17ACD213164560037F57D /* GiphyCollectionViewCell.m in Sources */,
+				EFA2008D2132A66A007A075D /* JSONParser.swift in Sources */,
+				EFA200922132A678007A075D /* GiphyImageMeta.swift in Sources */,
 				EFE17AC72131582D0037F57D /* UITextField+Paddings.swift in Sources */,
+				EFA200A12132BE78007A075D /* UIImage+Gif.swift in Sources */,
+				DA8FC80D21342DCA00DE8F0D /* Date+Format.swift in Sources */,
+				EFA2009D2132B225007A075D /* DataService.swift in Sources */,
 				EF7C434521317643009DFFE1 /* SearchResultsViewController+CollectionView.m in Sources */,
 				DA468531213041B300BCC31A /* MainViewController+GiphyCollectionViewLayout.m in Sources */,
+				EF89CDF7213338BF00721C90 /* MainViewPresenter.swift in Sources */,
 				EFE17AC5213152B50037F57D /* MainViewController+Appearance.m in Sources */,
+				EFA200942132A678007A075D /* GiphyImage.swift in Sources */,
+				DA7EB3D92133FF1C005AF12E /* SearchResultsViewPresenter.swift in Sources */,
 				EF7C433B213172D3009DFFE1 /* SearchResultsViewController.m in Sources */,
+				EFA2009B2132B1EA007A075D /* GiphyFileManager.swift in Sources */,
+				DA8FC8022134244A00DE8F0D /* DetailsViewPresenter.swift in Sources */,
 				EF72773C2131CF950036C638 /* DetailsViewController.m in Sources */,
 				DA468527213040BB00BCC31A /* MainViewController+CollectionView.m in Sources */,
 				DA4684F121303DC600BCC31A /* AppDelegate.swift in Sources */,
+				DA8FC8052134271700DE8F0D /* DetailsViewController+DetailsViewPresenterDelegate.m in Sources */,
+				DA4685452130770300BCC31A /* ParserService.swift in Sources */,
 				EF7C434221317485009DFFE1 /* SearchResultsViewController+GiphyCollectionViewLayout.m in Sources */,
 				DA46852421303F1800BCC31A /* MainViewController.m in Sources */,
 				DA46853421304B9F00BCC31A /* UIColor+ThemeColors.m in Sources */,
+				EFA200952132A678007A075D /* GiphyData.swift in Sources */,
+				EFA200932132A678007A075D /* DataSnapshot.swift in Sources */,
 				DA46852E2130417700BCC31A /* GiphyCollectionViewLayout.m in Sources */,
+				EF89CDFA213339C400721C90 /* MainViewController+MainViewPresenterDelegate.m in Sources */,
 				DA4684F921303DC600BCC31A /* Giphy.xcdatamodeld in Sources */,
+				2EA54883213060EE00159821 /* DownloadManager.m in Sources */,
+				DA46853821306E5400BCC31A /* GiphyService.swift in Sources */,
 				EF7C433F213173D0009DFFE1 /* IdentifierConstants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,7 +510,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFA200A52132C4BA007A075D /* DataServiceTests.swift in Sources */,
 				DA46850921303DC700BCC31A /* GiphyTests.swift in Sources */,
+				DA46853A21306EC600BCC31A /* GiphyServiceTests.swift in Sources */,
+				EF2D44C82132E1A000E70990 /* FileManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,6 +667,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5M3HNT6J9D;
 				INFOPLIST_FILE = Giphy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -575,6 +688,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5M3HNT6J9D;
 				INFOPLIST_FILE = Giphy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

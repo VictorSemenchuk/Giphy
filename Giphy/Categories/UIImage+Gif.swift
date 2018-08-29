@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIImage {
-    static func animatedImage(data: Data) -> UIImage? {
+    @objc public static func animatedImage(data: Data) -> UIImage? {
         guard let source: CGImageSource = CGImageSourceCreateWithData(data as CFData, nil), CGImageSourceGetCount(source) > 1 else {
             return UIImage(data: data)
         }
@@ -17,7 +17,9 @@ extension UIImage {
         // Collect key frames and durations
         var frames: [(image: CGImage, delay: TimeInterval)] = []
         for i: Int in 0 ..< CGImageSourceGetCount(source) {
-            guard let image = CGImageSourceCreateImageAtIndex(source, i, nil), let frame = CGImageSourceCopyPropertiesAtIndex(source, i, nil) as? [String: Any], let gif = frame["{GIF}"] as? [String: Any] else {
+            guard let image = CGImageSourceCreateImageAtIndex(source, i, nil),
+                let frame = CGImageSourceCopyPropertiesAtIndex(source, i, nil) as? [String: Any],
+                let gif = frame["{GIF}"] as? [String: Any] else {
                 continue
             }
             

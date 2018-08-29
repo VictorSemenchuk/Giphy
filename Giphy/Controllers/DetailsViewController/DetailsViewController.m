@@ -37,9 +37,15 @@
     CGFloat tempHeight = [self.giphyItem.image.preview.height floatValue];
     CGFloat tempWidth = [self.giphyItem.image.preview.width floatValue];
     self.imageViewHeightConstraint.constant = tempHeight * self.imageView.bounds.size.width / tempWidth;
-    [self.presenter fetchOriginalImageForGiphyItem:self.giphyItem completion:^(UIImage * _Nullable image) {
-        self.imageView.image = image;
-    }];
+    if ([self.presenter checkIfItemExists:self.giphyItem]) {
+        [self.presenter setSavingStatus:YES];
+        self.imageView.image = [self.presenter getExistingImage:self.giphyItem];
+    } else {
+        [self.presenter setSavingStatus:NO];
+        [self.presenter fetchOriginalImageForGiphyItem:self.giphyItem completion:^(UIImage * _Nullable image) {
+            self.imageView.image = image;
+        }];
+    }
     self.titleLabel.text = self.giphyItem.title;
     self.publishedLabel.text = [@"Published on " stringByAppendingString:[self.presenter convertDateWithInputDate:self.giphyItem.importDatetime]];
     self.trandingView.hidden = [self.giphyItem.trendingDatetime isEqualToString:@"0000-00-00 00:00:00"];
@@ -51,6 +57,15 @@
 
 - (IBAction)stopPlay:(id)sender {
     [self.presenter stopPlayWithImageView:self.imageView];
+}
+
+- (IBAction)save:(id)sender {
+    if (self.presenter.isSaved) {
+        [self.presenter removeItem:self.giphyItem];
+    } else {
+        [self.presenter saveGiphyItem:self.giphyItem];
+    }
+    [self.presenter toggleSavingStatus];
 }
 
 

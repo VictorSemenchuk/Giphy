@@ -10,18 +10,21 @@ import Foundation
 import UIKit
 import Social
 
-@objc protocol DetailsViewPresenterDelegate {
+@objc protocol DetailsViewPresenterDelegate: class {
     @objc func setPlayIconForStopPlayButton();
     @objc func setStopIconForStopPlayButton();
+    @objc func setSaveRemoveButtonFor(savingStatus: Bool)
 }
 
 @objc class DetailsViewPresenter: NSObject {
     
-    var view: DetailsViewPresenterDelegate!
+    weak var view: DetailsViewPresenterDelegate!
     var animatedImage: UIImage?
+    @objc public var isSaved: Bool
     
     @objc init(view: DetailsViewPresenterDelegate) {
         self.view = view
+        self.isSaved = false
     }
     
     @objc public func fetchOriginalImageForGiphyItem(_ giphyItem: GiphyData, completion: @escaping (UIImage?) -> Void) {
@@ -56,6 +59,32 @@ import Social
             imageView.image = self.animatedImage?.images![0];
             self.view.setPlayIconForStopPlayButton()
         }
+    }
+    
+    @objc public func setSavingStatus(_ status: Bool) {
+        isSaved = status;
+        self.view.setSaveRemoveButtonFor(savingStatus: isSaved)
+    }
+    
+    @objc public func toggleSavingStatus() {
+        isSaved = !isSaved
+        self.view.setSaveRemoveButtonFor(savingStatus: isSaved)
+    }
+    
+    @objc public func saveGiphyItem(_ giphyItem: GiphyData) {
+        GifPreview.saveToPersistance(giphyItem)
+    }
+    
+    @objc public func checkIfItemExists(_ giphyItem: GiphyData) -> Bool {
+        return PersistentService.checkIfItemExists(giphyItem)
+    }
+    
+    @objc public func getExistingImage(_ giphyItem: GiphyData) -> UIImage {
+        return PersistentService.getExistingImage(giphyItem)
+    }
+    
+    @objc public func removeItem(_ giphyItem: GiphyData) {
+        PersistentService.deleteItem(giphyItem)
     }
 
 }

@@ -25,6 +25,19 @@ import Foundation
         self.image = values["image"] as? GiphyImage
     }
     
+    init(with cdItem:GifPreview) {
+        self.dataId = cdItem.dataId
+        self.title = cdItem.title
+        self.rating = cdItem.rating
+        self.importDatetime = cdItem.importDatetime
+        self.trendingDatetime = cdItem.trendingDatetime
+        
+        let preview = GiphyImageMeta(url: cdItem.url!, size: cdItem.size!, width: cdItem.width!, height: cdItem.height!, image: cdItem.image!)
+        let original = GiphyImageMeta(url: (cdItem.fullGif?.url)!, size: (cdItem.fullGif?.size)!, width: (cdItem.fullGif?.width)!, height: (cdItem.fullGif?.height)!, image: (cdItem.fullGif?.image)!)
+        
+        self.image = GiphyImage(original: original, preview: preview)
+    }
+    
     enum CodingKeys: String, CodingKey {
         case title, rating
         case dataId = "id"

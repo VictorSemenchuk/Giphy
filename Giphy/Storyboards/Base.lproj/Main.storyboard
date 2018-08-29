@@ -91,6 +91,7 @@
                     <connections>
                         <outlet property="collectionView" destination="ceh-8F-zIG" id="ytJ-3O-5LO"/>
                         <outlet property="searhTextField" destination="498-bx-6Af" id="igu-EO-FFC"/>
+                        <outlet property="showSaved" destination="DBz-L2-PHk" id="2c9-7H-LMv"/>
                         <segue destination="0cL-jJ-mAI" kind="show" identifier="DetailsSegueIdentifier" id="2Uh-mp-5G1"/>
                     </connections>
                 </viewController>
@@ -142,7 +143,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2i0-z1-J4c">
-                                <rect key="frame" x="90" y="226.5" width="80" height="30"/>
+                                <rect key="frame" x="110" y="226.5" width="80" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="QR3-Bq-zaU"/>
                                     <constraint firstAttribute="width" constant="80" id="igE-JH-ova"/>
@@ -155,14 +156,17 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xl-aQ-T5j">
-                                <rect key="frame" x="10" y="226.5" width="70" height="30"/>
+                                <rect key="frame" x="10" y="226.5" width="90" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="4rY-Av-qga"/>
+                                    <constraint firstAttribute="width" constant="90" id="4rY-Av-qga"/>
                                     <constraint firstAttribute="height" constant="30" id="Chb-gf-Lsk"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Save" image="FavoriteIcon"/>
+                                <connections>
+                                    <action selector="save:" destination="0cL-jJ-mAI" eventType="touchUpInside" id="8Dh-l2-2XS"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQr-qv-1WH">
                                 <rect key="frame" x="335" y="226.5" width="30" height="30"/>
@@ -197,6 +201,7 @@
                         <outlet property="imageView" destination="Hjc-BG-hzn" id="dTp-CB-Mhe"/>
                         <outlet property="imageViewHeightConstraint" destination="pOb-Nx-pOQ" id="kzm-rf-Izu"/>
                         <outlet property="publishedLabel" destination="OcG-c0-poe" id="v5r-ic-p4g"/>
+                        <outlet property="saveButton" destination="8xl-aQ-T5j" id="nv4-Af-l8J"/>
                         <outlet property="stopPlayButton" destination="eQr-qv-1WH" id="Ua5-oW-2Th"/>
                         <outlet property="titleLabel" destination="gHu-FO-bET" id="Jsa-PC-f72"/>
                         <outlet property="trandingView" destination="Ewv-yw-uN2" id="usa-0d-QrF"/>

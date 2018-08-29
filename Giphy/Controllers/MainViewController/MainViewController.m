@@ -23,6 +23,8 @@
     [super viewDidLoad];
     
     self.items = [[NSMutableArray alloc] init];
+    self.savedItems = [[NSMutableArray alloc] init];
+    self.showingSavedItems = NO;
     self.presenter = [[MainViewPresenter alloc] initWithView: self];
     
     [self.collectionView registerNib:[UINib nibWithNibName:@"GiphyCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:kCollectionViewCellIdentifier];
@@ -32,6 +34,15 @@
     }
     [self setupViews];
     [self.presenter fetchItemsWith:0];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (self.showingSavedItems) {
+        [self.savedItems removeAllObjects];
+        self.savedItems = [NSMutableArray arrayWithArray:[self.presenter showSaved]];
+        [self.collectionView reloadData];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -46,7 +57,7 @@
     } else if ([segue.identifier isEqualToString:kDetailsSegueIdentifier]) {
         DetailsViewController *detailVC = segue.destinationViewController;
         NSIndexPath *indexPath = sender;
-        detailVC.giphyItem = self.items[indexPath.row];
+        detailVC.giphyItem = self.showingSavedItems ? self.savedItems[indexPath.row] : self.items[indexPath.row];
     }
 }
 
@@ -61,6 +72,13 @@
 
 - (IBAction)toggleSavedFlag:(id)sender {
     NSLog(@"Saved flag was toggled");
+    self.showingSavedItems = !self.showingSavedItems;
+    if (self.showingSavedItems) {
+        self.savedItems = [NSMutableArray arrayWithArray:[self.presenter showSaved]];
+    } else {
+        [self.savedItems removeAllObjects];
+    }
+    [self.collectionView reloadData];
 }
 
 @end

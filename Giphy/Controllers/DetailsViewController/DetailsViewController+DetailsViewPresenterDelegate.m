@@ -18,4 +18,13 @@
     [self.stopPlayButton setImage:[UIImage imageNamed:@"StopIcon"] forState:UIControlStateNormal];
 }
 
+- (void)setSaveRemoveButtonForSavingStatus:(BOOL)savingStatus {
+    if (savingStatus) {
+        [self.saveButton setTitle:@"Remove" forState:UIControlStateNormal];
+    } else {
+        [self.saveButton setTitle:@"Save" forState:UIControlStateNormal];
+    }
+}
+
+
 @end

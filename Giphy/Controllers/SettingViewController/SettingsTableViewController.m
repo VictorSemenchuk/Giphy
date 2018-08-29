@@ -50,10 +50,12 @@
             NSInteger checkedRow = [self.presenter getRattingSetting];
             cell.textLabel.text = [Rating stringDescriptionWithTypeFor:indexPath.row];
             cell.accessoryType = checkedRow == indexPath.row ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+            cell.tintColor = [UIColor colorWithRed:191.0/255.0 green:0.0/255.0 blue:253.0/255.0 alpha:255.0/255.0];
             break;
         }
         case 1:
             cell.textLabel.text = @"Clear cache";
+            cell.textLabel.textColor = [UIColor colorWithRed:191.0/255.0 green:0.0/255.0 blue:253.0/255.0 alpha:255.0/255.0];
             break;
         default:
             break;

@@ -18,9 +18,9 @@ extension FullGif{
         newGiphy.fullGif?.size = giphyItem.image?.original?.size
         newGiphy.fullGif?.url = giphyItem.image?.original?.url
         
-        let downloadManager = DownloadManager()
-        downloadManager.fetchData(fromURL: giphyItem.image?.original?.url, withCompletionBlock: { (fullImageData) in
-            newGiphy.fullGif?.image = fullImageData
+//        let downloadManager = DownloadManager()
+//        downloadManager.fetchData(fromURL: giphyItem.image?.original?.url, withCompletionBlock: { (fullImageData) in
+            newGiphy.fullGif?.image = giphyItem.image?.original?.image
                 do {
                     print("!!!!!!!!!!!!SAVED!!!!!!!!!!!!!")
                     try context.save()
@@ -28,7 +28,7 @@ extension FullGif{
                     print("Failed saving")
                 }
 
-        })
+//        })
     }
     
 }

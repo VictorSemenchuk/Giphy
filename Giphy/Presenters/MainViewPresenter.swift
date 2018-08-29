@@ -26,7 +26,9 @@ import CoreData
     @objc public func fetchItems(with offset: Int) {
         let giphyService = GiphyService()
         giphyService.fetchTrends(with: offset) { (items, error) in
-            if error == .NoError {
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
                 DispatchQueue.main.async {
                     self.view.itemsWasFetched(items)
                 }
@@ -36,9 +38,13 @@ import CoreData
     
     @objc public func fetchPreviewImageForGiphyItem(_ giphyItem: GiphyData, completion: @escaping (UIImage?) -> Void) {
         let dataService = DataService()
-        dataService.getAnimatedPreviewImageFor(giphyData: giphyItem) { (image) in
-            DispatchQueue.main.async {
-                completion(image)
+        dataService.getAnimatedPreviewImageFor(giphyData: giphyItem) { (image, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                DispatchQueue.main.async {
+                    completion(image)
+                }
             }
         }
     }
@@ -50,19 +56,14 @@ import CoreData
         var temp:[GifPreview] = []
         do {
             temp = try context.fetch(fetchRequest)
-            } catch {
-                print("My Error: %@", error as NSError)
+        } catch {
+            print("My Error: %@", error as NSError)
         }
-        
         var result:[GiphyData] = []
-        
-            for gifPreview in temp {
-                result.append(GiphyData.init(with: gifPreview))
-            }
-        
-        return result
+        for gifPreview in temp {
+            result.append(GiphyData.init(with: gifPreview))
         }
-    
-    
+        return result
+    }
     
 }

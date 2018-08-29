@@ -29,9 +29,13 @@ import Social
     
     @objc public func fetchOriginalImageForGiphyItem(_ giphyItem: GiphyData, completion: @escaping (UIImage?) -> Void) {
         let dataService = DataService()
-        dataService.getAnimatedOriginalImageFor(giphyData: giphyItem) { (image) in
-            DispatchQueue.main.async {
-                completion(image)
+        dataService.getAnimatedOriginalImageFor(giphyData: giphyItem) { (image, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                DispatchQueue.main.async {
+                    completion(image)
+                }
             }
         }
     }
@@ -43,7 +47,7 @@ import Social
     
     @objc public func shareGiphyItem(_ giphyItem: GiphyData, image: UIImage) {
         let vc = self.view as! UIViewController
-        let activityViewController = UIActivityViewController(activityItems: [giphyItem.title!, giphyItem.image?.original?.url, image], applicationActivities: nil)
+        let activityViewController = UIActivityViewController(activityItems: [giphyItem.title!, giphyItem.image?.original?.url ?? "", image], applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = vc.view
         vc.present(activityViewController, animated: true, completion: nil)
     }

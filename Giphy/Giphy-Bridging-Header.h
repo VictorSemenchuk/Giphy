@@ -3,3 +3,4 @@
 //
 
 #import "DownloadManager.h"
+#import "GiphyError.h"

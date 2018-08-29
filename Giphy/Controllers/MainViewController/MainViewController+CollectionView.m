@@ -14,20 +14,30 @@
 //MARK:- UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.items.count;
+    if (self.showingSavedItems) {
+        return self.savedItems.count;
+    } else {
+        return self.items.count;
+    }
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == (self.items.count - 1)) {
-        [self.presenter fetchItemsWith: indexPath.row + 1];
-    }
     GiphyCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCollectionViewCellIdentifier forIndexPath:indexPath];
     cell.backgroundColor = [UIColor randomThemeColor];
     [cell startActivityIndicator];
-    [self.presenter fetchPreviewImageForGiphyItem:self.items[indexPath.row] completion:^(UIImage * _Nullable image) {
-        cell.imageView.image = image;
+    if (self.showingSavedItems) {
+        GiphyData *item = self.savedItems[indexPath.row];
+        cell.imageView.image = [UIImage animatedImageWithData: item.image.preview.image];
         [cell stopActivityIndicator];
-    }];
+    } else {
+        if (indexPath.row == (self.items.count - 1)) {
+            [self.presenter fetchItemsWith: indexPath.row + 1];
+        }
+        [self.presenter fetchPreviewImageForGiphyItem:self.items[indexPath.row] completion:^(UIImage * _Nullable image) {
+            cell.imageView.image = image;
+            [cell stopActivityIndicator];
+        }];
+    }
     return cell;
 }
 

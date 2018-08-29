@@ -10,8 +10,11 @@
 
 @implementation SearchResultsViewController (GiphyCollectionViewLayout)
 
-- (CGFloat)collectionView:(UICollectionView *)collectionView heightForContentAtIndexPath:(NSIndexPath *)indexPath {
-    return 40 + arc4random() % (150 - 40);
+- (CGFloat)collectionView:(UICollectionView *)collectionView heightForContentAtIndexPath:(NSIndexPath *)indexPath withWidth:(CGFloat)width {
+    GiphyData *giphyItem = self.items[indexPath.row];
+    CGFloat tempHeight = [giphyItem.image.preview.height floatValue];
+    CGFloat tempWidth = [giphyItem.image.preview.width floatValue];
+    return tempHeight * width / tempWidth;
 }
 
 @end

@@ -11,7 +11,7 @@ import UIKit
 
 @objc public class DataService: NSObject {
     
-    @objc public func getAnimatedImageFor(giphyData: GiphyData, completion: @escaping (UIImage?) -> Void) {
+    @objc public func getAnimatedPreviewImageFor(giphyData: GiphyData, completion: @escaping (UIImage?) -> Void) {
         let fileManager = GiphyFileManager()
         let data = fileManager.dataFromFileWithName(giphyData.dataId!, withType: .gif, from: .cache)
         if let data = data {
@@ -25,6 +25,18 @@ import UIKit
                 } else {
                     completion(nil)
                 }
+            }
+        }
+    }
+    
+    @objc public func getAnimatedOriginalImageFor(giphyData: GiphyData, completion: @escaping (UIImage?) -> Void) {
+        let downloadManager = DownloadManager()
+        print(giphyData.image?.original?.url)
+        downloadManager.fetchData(fromURL: giphyData.image?.original?.url) { (data) in
+            if let data = data {
+                completion(UIImage.animatedImage(data: data))
+            } else {
+                completion(nil)
             }
         }
     }

@@ -13,11 +13,17 @@ import Foundation
     var size: String?
     var width: String?
     var height: String?
+    var image: Data?
     
     init(url: String, size: String, width: String, height: String) {
         self.url = url
         self.size = size
         self.width = width
         self.height = height
+    }
+    
+    convenience init(url: String, size: String, width: String, height: String, image: Data) {
+        self.init(url: url, size: size, width: width, height: height)
+        self.image = image
     }
 }

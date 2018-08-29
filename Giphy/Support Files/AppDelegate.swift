@@ -15,7 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        if UserDefaults.standard.object(forKey: "ratingSetting") == nil {
+            UserDefaults.standard.set(0, forKey: "ratingSetting")
+        }
         return true
     }
 

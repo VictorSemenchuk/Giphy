@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Giphy-Swift.h"
 
 @interface GiphyCollectionViewCell : UICollectionViewCell
 
@@ -14,5 +15,6 @@
 
 - (void)startActivityIndicator;
 - (void)stopActivityIndicator;
+- (void)setupViewsForGiphyItem:(GiphyData *)giphyItem sender:(NSObject *)sender;
 
 @end

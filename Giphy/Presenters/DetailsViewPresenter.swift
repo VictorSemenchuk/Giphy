@@ -32,6 +32,9 @@ import Social
         dataService.getAnimatedOriginalImageFor(giphyData: giphyItem) { (image, error) in
             if let error = error {
                 print(error.localizedDescription)
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
             } else {
                 DispatchQueue.main.async {
                     completion(image)
@@ -42,7 +45,11 @@ import Social
     
     @objc public func convertDate(inputDate: String) -> String {
         let date = Date.date(with: "yyyy-MM-dd HH:mm:ss", from: inputDate)
-        return String.string(with: "dd MMM yyyy", from: date)
+        if let date = date {
+            return String.string(with: "dd MMM yyyy", from: date)
+        } else {
+            return ""
+        }
     }
     
     @objc public func shareGiphyItem(_ giphyItem: GiphyData, image: UIImage) {

@@ -13,7 +13,7 @@ extension String {
     static func string(with format: String, from date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format;
-        return dateFormatter .string(from: date);
+        return dateFormatter.string(from: date);
     }
     
 }

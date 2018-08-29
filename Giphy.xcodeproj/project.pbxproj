@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E2CDB86213689A300DE6E2C /* Giphy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CDB84213689A300DE6E2C /* Giphy.xcdatamodeld */; };
 		2EA54883213060EE00159821 /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA54882213060EE00159821 /* DownloadManager.m */; };
+		2EFDD3A92135941100712E59 /* FullGif+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFDD3A72135941100712E59 /* FullGif+extensions.swift */; };
+		2EFDD3AA2135941100712E59 /* GifPreview+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFDD3A82135941100712E59 /* GifPreview+extension.swift */; };
 		DA4684F121303DC600BCC31A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4684F021303DC600BCC31A /* AppDelegate.swift */; };
 		DA4684F621303DC600BCC31A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA4684F421303DC600BCC31A /* Main.storyboard */; };
-		DA4684F921303DC600BCC31A /* Giphy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA4684F721303DC600BCC31A /* Giphy.xcdatamodeld */; };
 		DA4684FB21303DC700BCC31A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA4684FA21303DC700BCC31A /* Assets.xcassets */; };
 		DA4684FE21303DC700BCC31A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA4684FC21303DC700BCC31A /* LaunchScreen.storyboard */; };
 		DA46850921303DC700BCC31A /* GiphyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA46850821303DC700BCC31A /* GiphyTests.swift */; };
@@ -65,12 +67,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E2CDB85213689A300DE6E2C /* Giphy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Giphy.xcdatamodel; sourceTree = "<group>"; };
 		2EA54881213060EE00159821 /* DownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadManager.h; sourceTree = "<group>"; };
 		2EA54882213060EE00159821 /* DownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadManager.m; sourceTree = "<group>"; };
+		2EFDD3A72135941100712E59 /* FullGif+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FullGif+extensions.swift"; sourceTree = "<group>"; };
+		2EFDD3A82135941100712E59 /* GifPreview+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GifPreview+extension.swift"; sourceTree = "<group>"; };
 		DA4684ED21303DC600BCC31A /* Giphy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Giphy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA4684F021303DC600BCC31A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA4684F521303DC600BCC31A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DA4684F821303DC600BCC31A /* Giphy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Giphy.xcdatamodel; sourceTree = "<group>"; };
 		DA4684FA21303DC700BCC31A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA4684FD21303DC700BCC31A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA4684FF21303DC700BCC31A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -202,7 +206,7 @@
 				DA46851521303E1C00BCC31A /* Storyboards */,
 				DA46851421303E0600BCC31A /* Support Files */,
 				DA4684FF21303DC700BCC31A /* Info.plist */,
-				DA4684F721303DC600BCC31A /* Giphy.xcdatamodeld */,
+				2E2CDB84213689A300DE6E2C /* Giphy.xcdatamodeld */,
 				DA46851D21303E6700BCC31A /* Giphy-Bridging-Header.h */,
 			);
 			path = Giphy;
@@ -311,6 +315,8 @@
 		DA468528213040FB00BCC31A /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				2EFDD3A72135941100712E59 /* FullGif+extensions.swift */,
+				2EFDD3A82135941100712E59 /* GifPreview+extension.swift */,
 				DA46853221304B9F00BCC31A /* UIColor+ThemeColors.h */,
 				DA46853321304B9F00BCC31A /* UIColor+ThemeColors.m */,
 				EFE17AC62131582D0037F57D /* UITextField+Paddings.swift */,
@@ -515,6 +521,7 @@
 				EF7C433B213172D3009DFFE1 /* SearchResultsViewController.m in Sources */,
 				EFA2009B2132B1EA007A075D /* GiphyFileManager.swift in Sources */,
 				DA8FC8022134244A00DE8F0D /* DetailsViewPresenter.swift in Sources */,
+				2EFDD3A92135941100712E59 /* FullGif+extensions.swift in Sources */,
 				EF72773C2131CF950036C638 /* DetailsViewController.m in Sources */,
 				DA468527213040BB00BCC31A /* MainViewController+CollectionView.m in Sources */,
 				DA4684F121303DC600BCC31A /* AppDelegate.swift in Sources */,
@@ -528,11 +535,12 @@
 				EFA200952132A678007A075D /* GiphyData.swift in Sources */,
 				EFA200932132A678007A075D /* DataSnapshot.swift in Sources */,
 				DA46852E2130417700BCC31A /* GiphyCollectionViewLayout.m in Sources */,
+				2EFDD3AA2135941100712E59 /* GifPreview+extension.swift in Sources */,
 				EF89CDFA213339C400721C90 /* MainViewController+MainViewPresenterDelegate.m in Sources */,
-				DA4684F921303DC600BCC31A /* Giphy.xcdatamodeld in Sources */,
 				2EA54883213060EE00159821 /* DownloadManager.m in Sources */,
 				DA46853821306E5400BCC31A /* GiphyService.swift in Sources */,
 				EF7C433F213173D0009DFFE1 /* IdentifierConstants.m in Sources */,
+				2E2CDB86213689A300DE6E2C /* Giphy.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -805,12 +813,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		DA4684F721303DC600BCC31A /* Giphy.xcdatamodeld */ = {
+		2E2CDB84213689A300DE6E2C /* Giphy.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				DA4684F821303DC600BCC31A /* Giphy.xcdatamodel */,
+				2E2CDB85213689A300DE6E2C /* Giphy.xcdatamodel */,
 			);
-			currentVersion = DA4684F821303DC600BCC31A /* Giphy.xcdatamodel */;
+			currentVersion = 2E2CDB85213689A300DE6E2C /* Giphy.xcdatamodel */;
 			path = Giphy.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

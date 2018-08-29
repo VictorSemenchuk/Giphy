@@ -8,10 +8,12 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 @objc protocol MainViewPresenterDelegate {
     @objc func itemsWasFetched(_ items: [GiphyData]?);
 }
+
 
 @objc public class MainViewPresenter: NSObject {
     
@@ -40,4 +42,25 @@ import UIKit
             }
         }
     }
+    
+    @objc public func showSaved(){
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        let context:NSManagedObjectContext = (appDelegate?.persistentContainer.newBackgroundContext())!
+        let fetchRequest:NSFetchRequest<GifPreview> = GifPreview.fetchRequest()
+        var temp:[GifPreview] = []
+        do {
+            temp = try context.fetch(fetchRequest)
+            } catch {
+                print("My Error: %@", error as NSError)
+        }
+        
+        var result:[GiphyData] = []
+        
+            for gifPreview in temp {
+                result.append(GiphyData.init(with: gifPreview))
+            }
+        
+        }
+    
+    
 }

@@ -17,14 +17,14 @@ import Foundation
     private var apiKey: String = "dc6zaTOxFJmzC"
     private var limit: Int = 24
     
-    @objc func fetchTrends(with offset: Int, completion: @escaping ([GiphyData]?, GiphyServiceError) -> Void) {
+    @objc func fetchTrends(with offset: Int, completion: @escaping ([GiphyData]?, GiphyError?) -> Void) {
         let url = "https://api.giphy.com/v1/gifs/trending?api_key=\(apiKey)&limit=\(limit)&offset=\(offset)"
         fetchData(from: url) { (data, error) in
             completion(data, error)
         }
     }
     
-    @objc func fetchItemsBySearchRequest(_ searchRequest: String, with offset: Int, completion: @escaping ([GiphyData]?, GiphyServiceError) -> Void) {
+    @objc func fetchItemsBySearchRequest(_ searchRequest: String, with offset: Int, completion: @escaping ([GiphyData]?, GiphyError?) -> Void) {
         let ratingCode = UserDefaults.standard.integer(forKey: "ratingSetting")
         if let ratingType = RatingType(rawValue: ratingCode) {
             let rating = Rating.stringDescription(typeFor: ratingType)
@@ -33,22 +33,30 @@ import Foundation
                 completion(data, error)
             }
         } else {
-            completion(nil, GiphyServiceError.FetchingDataError)
+            completion(nil, GiphyError(code: .fetchingError))
         }
     }
     
-    private func fetchData(from url: String, completion: @escaping ([GiphyData]?, GiphyServiceError) -> Void) {
+    private func fetchData(from url: String, completion: @escaping ([GiphyData]?, GiphyError?) -> Void) {
         let donwloadManager = DownloadManager()
-        donwloadManager.fetchData(fromURL: url) { (data) in
-            guard let data = data else {
-                completion(nil, GiphyServiceError.FetchingDataError)
+        donwloadManager.fetchData(fromURL: url) { (data, error) in
+            guard let data = data, error == nil else {
+                if error != nil {
+                    completion(nil, error! as GiphyError)
+                } else {
+                    completion(nil, GiphyError(code: .fetchingError))
+                }
                 return
             }
             let snapshot = DataSnapshot()
             snapshot.values = snapshot.setValuesBy(data: data)
             let parserService = ParserService()
-            parserService.parse(snapshot: snapshot, completion: { (results) in
-                completion(results, GiphyServiceError.NoError)
+            parserService.parse(snapshot: snapshot, completion: { (results, error) in
+                if error != nil {
+                    completion(nil, error)
+                } else {
+                    completion(results, nil)
+                }
             })
         }
     }

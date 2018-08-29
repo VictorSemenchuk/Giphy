@@ -25,7 +25,9 @@ import UIKit
     @objc public func fetchItemsBySearchRequest(_ searchRequest: String, with offset: Int) {
         let giphyService = GiphyService()
         giphyService.fetchItemsBySearchRequest(searchRequest, with: offset) { (items, error) in
-            if error == .NoError {
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
                 DispatchQueue.main.async {
                     self.view.itemsWasFetched(items)
                 }
@@ -35,9 +37,13 @@ import UIKit
     
     @objc public func fetchPreviewImageForGiphyItem(_ giphyItem: GiphyData, completion: @escaping (UIImage?) -> Void) {
         let dataService = DataService()
-        dataService.getAnimatedPreviewImageFor(giphyData: giphyItem) { (image) in
-            DispatchQueue.main.async {
-                completion(image)
+        dataService.getAnimatedPreviewImageFor(giphyData: giphyItem) { (image, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                DispatchQueue.main.async {
+                    completion(image)
+                }
             }
         }
     }

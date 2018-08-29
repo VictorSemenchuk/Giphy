@@ -1,4 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17G2208" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="FullGif" representedClassName="FullGif" syncable="YES" codeGenerationType="class">
+        <attribute name="height" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="size" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="width" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="gifPreview" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GifPreview" inverseName="fullGif" inverseEntity="GifPreview" syncable="YES"/>
+    </entity>
+    <entity name="GifPreview" representedClassName="GifPreview" syncable="YES" codeGenerationType="class">
+        <attribute name="dataId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="height" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="importDatetime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rating" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="size" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trendingDatetime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="width" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="fullGif" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FullGif" inverseName="gifPreview" inverseEntity="FullGif" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="FullGif" positionX="-1161" positionY="792" width="128" height="135"/>
+        <element name="GifPreview" positionX="-983" positionY="792" width="128" height="210"/>
+    </elements>
 </model>

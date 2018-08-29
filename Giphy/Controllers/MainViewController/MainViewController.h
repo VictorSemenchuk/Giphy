@@ -19,6 +19,7 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic) NSMutableArray<GiphyData *> *items;
+//@property (nonatomic) NSMutableArray
 @property (nonatomic) MainViewPresenter *presenter;
 
 @end

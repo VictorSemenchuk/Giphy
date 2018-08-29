@@ -11,14 +11,14 @@ import UIKit
 import Social
 import CoreData
 
-@objc protocol DetailsViewPresenterDelegate {
+@objc protocol DetailsViewPresenterDelegate: class {
     @objc func setPlayIconForStopPlayButton();
     @objc func setStopIconForStopPlayButton();
 }
 
 @objc class DetailsViewPresenter: NSObject {
     
-    var view: DetailsViewPresenterDelegate!
+    weak var view: DetailsViewPresenterDelegate!
     var animatedImage: UIImage?
     
     @objc init(view: DetailsViewPresenterDelegate) {

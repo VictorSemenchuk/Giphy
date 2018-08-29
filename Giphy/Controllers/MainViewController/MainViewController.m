@@ -71,12 +71,13 @@
 }
 
 - (IBAction)toggleSavedFlag:(id)sender {
-    NSLog(@"Saved flag was toggled");
     self.showingSavedItems = !self.showingSavedItems;
     if (self.showingSavedItems) {
         self.savedItems = [NSMutableArray arrayWithArray:[self.presenter showSaved]];
+        [self.showSaved setImage: [UIImage imageNamed:@"TrendingIconLarge"]];
     } else {
         [self.savedItems removeAllObjects];
+        [self.showSaved setImage: [UIImage imageNamed:@"FavoriteIcon"]];
     }
     [self.collectionView reloadData];
 }

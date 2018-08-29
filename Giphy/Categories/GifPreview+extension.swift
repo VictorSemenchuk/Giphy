@@ -44,12 +44,12 @@ extension GifPreview {
         newGiphy.height = giphyItem.image?.preview?.height
         newGiphy.width = giphyItem.image?.preview?.width
         
-        let downloadManager = DownloadManager()
-        downloadManager.fetchData(fromURL: giphyItem.image?.preview?.url, withCompletionBlock: { (data) in
-            newGiphy.image = data
+//        let downloadManager = DownloadManager()
+//        downloadManager.fetchData(fromURL: giphyItem.image?.preview?.url, withCompletionBlock: { (data) in
+            newGiphy.image = giphyItem.image?.preview?.image
             
             FullGif.saveFullGif(context, newGiphy, giphyItem)
-        })
+//        })
     }
     
 }

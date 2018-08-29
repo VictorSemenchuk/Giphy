@@ -21,8 +21,10 @@
 - (void)setSaveRemoveButtonForSavingStatus:(BOOL)savingStatus {
     if (savingStatus) {
         [self.saveButton setTitle:@"Remove" forState:UIControlStateNormal];
+        [self.saveButton setImage:[UIImage imageNamed:@"RemoveIcon"] forState:UIControlStateNormal];
     } else {
         [self.saveButton setTitle:@"Save" forState:UIControlStateNormal];
+        [self.saveButton setImage:[UIImage imageNamed:@"FavoriteIcon"] forState:UIControlStateNormal];
     }
 }
 

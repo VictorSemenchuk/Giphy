@@ -11,26 +11,22 @@ import UIKit
 import CoreData
 
 
-extension GifPreview{
-    static public func saveToPersistance(_ giphyItem: GiphyData)
-    {
-      let appDelegate =  UIApplication.shared.delegate as? AppDelegate
-        
+extension GifPreview {
+    
+    static public func saveToPersistance(_ giphyItem: GiphyData) {
+        let appDelegate =  UIApplication.shared.delegate as? AppDelegate
         appDelegate?.persistentContainer .performBackgroundTask({ (context) in
-
             if (alreadyExists(context: context, giphyItem)){
                 print("Error GifPreview+extension")
             } else{
                 saveGif(context: context, giphyItem)
             }
         })
-}
-    
+    }
     
     static func alreadyExists(context: NSManagedObjectContext, _ giphyItem: GiphyData) -> Bool{
         let request: NSFetchRequest<NSFetchRequestResult> = GifPreview.fetchRequest()
         request.predicate = NSPredicate(format: "dataId = %@", giphyItem.dataId!)
-        
         return try! context.count(for: request) > 0
     }
     
@@ -54,7 +50,7 @@ extension GifPreview{
             
             FullGif.saveFullGif(context, newGiphy, giphyItem)
         })
-
     }
+    
 }
 

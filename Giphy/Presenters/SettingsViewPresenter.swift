@@ -8,13 +8,13 @@
 
 import Foundation
 
-@objc protocol SettingsViewPresenterDelegate {
+@objc protocol SettingsViewPresenterDelegate: class {
     
 }
 
 @objcMembers class SettingsViewPresenter: NSObject {
     
-    var view: SettingsViewPresenterDelegate!
+    weak var view: SettingsViewPresenterDelegate!
     
     init(view: SettingsViewPresenterDelegate) {
         self.view = view

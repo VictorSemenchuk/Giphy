@@ -48,6 +48,7 @@
 
 - (void)prepareLayout {
     [self.cache removeAllObjects];
+    self.contentHeight = 0.0;
     if (self.collectionView == nil) {
         return;
     } else {

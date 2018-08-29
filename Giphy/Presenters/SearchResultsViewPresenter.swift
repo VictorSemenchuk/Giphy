@@ -9,14 +9,14 @@
 import Foundation
 import UIKit
 
-@objc protocol SearchResultsViewPresenterDelegate {
+@objc protocol SearchResultsViewPresenterDelegate: class {
     @objc func itemsWasFetched(_ items: [GiphyData]?);
     @objc func updateTitle(text: String);
 }
 
 @objc public class SearchResultsViewPresenter: NSObject {
     
-    var view: SearchResultsViewPresenterDelegate!
+    weak var view: SearchResultsViewPresenterDelegate!
     
     @objc init(view: SearchResultsViewPresenterDelegate) {
         self.view = view;

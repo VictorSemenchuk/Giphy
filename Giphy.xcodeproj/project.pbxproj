@@ -33,6 +33,7 @@
 		DA8FC8052134271700DE8F0D /* DetailsViewController+DetailsViewPresenterDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8FC8042134271700DE8F0D /* DetailsViewController+DetailsViewPresenterDelegate.m */; };
 		DA8FC80D21342DCA00DE8F0D /* Date+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8FC80C21342DCA00DE8F0D /* Date+Format.swift */; };
 		DA8FC80F21342E4200DE8F0D /* String+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8FC80E21342E4200DE8F0D /* String+Format.swift */; };
+		DAA7B8C121369FD700E60D22 /* PersistentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA7B8C021369FD700E60D22 /* PersistentService.swift */; };
 		EF2D44C82132E1A000E70990 /* FileManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2D44C72132E1A000E70990 /* FileManagerTests.swift */; };
 		EF72773C2131CF950036C638 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF72773B2131CF950036C638 /* DetailsViewController.m */; };
 		EF7C433B213172D3009DFFE1 /* SearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C433A213172D3009DFFE1 /* SearchResultsViewController.m */; };
@@ -107,6 +108,7 @@
 		DA8FC8042134271700DE8F0D /* DetailsViewController+DetailsViewPresenterDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "DetailsViewController+DetailsViewPresenterDelegate.m"; sourceTree = "<group>"; };
 		DA8FC80C21342DCA00DE8F0D /* Date+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Format.swift"; sourceTree = "<group>"; };
 		DA8FC80E21342E4200DE8F0D /* String+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Format.swift"; sourceTree = "<group>"; };
+		DAA7B8C021369FD700E60D22 /* PersistentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentService.swift; sourceTree = "<group>"; };
 		EF2D44C72132E1A000E70990 /* FileManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerTests.swift; sourceTree = "<group>"; };
 		EF72773A2131CF950036C638 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		EF72773B2131CF950036C638 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
@@ -333,6 +335,7 @@
 				DA46853721306E5400BCC31A /* GiphyService.swift */,
 				DA4685442130770300BCC31A /* ParserService.swift */,
 				EFA2009C2132B225007A075D /* DataService.swift */,
+				DAA7B8C021369FD700E60D22 /* PersistentService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -514,6 +517,7 @@
 				EFA2009D2132B225007A075D /* DataService.swift in Sources */,
 				EF7C434521317643009DFFE1 /* SearchResultsViewController+CollectionView.m in Sources */,
 				DA468531213041B300BCC31A /* MainViewController+GiphyCollectionViewLayout.m in Sources */,
+				DAA7B8C121369FD700E60D22 /* PersistentService.swift in Sources */,
 				EF89CDF7213338BF00721C90 /* MainViewPresenter.swift in Sources */,
 				EFE17AC5213152B50037F57D /* MainViewController+Appearance.m in Sources */,
 				EFA200942132A678007A075D /* GiphyImage.swift in Sources */,

@@ -3,4 +3,10 @@
 //
 
 #import "DownloadManager.h"
+#import "IdentifierConstants.h"
 #import "GiphyError.h"
+#import "UIColor+ThemeColors.h"
+#import "GiphyCollectionViewCell.h"
+#import "MainViewController.h"
+#import "SearchResultsViewController.h"
+#import "DetailsViewController.h"

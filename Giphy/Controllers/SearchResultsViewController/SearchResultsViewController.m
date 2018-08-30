@@ -8,8 +8,9 @@
 
 #import "SearchResultsViewController.h"
 #import "SearchResultsViewController+GiphyCollectionViewLayout.h"
-#import "SearchResultsViewController+SearchResultsViewPresenterDelegate.h"
+#import "SearchResultsViewController+SearchResultsViewProtocol.h"
 #import "DetailsViewController.h"
+#import "Giphy-Swift.h"
 
 @interface SearchResultsViewController ()
 
@@ -20,25 +21,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.items = [[NSMutableArray alloc] init];
-    self.presenter = [[SearchResultsViewPresenter alloc] initWithView:self];
-    
-    [self.collectionView registerNib:[UINib nibWithNibName:@"GiphyCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:kCollectionViewCellIdentifier];
-    self.collectionView.contentInset = UIEdgeInsetsMake(0.0, 5.0, 0.0, 5.0);
     GiphyCollectionViewLayout *layout = (GiphyCollectionViewLayout *)self.collectionView.collectionViewLayout;
     if (layout != nil) {
         layout.delegate = self;
     }
-    [self.presenter setTitleWithText:self.searchRequest];
-
-    [self.presenter fetchItemsBySearchRequest:self.searchRequest with:0];
+    
+    self.presenter = [[SearchResultsViewPresenter alloc] init];
+    [self.presenter registerCellsFor:self.collectionView];
+    [self.presenter setSearchRequest:self.searchRequest by:self];
+    self.collectionView.dataSource = self.presenter;
+    self.collectionView.contentInset = UIEdgeInsetsMake(0.0, 5.0, 0.0, 5.0);
+    [self.presenter fetchItems:self.searchRequest with:0 for:self.collectionView];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:kDetailsSegueIdentifier]) {
         DetailsViewController *detailVC = segue.destinationViewController;
         NSIndexPath *indexPath = sender;
-        detailVC.giphyItem = self.items[indexPath.row];
+        detailVC.presenter = [[DetailsViewPresenter alloc] initWith:self.presenter.items[indexPath.row]];
     }
 }
 

@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Giphy-Swift.h"
 
+@class GiphyData;
 @interface GiphyCollectionViewCell : UICollectionViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;

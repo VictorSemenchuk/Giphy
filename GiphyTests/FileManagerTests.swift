@@ -41,10 +41,12 @@ class FileManagerTests: XCTestCase {
     
     func test_dataFromFileWithName_success() {
         let fileManager  = GiphyFileManager()
+        let inputData = Data()
         let inputFileName = "testFilename"
         let inputDirectory = DirectoryType.cache
         let inputFileType = FileType.gif
         
+        fileManager.writeFileWithName(inputFileName, data: inputData, withType: inputFileType, to: inputDirectory)
         let writtenData = fileManager.dataFromFileWithName(inputFileName, withType: inputFileType, from: inputDirectory)
         
         XCTAssertNotEqual(writtenData, nil, "Data from invalid file should be nil")

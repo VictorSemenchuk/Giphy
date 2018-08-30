@@ -8,6 +8,6 @@
 
 #import "DetailsViewController.h"
 
-@interface DetailsViewController (DetailsViewPresenterDelegate) <DetailsViewPresenterDelegate>
+@interface DetailsViewController (DetailsViewPresenterDelegate) <DetailsViewProtocol>
 
 @end

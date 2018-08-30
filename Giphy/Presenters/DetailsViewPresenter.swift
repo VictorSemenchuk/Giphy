@@ -16,18 +16,35 @@ import Social
     @objc func setSaveRemoveButtonFor(savingStatus: Bool)
 }
 
-@objc class DetailsViewPresenter: NSObject {
+@objc protocol DetailsViewPresenterProtocol: class {
+    @objc func fetchOriginalImageForItem(_ giphyItem: GiphyData, completion: @escaping (UIImage?) -> Void)
+    @objc func convertDate(inputDate: String) -> String
+    @objc func shareItem(_ giphyItem: GiphyData, by view: DetailsViewProtocol)
+    @objc func startStopPlaying(for imageView: UIImageView, by view: DetailsViewProtocol)
+    @objc func setSavingStatus(_ status: Bool, by view: DetailsViewProtocol)
+    @objc func toggleSavingStatus(by view: DetailsViewProtocol)
+    @objc func saveItem(_ giphyItem: GiphyData)
+    @objc func checkIfItemIsExists(_ giphyData: GiphyData) -> Bool
+    @objc func getExistingImage(_ giphyItem: GiphyData) -> UIImage
+    @objc func removeItem(_ giphyItem: GiphyData)
+}
+
+@objcMembers class DetailsViewPresenter: NSObject, DetailsViewPresenterProtocol {
     
-    weak var view: DetailsViewPresenterDelegate!
+    //MARK:- Properties
+    
+    var giphyItem: GiphyData?
     var animatedImage: UIImage?
     @objc public var isSaved: Bool
     
-    @objc init(view: DetailsViewPresenterDelegate) {
-        self.view = view
+    //MARK:- Methods
+    
+    init(with giphyItem: GiphyData) {
+        self.giphyItem = giphyItem
         self.isSaved = false
     }
     
-    @objc public func fetchOriginalImageForGiphyItem(_ giphyItem: GiphyData, completion: @escaping (UIImage?) -> Void) {
+    func fetchOriginalImageForItem(_ giphyItem: GiphyData, completion: @escaping (UIImage?) -> Void) {
         let dataService = DataService()
         dataService.getAnimatedOriginalImageFor(giphyData: giphyItem) { (image, error) in
             if let error = error {
@@ -43,7 +60,7 @@ import Social
         }
     }
     
-    @objc public func convertDate(inputDate: String) -> String {
+    func convertDate(inputDate: String) -> String {
         let date = Date.date(with: "yyyy-MM-dd HH:mm:ss", from: inputDate)
         if let date = date {
             return String.string(with: "dd MMM yyyy", from: date)
@@ -52,50 +69,65 @@ import Social
         }
     }
     
-    @objc public func shareGiphyItem(_ giphyItem: GiphyData, image: UIImage) {
-        let vc = self.view as! UIViewController
-        let activityViewController = UIActivityViewController(activityItems: [giphyItem.title!, giphyItem.image?.original?.url ?? "", image], applicationActivities: nil)
-        activityViewController.popoverPresentationController?.sourceView = vc.view
-        vc.present(activityViewController, animated: true, completion: nil)
+    func shareItem(_ giphyItem: GiphyData, by view: DetailsViewProtocol) {
+        let activityViewController = UIActivityViewController(activityItems: [giphyItem.title!, giphyItem.image?.original?.url ?? "", giphyItem.image?.original?.image! as Any], applicationActivities: nil)
+        view.show(activityViewController)
     }
     
-    @objc public func stopPlay(imageView: UIImageView) {
+    
+    func startStopPlaying(for imageView: UIImageView, by view: DetailsViewProtocol) {
         if (self.animatedImage != nil) {
             imageView.image = self.animatedImage;
             self.animatedImage = nil
-            self.view.setStopIconForStopPlayButton()
+            view.setIconForStartStopPlayingButton(UIImage(named: "StopIcon"))
         } else {
             self.animatedImage = imageView.image
             imageView.image = nil;
             imageView.image = self.animatedImage?.images![0];
-            self.view.setPlayIconForStopPlayButton()
+            view.setIconForStartStopPlayingButton(UIImage(named: "PlayIcon"))
         }
     }
     
-    @objc public func setSavingStatus(_ status: Bool) {
+    func setSavingStatus(_ status: Bool, by view: DetailsViewProtocol) {
         isSaved = status;
-        self.view.setSaveRemoveButtonFor(savingStatus: isSaved)
+        self.updateSaveRemoveButton(for: isSaved, by: view)
+        
     }
     
-    @objc public func toggleSavingStatus() {
+    func toggleSavingStatus(by view: DetailsViewProtocol) {
         isSaved = !isSaved
-        self.view.setSaveRemoveButtonFor(savingStatus: isSaved)
+        self.updateSaveRemoveButton(for: isSaved, by: view)
     }
     
-    @objc public func saveGiphyItem(_ giphyItem: GiphyData) {
+    func saveItem(_ giphyItem: GiphyData) {
         GifPreview.saveToPersistance(giphyItem)
     }
     
-    @objc public func checkIfItemExists(_ giphyItem: GiphyData) -> Bool {
+    func checkIfItemIsExists(_ giphyItem: GiphyData) -> Bool {
         return PersistentService.checkIfItemExists(giphyItem)
     }
     
-    @objc public func getExistingImage(_ giphyItem: GiphyData) -> UIImage {
+    func getExistingImage(_ giphyItem: GiphyData) -> UIImage {
         return PersistentService.getExistingImage(giphyItem)
     }
     
-    @objc public func removeItem(_ giphyItem: GiphyData) {
+    func removeItem(_ giphyItem: GiphyData) {
         PersistentService.deleteItem(giphyItem)
+    }
+    
+    //MARK:- Private mathods
+    
+    private func updateSaveRemoveButton(for status: Bool, by view: DetailsViewProtocol) {
+        var title: String
+        var image: UIImage
+        if (status) {
+            title = "Remove"
+            image = UIImage(named: "RemoveIcon")!
+        } else {
+            title = "Save"
+            image = UIImage(named: "FavoriteIcon")!
+        }
+        view.updateSaveRemoveButton(title, image: image)
     }
 
 }

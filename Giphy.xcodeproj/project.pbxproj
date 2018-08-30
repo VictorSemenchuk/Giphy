@@ -11,6 +11,13 @@
 		2EA54883213060EE00159821 /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA54882213060EE00159821 /* DownloadManager.m */; };
 		2EFDD3A92135941100712E59 /* FullGif+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFDD3A72135941100712E59 /* FullGif+extensions.swift */; };
 		2EFDD3AA2135941100712E59 /* GifPreview+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFDD3A82135941100712E59 /* GifPreview+extension.swift */; };
+		DA2E53382137D5CE00D4AFDF /* MainViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E53362137D5CE00D4AFDF /* MainViewPresenter.swift */; };
+		DA2E53392137D5CE00D4AFDF /* MainViewPresenter+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E53372137D5CE00D4AFDF /* MainViewPresenter+CollectionView.swift */; };
+		DA2E533D2137D5DC00D4AFDF /* SearchResultsViewPresenter+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E533B2137D5DC00D4AFDF /* SearchResultsViewPresenter+CollectionView.swift */; };
+		DA2E533E2137D5DC00D4AFDF /* SearchResultsViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E533C2137D5DC00D4AFDF /* SearchResultsViewPresenter.swift */; };
+		DA2E53402137D62F00D4AFDF /* CollectionViewPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E533F2137D62F00D4AFDF /* CollectionViewPresenterProtocol.swift */; };
+		DA2E53432137D67A00D4AFDF /* SearchResultsViewController+SearchResultsViewProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2E53422137D67A00D4AFDF /* SearchResultsViewController+SearchResultsViewProtocol.m */; };
+		DA2E53462137D69600D4AFDF /* MainViewController+MainViewProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2E53452137D69600D4AFDF /* MainViewController+MainViewProtocol.m */; };
 		DA4684F121303DC600BCC31A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4684F021303DC600BCC31A /* AppDelegate.swift */; };
 		DA4684F621303DC600BCC31A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA4684F421303DC600BCC31A /* Main.storyboard */; };
 		DA4684FB21303DC700BCC31A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA4684FA21303DC700BCC31A /* Assets.xcassets */; };
@@ -31,8 +38,6 @@
 		DA735B062136D1B200F13470 /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA735B052136D1B200F13470 /* DateTests.swift */; };
 		DA735B082136D72100F13470 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA735B072136D72100F13470 /* StringTests.swift */; };
 		DA735B0A2136D92200F13470 /* GiphyErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA735B092136D92200F13470 /* GiphyErrorTests.swift */; };
-		DA7EB3D92133FF1C005AF12E /* SearchResultsViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7EB3D82133FF1C005AF12E /* SearchResultsViewPresenter.swift */; };
-		DA7EB3DC213400E9005AF12E /* SearchResultsViewController+SearchResultsViewPresenterDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA7EB3DB213400E9005AF12E /* SearchResultsViewController+SearchResultsViewPresenterDelegate.m */; };
 		DA8FC8022134244A00DE8F0D /* DetailsViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8FC8012134244A00DE8F0D /* DetailsViewPresenter.swift */; };
 		DA8FC8052134271700DE8F0D /* DetailsViewController+DetailsViewPresenterDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8FC8042134271700DE8F0D /* DetailsViewController+DetailsViewPresenterDelegate.m */; };
 		DA8FC80D21342DCA00DE8F0D /* Date+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8FC80C21342DCA00DE8F0D /* Date+Format.swift */; };
@@ -44,8 +49,6 @@
 		EF7C433F213173D0009DFFE1 /* IdentifierConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C433D213173D0009DFFE1 /* IdentifierConstants.m */; };
 		EF7C434221317485009DFFE1 /* SearchResultsViewController+GiphyCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C434121317485009DFFE1 /* SearchResultsViewController+GiphyCollectionViewLayout.m */; };
 		EF7C434521317643009DFFE1 /* SearchResultsViewController+CollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C434421317643009DFFE1 /* SearchResultsViewController+CollectionView.m */; };
-		EF89CDF7213338BF00721C90 /* MainViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89CDF6213338BF00721C90 /* MainViewPresenter.swift */; };
-		EF89CDFA213339C400721C90 /* MainViewController+MainViewPresenterDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF89CDF9213339C400721C90 /* MainViewController+MainViewPresenterDelegate.m */; };
 		EFA2008D2132A66A007A075D /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA2008C2132A66A007A075D /* JSONParser.swift */; };
 		EFA200922132A678007A075D /* GiphyImageMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA2008E2132A678007A075D /* GiphyImageMeta.swift */; };
 		EFA200932132A678007A075D /* DataSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA2008F2132A678007A075D /* DataSnapshot.swift */; };
@@ -77,6 +80,15 @@
 		2EA54882213060EE00159821 /* DownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadManager.m; sourceTree = "<group>"; };
 		2EFDD3A72135941100712E59 /* FullGif+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FullGif+extensions.swift"; sourceTree = "<group>"; };
 		2EFDD3A82135941100712E59 /* GifPreview+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GifPreview+extension.swift"; sourceTree = "<group>"; };
+		DA2E53362137D5CE00D4AFDF /* MainViewPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewPresenter.swift; sourceTree = "<group>"; };
+		DA2E53372137D5CE00D4AFDF /* MainViewPresenter+CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainViewPresenter+CollectionView.swift"; sourceTree = "<group>"; };
+		DA2E533B2137D5DC00D4AFDF /* SearchResultsViewPresenter+CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SearchResultsViewPresenter+CollectionView.swift"; sourceTree = "<group>"; };
+		DA2E533C2137D5DC00D4AFDF /* SearchResultsViewPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsViewPresenter.swift; sourceTree = "<group>"; };
+		DA2E533F2137D62F00D4AFDF /* CollectionViewPresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewPresenterProtocol.swift; sourceTree = "<group>"; };
+		DA2E53412137D67A00D4AFDF /* SearchResultsViewController+SearchResultsViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SearchResultsViewController+SearchResultsViewProtocol.h"; sourceTree = "<group>"; };
+		DA2E53422137D67A00D4AFDF /* SearchResultsViewController+SearchResultsViewProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SearchResultsViewController+SearchResultsViewProtocol.m"; sourceTree = "<group>"; };
+		DA2E53442137D69500D4AFDF /* MainViewController+MainViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MainViewController+MainViewProtocol.h"; sourceTree = "<group>"; };
+		DA2E53452137D69600D4AFDF /* MainViewController+MainViewProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MainViewController+MainViewProtocol.m"; sourceTree = "<group>"; };
 		DA4684ED21303DC600BCC31A /* Giphy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Giphy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA4684F021303DC600BCC31A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA4684F521303DC600BCC31A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -109,16 +121,12 @@
 		DA735B052136D1B200F13470 /* DateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTests.swift; sourceTree = "<group>"; };
 		DA735B072136D72100F13470 /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
 		DA735B092136D92200F13470 /* GiphyErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyErrorTests.swift; sourceTree = "<group>"; };
-		DA7EB3D82133FF1C005AF12E /* SearchResultsViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewPresenter.swift; sourceTree = "<group>"; };
-		DA7EB3DA213400E9005AF12E /* SearchResultsViewController+SearchResultsViewPresenterDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SearchResultsViewController+SearchResultsViewPresenterDelegate.h"; sourceTree = "<group>"; };
-		DA7EB3DB213400E9005AF12E /* SearchResultsViewController+SearchResultsViewPresenterDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SearchResultsViewController+SearchResultsViewPresenterDelegate.m"; sourceTree = "<group>"; };
 		DA8FC8012134244A00DE8F0D /* DetailsViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewPresenter.swift; sourceTree = "<group>"; };
 		DA8FC8032134271700DE8F0D /* DetailsViewController+DetailsViewPresenterDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DetailsViewController+DetailsViewPresenterDelegate.h"; sourceTree = "<group>"; };
 		DA8FC8042134271700DE8F0D /* DetailsViewController+DetailsViewPresenterDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "DetailsViewController+DetailsViewPresenterDelegate.m"; sourceTree = "<group>"; };
 		DA8FC80C21342DCA00DE8F0D /* Date+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Format.swift"; sourceTree = "<group>"; };
 		DA8FC80E21342E4200DE8F0D /* String+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Format.swift"; sourceTree = "<group>"; };
 		DAA7B8C021369FD700E60D22 /* PersistentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentService.swift; sourceTree = "<group>"; };
-		EF02EE992136F522005E9479 /* GiphyTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GiphyTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		EF2D44C72132E1A000E70990 /* FileManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerTests.swift; sourceTree = "<group>"; };
 		EF72773A2131CF950036C638 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		EF72773B2131CF950036C638 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
@@ -130,9 +138,6 @@
 		EF7C434121317485009DFFE1 /* SearchResultsViewController+GiphyCollectionViewLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SearchResultsViewController+GiphyCollectionViewLayout.m"; sourceTree = "<group>"; };
 		EF7C434321317643009DFFE1 /* SearchResultsViewController+CollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SearchResultsViewController+CollectionView.h"; sourceTree = "<group>"; };
 		EF7C434421317643009DFFE1 /* SearchResultsViewController+CollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SearchResultsViewController+CollectionView.m"; sourceTree = "<group>"; };
-		EF89CDF6213338BF00721C90 /* MainViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewPresenter.swift; sourceTree = "<group>"; };
-		EF89CDF8213339C400721C90 /* MainViewController+MainViewPresenterDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MainViewController+MainViewPresenterDelegate.h"; sourceTree = "<group>"; };
-		EF89CDF9213339C400721C90 /* MainViewController+MainViewPresenterDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MainViewController+MainViewPresenterDelegate.m"; sourceTree = "<group>"; };
 		EFA2008C2132A66A007A075D /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		EFA2008E2132A678007A075D /* GiphyImageMeta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiphyImageMeta.swift; sourceTree = "<group>"; };
 		EFA2008F2132A678007A075D /* DataSnapshot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSnapshot.swift; sourceTree = "<group>"; };
@@ -186,6 +191,24 @@
 			path = Downloading;
 			sourceTree = "<group>";
 		};
+		DA2E53352137D5CE00D4AFDF /* MainViewPresenter */ = {
+			isa = PBXGroup;
+			children = (
+				DA2E53362137D5CE00D4AFDF /* MainViewPresenter.swift */,
+				DA2E53372137D5CE00D4AFDF /* MainViewPresenter+CollectionView.swift */,
+			);
+			path = MainViewPresenter;
+			sourceTree = "<group>";
+		};
+		DA2E533A2137D5DC00D4AFDF /* SearchResultsViewPresenter */ = {
+			isa = PBXGroup;
+			children = (
+				DA2E533C2137D5DC00D4AFDF /* SearchResultsViewPresenter.swift */,
+				DA2E533B2137D5DC00D4AFDF /* SearchResultsViewPresenter+CollectionView.swift */,
+			);
+			path = SearchResultsViewPresenter;
+			sourceTree = "<group>";
+		};
 		DA4684E421303DC600BCC31A = {
 			isa = PBXGroup;
 			children = (
@@ -236,7 +259,6 @@
 				DA735B052136D1B200F13470 /* DateTests.swift */,
 				DA735B072136D72100F13470 /* StringTests.swift */,
 				DA735B092136D92200F13470 /* GiphyErrorTests.swift */,
-				EF02EE992136F522005E9479 /* GiphyTests-Bridging-Header.h */,
 			);
 			path = GiphyTests;
 			sourceTree = "<group>";
@@ -284,8 +306,9 @@
 		DA46851821303E3F00BCC31A /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
-				EF89CDF6213338BF00721C90 /* MainViewPresenter.swift */,
-				DA7EB3D82133FF1C005AF12E /* SearchResultsViewPresenter.swift */,
+				DA2E533F2137D62F00D4AFDF /* CollectionViewPresenterProtocol.swift */,
+				DA2E53352137D5CE00D4AFDF /* MainViewPresenter */,
+				DA2E533A2137D5DC00D4AFDF /* SearchResultsViewPresenter */,
 				DA8FC8012134244A00DE8F0D /* DetailsViewPresenter.swift */,
 				DA50C25621357CCC00F06FDE /* SettingsViewPresenter.swift */,
 			);
@@ -323,8 +346,8 @@
 				DA468530213041B300BCC31A /* MainViewController+GiphyCollectionViewLayout.m */,
 				EFE17AC3213152B50037F57D /* MainViewController+Appearance.h */,
 				EFE17AC4213152B50037F57D /* MainViewController+Appearance.m */,
-				EF89CDF8213339C400721C90 /* MainViewController+MainViewPresenterDelegate.h */,
-				EF89CDF9213339C400721C90 /* MainViewController+MainViewPresenterDelegate.m */,
+				DA2E53442137D69500D4AFDF /* MainViewController+MainViewProtocol.h */,
+				DA2E53452137D69600D4AFDF /* MainViewController+MainViewProtocol.m */,
 			);
 			path = MainViewController;
 			sourceTree = "<group>";
@@ -390,8 +413,8 @@
 				EF7C434121317485009DFFE1 /* SearchResultsViewController+GiphyCollectionViewLayout.m */,
 				EF7C434321317643009DFFE1 /* SearchResultsViewController+CollectionView.h */,
 				EF7C434421317643009DFFE1 /* SearchResultsViewController+CollectionView.m */,
-				DA7EB3DA213400E9005AF12E /* SearchResultsViewController+SearchResultsViewPresenterDelegate.h */,
-				DA7EB3DB213400E9005AF12E /* SearchResultsViewController+SearchResultsViewPresenterDelegate.m */,
+				DA2E53412137D67A00D4AFDF /* SearchResultsViewController+SearchResultsViewProtocol.h */,
+				DA2E53422137D67A00D4AFDF /* SearchResultsViewController+SearchResultsViewProtocol.m */,
 			);
 			path = SearchResultsViewController;
 			sourceTree = "<group>";
@@ -480,7 +503,6 @@
 					};
 					DA46850321303DC700BCC31A = {
 						CreatedOnToolsVersion = 9.4.1;
-						LastSwiftMigration = 0940;
 						TestTargetID = DA4684EC21303DC600BCC31A;
 					};
 				};
@@ -530,11 +552,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA7EB3DC213400E9005AF12E /* SearchResultsViewController+SearchResultsViewPresenterDelegate.m in Sources */,
 				DA8FC80F21342E4200DE8F0D /* String+Format.swift in Sources */,
+				DA2E53382137D5CE00D4AFDF /* MainViewPresenter.swift in Sources */,
 				EFE17ACD213164560037F57D /* GiphyCollectionViewCell.m in Sources */,
 				EFA2008D2132A66A007A075D /* JSONParser.swift in Sources */,
 				EFA200922132A678007A075D /* GiphyImageMeta.swift in Sources */,
+				DA2E53462137D69600D4AFDF /* MainViewController+MainViewProtocol.m in Sources */,
 				EFE17AC72131582D0037F57D /* UITextField+Paddings.swift in Sources */,
 				EFA200A12132BE78007A075D /* UIImage+Gif.swift in Sources */,
 				DA50C2522135560A00F06FDE /* SettingsTableViewController.m in Sources */,
@@ -542,11 +565,10 @@
 				EFA2009D2132B225007A075D /* DataService.swift in Sources */,
 				EF7C434521317643009DFFE1 /* SearchResultsViewController+CollectionView.m in Sources */,
 				DA468531213041B300BCC31A /* MainViewController+GiphyCollectionViewLayout.m in Sources */,
+				DA2E53402137D62F00D4AFDF /* CollectionViewPresenterProtocol.swift in Sources */,
 				DAA7B8C121369FD700E60D22 /* PersistentService.swift in Sources */,
-				EF89CDF7213338BF00721C90 /* MainViewPresenter.swift in Sources */,
 				EFE17AC5213152B50037F57D /* MainViewController+Appearance.m in Sources */,
 				EFA200942132A678007A075D /* GiphyImage.swift in Sources */,
-				DA7EB3D92133FF1C005AF12E /* SearchResultsViewPresenter.swift in Sources */,
 				EF7C433B213172D3009DFFE1 /* SearchResultsViewController.m in Sources */,
 				EFA2009B2132B1EA007A075D /* GiphyFileManager.swift in Sources */,
 				DA8FC8022134244A00DE8F0D /* DetailsViewPresenter.swift in Sources */,
@@ -555,6 +577,8 @@
 				DA468527213040BB00BCC31A /* MainViewController+CollectionView.m in Sources */,
 				DA4684F121303DC600BCC31A /* AppDelegate.swift in Sources */,
 				DA50C25721357CCC00F06FDE /* SettingsViewPresenter.swift in Sources */,
+				DA2E53392137D5CE00D4AFDF /* MainViewPresenter+CollectionView.swift in Sources */,
+				DA2E53432137D67A00D4AFDF /* SearchResultsViewController+SearchResultsViewProtocol.m in Sources */,
 				DA735B032136C7B200F13470 /* GiphyError.m in Sources */,
 				DA8FC8052134271700DE8F0D /* DetailsViewController+DetailsViewPresenterDelegate.m in Sources */,
 				DA4685452130770300BCC31A /* ParserService.swift in Sources */,
@@ -566,11 +590,12 @@
 				EFA200932132A678007A075D /* DataSnapshot.swift in Sources */,
 				DA46852E2130417700BCC31A /* GiphyCollectionViewLayout.m in Sources */,
 				2EFDD3AA2135941100712E59 /* GifPreview+extension.swift in Sources */,
-				EF89CDFA213339C400721C90 /* MainViewController+MainViewPresenterDelegate.m in Sources */,
+				DA2E533E2137D5DC00D4AFDF /* SearchResultsViewPresenter.swift in Sources */,
 				2EA54883213060EE00159821 /* DownloadManager.m in Sources */,
 				DA46853821306E5400BCC31A /* GiphyService.swift in Sources */,
 				EF7C433F213173D0009DFFE1 /* IdentifierConstants.m in Sources */,
 				2E2CDB86213689A300DE6E2C /* Giphy.xcdatamodeld in Sources */,
+				DA2E533D2137D5DC00D4AFDF /* SearchResultsViewPresenter+CollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -737,6 +762,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5M3HNT6J9D;
 				INFOPLIST_FILE = Giphy/Info.plist;
@@ -746,6 +772,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vicmac.Giphy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Giphy/Giphy-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -758,6 +785,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5M3HNT6J9D;
 				INFOPLIST_FILE = Giphy/Info.plist;
@@ -767,6 +795,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vicmac.Giphy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Giphy/Giphy-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -778,7 +807,6 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = GiphyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -788,8 +816,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vicmac.GiphyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "GiphyTests/GiphyTests-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Giphy.app/Giphy";
@@ -801,7 +827,6 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = GiphyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -811,7 +836,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vicmac.GiphyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "GiphyTests/GiphyTests-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Giphy.app/Giphy";

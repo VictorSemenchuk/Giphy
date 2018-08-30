@@ -9,6 +9,7 @@
 #import "GiphyCollectionViewCell.h"
 #import "SearchResultsViewController.h"
 #import "UIColor+ThemeColors.h"
+#import "Giphy-Swift.h"
 
 @interface GiphyCollectionViewCell ()
 

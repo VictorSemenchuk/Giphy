@@ -54,6 +54,9 @@
 		EF3FA0CB21385C7F00D037A8 /* DataServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3FA0C121385C7E00D037A8 /* DataServiceTests.swift */; };
 		EF3FA0CC21385C7F00D037A8 /* RatingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3FA0C321385C7E00D037A8 /* RatingTests.swift */; };
 		EF3FA0CD21385C7F00D037A8 /* JSONParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3FA0C421385C7E00D037A8 /* JSONParserTests.swift */; };
+		EF3FA0D02138619A00D037A8 /* MainViewPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3FA0CF2138619A00D037A8 /* MainViewPresenterTests.swift */; };
+		EF3FA0D42138666200D037A8 /* SearchResultsViewPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3FA0D32138666200D037A8 /* SearchResultsViewPresenterTests.swift */; };
+		EF3FA0D621386CB800D037A8 /* DetailsViewPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3FA0D521386CB800D037A8 /* DetailsViewPresenterTests.swift */; };
 		EF72773C2131CF950036C638 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF72773B2131CF950036C638 /* DetailsViewController.m */; };
 		EF7C433B213172D3009DFFE1 /* SearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C433A213172D3009DFFE1 /* SearchResultsViewController.m */; };
 		EF7C433F213173D0009DFFE1 /* IdentifierConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7C433D213173D0009DFFE1 /* IdentifierConstants.m */; };
@@ -149,6 +152,9 @@
 		EF3FA0C321385C7E00D037A8 /* RatingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingTests.swift; sourceTree = "<group>"; };
 		EF3FA0C421385C7E00D037A8 /* JSONParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParserTests.swift; sourceTree = "<group>"; };
 		EF3FA0CE21385CA800D037A8 /* GiphyTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GiphyTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		EF3FA0CF2138619A00D037A8 /* MainViewPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewPresenterTests.swift; sourceTree = "<group>"; };
+		EF3FA0D32138666200D037A8 /* SearchResultsViewPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewPresenterTests.swift; sourceTree = "<group>"; };
+		EF3FA0D521386CB800D037A8 /* DetailsViewPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewPresenterTests.swift; sourceTree = "<group>"; };
 		EF72773A2131CF950036C638 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		EF72773B2131CF950036C638 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		EF7C4339213172D3009DFFE1 /* SearchResultsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResultsViewController.h; sourceTree = "<group>"; };
@@ -314,6 +320,9 @@
 				EF3FA0C421385C7E00D037A8 /* JSONParserTests.swift */,
 				EF3FA0C321385C7E00D037A8 /* RatingTests.swift */,
 				EF3FA0C021385C7E00D037A8 /* StringTests.swift */,
+				EF3FA0CF2138619A00D037A8 /* MainViewPresenterTests.swift */,
+				EF3FA0D32138666200D037A8 /* SearchResultsViewPresenterTests.swift */,
+				EF3FA0D521386CB800D037A8 /* DetailsViewPresenterTests.swift */,
 				EF3FA0CE21385CA800D037A8 /* GiphyTests-Bridging-Header.h */,
 			);
 			path = GiphyTests;
@@ -667,7 +676,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF3FA0D02138619A00D037A8 /* MainViewPresenterTests.swift in Sources */,
 				EF3FA0C621385C7F00D037A8 /* GiphyErrorTests.swift in Sources */,
+				EF3FA0D621386CB800D037A8 /* DetailsViewPresenterTests.swift in Sources */,
 				EF3FA0C721385C7F00D037A8 /* DateTests.swift in Sources */,
 				EF3FA0CB21385C7F00D037A8 /* DataServiceTests.swift in Sources */,
 				EF3FA0CD21385C7F00D037A8 /* JSONParserTests.swift in Sources */,
@@ -676,6 +687,7 @@
 				EF3FA0C921385C7F00D037A8 /* GiphyServiceTests.swift in Sources */,
 				EF3FA0CA21385C7F00D037A8 /* StringTests.swift in Sources */,
 				EF3FA0C821385C7F00D037A8 /* DownloadManagerTests.swift in Sources */,
+				EF3FA0D42138666200D037A8 /* SearchResultsViewPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

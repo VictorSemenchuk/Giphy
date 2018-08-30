@@ -44,8 +44,11 @@ class PersistentService {
         } catch {
             NSLog("My Error: %@", error as NSError)
         }
+        if ( result.count > 0 ){
+            return UIImage.animatedImage(data: (result.first?.fullGif?.image)!)!
+        }
+        return UIImage(imageLiteralResourceName: "TrendingIconLarge")
         
-        return UIImage.animatedImage(data: (result.first?.fullGif?.image)!)!
     }
     
     static func deleteItem(_ giphyItem: GiphyData) {
@@ -63,7 +66,10 @@ class PersistentService {
             NSLog("My Error: %@", error as NSError)
         }
         
-        backgroundContext?.delete(result.first!)
+        if let blabla = result.first{
+            backgroundContext?.delete(blabla)
+        }
+        
         
         do {
             try backgroundContext?.save()

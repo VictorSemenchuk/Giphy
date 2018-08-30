@@ -39,6 +39,8 @@ static NSString * const appDomain = @"com.epam.giphy";
             return @"Can't get animated image";
         case kNoInternet:
             return @"The Internet is turn off. Turn on cellular or Wi-Fi to access data";
+        default:
+            return @"Unknow Error";
     }
 }
 

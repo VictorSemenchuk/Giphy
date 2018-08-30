@@ -15,6 +15,7 @@ extension MainViewPresenter: CollectionViewPresenterProtocol {
         dataService.getAnimatedPreviewImageFor(giphyData: giphyItem) { (image, error) in
             if let error = error {
                 print(error.localizedDescription)
+                completion(nil)
             } else {
                 DispatchQueue.main.async {
                     completion(image)

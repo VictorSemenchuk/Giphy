@@ -27,3 +27,7 @@ NSString * const kPlayIconName = @"PlayIcon";
 
 const float kPadding = 10.0;
 
+#pragma mark Fetching
+
+const int kFetchingAmountLimit = 24;
+

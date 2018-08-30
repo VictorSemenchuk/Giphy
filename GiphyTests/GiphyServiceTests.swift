@@ -11,30 +11,32 @@ import XCTest
 
 class GiphyServiceTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
     func test_fetchTrends_success() {
+        let giphyService = GiphyService()
+        let expectation = self.expectation(description: "test_fetchTrends_success")
+        var results: [GiphyData]?
         
+        giphyService.fetchTrends(with: 0, limit: 1) { (data, error) in
+            results = data
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: 1, handler: nil)
+        
+        XCTAssertNotNil(results, "Result of fetching can't be nil")
     }
     
-    func test_fetchTrends_failure() {
+    func test_fetchItemsBySearchRequest_success() {
+        let giphyService = GiphyService()
+        let expectation = self.expectation(description: "test_fetchItemsBySearchRequest_success")
+        var results: [GiphyData]?
         
-    }
-    
-    func test_fetchItemsbySearchRequest_success() {
+        giphyService.fetchItemsBySearchRequest("", with: 1, limit: 1) { (data, error) in
+            results = data
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: 1, handler: nil)
         
-    }
-    
-    func test_fetchItemsbySearchRequest_failure() {
-        
+        XCTAssertNotNil(results, "Result of fetching can't be nil")
     }
     
 }

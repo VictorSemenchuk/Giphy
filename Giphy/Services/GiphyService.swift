@@ -13,18 +13,22 @@ import Foundation
     case FetchingDataError
 }
 
-@objc public class GiphyService: NSObject {
+@objc protocol GiphyServiceProtocol: class {
+    @objc func fetchTrends(with offset: Int, limit: Int, completion: @escaping ([GiphyData]?, GiphyError?) -> Void)
+    @objc func fetchItemsBySearchRequest(_ searchRequest: String, with offset: Int, limit: Int, completion: @escaping ([GiphyData]?, GiphyError?) -> Void)
+}
+
+@objcMembers public class GiphyService: NSObject, GiphyServiceProtocol {
     private var apiKey: String = "dc6zaTOxFJmzC"
-    private var limit: Int = 24
     
-    @objc func fetchTrends(with offset: Int, completion: @escaping ([GiphyData]?, GiphyError?) -> Void) {
+    @objc func fetchTrends(with offset: Int, limit: Int, completion: @escaping ([GiphyData]?, GiphyError?) -> Void) {
         let url = "https://api.giphy.com/v1/gifs/trending?api_key=\(apiKey)&limit=\(limit)&offset=\(offset)"
         fetchData(from: url) { (data, error) in
             completion(data, error)
         }
     }
     
-    @objc func fetchItemsBySearchRequest(_ searchRequest: String, with offset: Int, completion: @escaping ([GiphyData]?, GiphyError?) -> Void) {
+    @objc func fetchItemsBySearchRequest(_ searchRequest: String, with offset: Int, limit: Int, completion: @escaping ([GiphyData]?, GiphyError?) -> Void) {
         let ratingCode = UserDefaults.standard.integer(forKey: kRatingSettingKey)
         if let ratingType = RatingType(rawValue: ratingCode) {
             let rating = Rating.stringDescription(typeFor: ratingType)

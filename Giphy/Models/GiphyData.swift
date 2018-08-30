@@ -25,7 +25,7 @@ import Foundation
         self.image = values["image"] as? GiphyImage
     }
     
-    init(with cdItem:GifPreview) {
+    init(with cdItem: GifPreview) {
         self.dataId = cdItem.dataId
         self.title = cdItem.title
         self.rating = cdItem.rating

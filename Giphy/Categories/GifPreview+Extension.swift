@@ -14,13 +14,20 @@ extension GifPreview {
     
     static public func saveToPersistance(_ giphyItem: GiphyData) {
         let appDelegate =  UIApplication.shared.delegate as? AppDelegate
-        appDelegate?.persistentContainer .performBackgroundTask({ (context) in
+        
+        let context: NSManagedObjectContext = (appDelegate?.persistentContainer.newBackgroundContext())!
+        
+        context .performAndWait {
             if (alreadyExists(context: context, giphyItem)){
                 print("Error GifPreview+extension")
             } else{
                 saveGif(context: context, giphyItem)
             }
-        })
+        }
+        
+//        appDelegate?.persistentContainer .performBackgroundTask({ (context) in
+//
+//        })
     }
     
     static func alreadyExists(context: NSManagedObjectContext, _ giphyItem: GiphyData) -> Bool {

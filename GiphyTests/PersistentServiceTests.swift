@@ -31,19 +31,21 @@ class PersistentServiceTests: XCTestCase {
     }
     
     override func tearDown() {
+        PersistentService.deleteItem(giphyDataMock)
         giphyDataMock = nil
         super.tearDown()
     }
     
     
     func test_checkIfItemExists_seccess() {
-        XCTAssertEqual(false, PersistentService.checkIfItemExists(giphyDataMock))
+        GifPreview.saveToPersistance(giphyDataMock)
+        XCTAssertEqual(true, PersistentService.checkIfItemExists(giphyDataMock))
         
     }
     
     func test_deleteItem_seccess() {
         PersistentService.deleteItem(giphyDataMock)
-        XCTAssertEqual(true, true)
+        XCTAssertEqual(false, PersistentService.checkIfItemExists(giphyDataMock))
     }
     
     func test_getExistingImage_success() {

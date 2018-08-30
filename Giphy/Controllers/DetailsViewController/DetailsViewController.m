@@ -58,7 +58,7 @@
     }
     self.titleLabel.text = self.presenter.giphyItem.title;
     self.publishedLabel.text = [@"Published on " stringByAppendingString:[self.presenter convertDateWithInputDate:self.presenter.giphyItem.importDatetime]];
-    self.trandingView.hidden = [self.presenter.giphyItem.trendingDatetime isEqualToString:@"0000-00-00 00:00:00"];
+    self.trandingView.hidden = [self.presenter.giphyItem.trendingDatetime isEqualToString:kTrendingDateFormat];
     [self.view setNeedsLayout];
 }
 
@@ -66,7 +66,7 @@
     self.saveButton.enabled = YES;
     self.shareButton.enabled = YES;
     self.stopPlayButton.enabled = YES;
-    [self.stopPlayButton setImage:[UIImage imageNamed:@"StopIcon"] forState:UIControlStateNormal];
+    [self.stopPlayButton setImage:[UIImage imageNamed:kStopIconName] forState:UIControlStateNormal];
 }
 
 - (IBAction)share:(id)sender {

@@ -8,33 +8,30 @@
 
 import Foundation
 
-@objc protocol SettingsViewPresenterDelegate: class {
+@objc protocol SettingsViewPresenterProtocol: class {
+    func updateRatingSetting(newValue: NSInteger) -> Int
+    func getRattingSetting() -> Int
+    func clearCache()
     
 }
 
-@objcMembers class SettingsViewPresenter: NSObject {
-    
-    weak var view: SettingsViewPresenterDelegate!
-    
-    init(view: SettingsViewPresenterDelegate) {
-        self.view = view
-    }
+@objcMembers class SettingsViewPresenter: NSObject, SettingsViewPresenterProtocol {
     
     func updateRatingSetting(newValue: NSInteger) -> Int {
         let oldValue = getRattingSetting()
-        UserDefaults.standard.set(newValue, forKey: "ratingSetting")
+        UserDefaults.standard.set(newValue, forKey: kRatingSettingKey)
         return oldValue
     }
     
-    @objc public func getRattingSetting() -> Int {
+    func getRattingSetting() -> Int {
         var value = 0
-        if let oldValue = UserDefaults.standard.object(forKey: "ratingSetting") as? Int {
+        if let oldValue = UserDefaults.standard.object(forKey: kRatingSettingKey) as? Int {
             value = oldValue
         }
         return value
     }
     
-    @objc public func clearCache() {
+    func clearCache() {
         let fileManager = GiphyFileManager()
         let path = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true) [0]
         _ = fileManager.removeAppDirectory(from: path)

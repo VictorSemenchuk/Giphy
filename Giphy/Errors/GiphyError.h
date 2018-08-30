@@ -14,7 +14,8 @@ typedef NS_ENUM(NSUInteger, GiphyErrorCode) {
     kParsingErrorInvalidData,
     kParsingErrorFailureSetDataToModel,
     kFetchingError,
-    kDataErrorFailureGetAnimatedImage
+    kDataErrorFailureGetAnimatedImage,
+    kNoInternet
 };
 
 @interface GiphyError : NSError

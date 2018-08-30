@@ -14,59 +14,21 @@ import UIKit
     @objc func setSearchRequest(_ searchRequest: String, by view: SearchResultsViewProtocol)
 }
 
-@objcMembers class SearchResultsViewPresenter: NSObject, CollectionViewPresenterProtocol, SearchResultsViewPresenterProtocol {
+@objcMembers class SearchResultsViewPresenter: NSObject {
     
     //MARK:- Properties
     
     var items: [GiphyData]
     var searchRequest: String
     
-    //MARK:- Public Methods
+    //MARK:- Methods
     
     override init() {
         self.searchRequest = String()
         self.items = [GiphyData]()
     }
     
-    func fetchItems(_ searchRequest: String, with offset: Int, for collectionView: UICollectionView) {
-        let giphyService = GiphyService()
-        giphyService.fetchItemsBySearchRequest(searchRequest, with: offset) { (items, error) in
-            if let error = error {
-                print(error.localizedDescription)
-            } else {
-                DispatchQueue.main.async {
-                    let indexPaths = self.itemsWasFetched(items!)
-                    collectionView.insertItems(at: indexPaths)
-                }
-            }
-        }
-    }
-    
-    func fetchPreviewImageForGiphyItem(_ giphyItem: GiphyData, completion: @escaping (UIImage?) -> Void) {
-        let dataService = DataService()
-        dataService.getAnimatedPreviewImageFor(giphyData: giphyItem) { (image, error) in
-            if let error = error {
-                print(error.localizedDescription)
-            } else {
-                DispatchQueue.main.async {
-                    completion(image)
-                }
-            }
-        }
-    }
-    
-    func registerCells(for collectionView: UICollectionView) {
-        collectionView.register(UINib(nibName: "GiphyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: kCollectionViewCellIdentifier)
-    }
-    
-    func setSearchRequest(_ searchRequest: String, by view: SearchResultsViewProtocol) {
-        self.searchRequest = searchRequest
-        view.setViewTitle(searchRequest)
-    }
-    
-    //MARK:- Private Methods
-    
-    private func itemsWasFetched(_ items: [GiphyData]) -> ([IndexPath]) {
+    internal func itemsWasFetched(_ items: [GiphyData]) -> ([IndexPath]) {
         let section = 0
         var indexPaths = [IndexPath]()
         for i in 0..<items.count {

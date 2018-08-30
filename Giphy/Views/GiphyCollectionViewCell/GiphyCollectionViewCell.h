@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GeneralConstants.h"
 
 @class GiphyData;
 @interface GiphyCollectionViewCell : UICollectionViewCell

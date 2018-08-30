@@ -1,48 +1,14 @@
 //
-//  DetailsViewPresenter.swift
+//  DetailsViewPresenter+DetailsViewPresenterProtocol.swift
 //  Giphy
 //
-//  Created by Viktar Semianchuk on 8/27/18.
+//  Created by Viktar Semianchuk on 8/30/18.
 //  Copyright © 2018 Viktar Semianchuk. All rights reserved.
 //
 
 import Foundation
-import UIKit
-import Social
 
-@objc protocol DetailsViewPresenterDelegate: class {
-    @objc func setPlayIconForStopPlayButton();
-    @objc func setStopIconForStopPlayButton();
-    @objc func setSaveRemoveButtonFor(savingStatus: Bool)
-}
-
-@objc protocol DetailsViewPresenterProtocol: class {
-    @objc func fetchOriginalImageForItem(_ giphyItem: GiphyData, completion: @escaping (UIImage?) -> Void)
-    @objc func convertDate(inputDate: String) -> String
-    @objc func shareItem(_ giphyItem: GiphyData, by view: DetailsViewProtocol)
-    @objc func startStopPlaying(for imageView: UIImageView, by view: DetailsViewProtocol)
-    @objc func setSavingStatus(_ status: Bool, by view: DetailsViewProtocol)
-    @objc func toggleSavingStatus(by view: DetailsViewProtocol)
-    @objc func saveItem(_ giphyItem: GiphyData)
-    @objc func checkIfItemIsExists(_ giphyData: GiphyData) -> Bool
-    @objc func getExistingImage(_ giphyItem: GiphyData) -> UIImage
-    @objc func removeItem(_ giphyItem: GiphyData)
-}
-
-@objcMembers class DetailsViewPresenter: NSObject, DetailsViewPresenterProtocol {
-    
-    //MARK:- Properties
-    
-    var giphyItem: GiphyData?
-    var animatedImage: UIImage?
-    @objc public var isSaved: Bool
-    
-    //MARK:- Methods
-    
-    init(with giphyItem: GiphyData) {
-        self.giphyItem = giphyItem
-        self.isSaved = false
-    }
+extension DetailsViewPresenter: DetailsViewPresenterProtocol {
     
     func fetchOriginalImageForItem(_ giphyItem: GiphyData, completion: @escaping (UIImage?) -> Void) {
         let dataService = DataService()
@@ -61,9 +27,9 @@ import Social
     }
     
     func convertDate(inputDate: String) -> String {
-        let date = Date.date(with: "yyyy-MM-dd HH:mm:ss", from: inputDate)
+        let date = Date.date(with: kInputDateFormat, from: inputDate)
         if let date = date {
-            return String.string(with: "dd MMM yyyy", from: date)
+            return String.string(with: kOutputDateFormat, from: date)
         } else {
             return ""
         }
@@ -79,12 +45,12 @@ import Social
         if (self.animatedImage != nil) {
             imageView.image = self.animatedImage;
             self.animatedImage = nil
-            view.setIconForStartStopPlayingButton(UIImage(named: "StopIcon"))
+            view.setIconForStartStopPlayingButton(UIImage(named: kStopIconName))
         } else {
             self.animatedImage = imageView.image
             imageView.image = nil;
             imageView.image = self.animatedImage?.images![0];
-            view.setIconForStartStopPlayingButton(UIImage(named: "PlayIcon"))
+            view.setIconForStartStopPlayingButton(UIImage(named: kPlayIconName))
         }
     }
     
@@ -115,19 +81,4 @@ import Social
         PersistentService.deleteItem(giphyItem)
     }
     
-    //MARK:- Private mathods
-    
-    private func updateSaveRemoveButton(for status: Bool, by view: DetailsViewProtocol) {
-        var title: String
-        var image: UIImage
-        if (status) {
-            title = "Remove"
-            image = UIImage(named: "RemoveIcon")!
-        } else {
-            title = "Save"
-            image = UIImage(named: "FavoriteIcon")!
-        }
-        view.updateSaveRemoveButton(title, image: image)
-    }
-
 }

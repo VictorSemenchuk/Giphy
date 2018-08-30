@@ -36,7 +36,7 @@ class DataServiceTests: XCTestCase {
         let dataService = DataService()
         let expectation = self.expectation(description: "test_getAnimatedImage_success")
         var resultImage: UIImage?
-        dataService.getAnimatedPreviewImageFor(giphyData: giphyDataMock) { (image) in
+        dataService.getAnimatedPreviewImageFor(giphyData: giphyDataMock) { (image, error) in
             resultImage = image
             expectation.fulfill()
         }

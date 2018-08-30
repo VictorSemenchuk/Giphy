@@ -11,14 +11,6 @@ import XCTest
 
 class FileManagerTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
     func test_createAppDirectoryIfNeeded_success() {
         let fileManager = GiphyFileManager()
         let path = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0]
@@ -32,6 +24,43 @@ class FileManagerTests: XCTestCase {
         _ = fileManager.createAppDirectoryIfNeeded(at: path)
         let result = fileManager.removeAppDirectory(from: path)
         XCTAssert(result, "Can't remove directory")
+    }
+    
+    func test_writeFileWithName_success() {
+        let fileManager  = GiphyFileManager()
+        let inputData = Data()
+        let inputFileName = "testFilename"
+        let inputDirectory = DirectoryType.cache
+        let inputFileType = FileType.gif
+        
+        fileManager.writeFileWithName(inputFileName, data: inputData, withType: inputFileType, to: inputDirectory)
+        let writtenData = fileManager.dataFromFileWithName(inputFileName, withType: inputFileType, from: inputDirectory)
+        
+        XCTAssertNotEqual(writtenData, nil, "Data from valid file can't be nil")
+    }
+    
+    func test_dataFromFileWithName_success() {
+        let fileManager  = GiphyFileManager()
+        let inputData = Data()
+        let inputFileName = "testFilename"
+        let inputDirectory = DirectoryType.cache
+        let inputFileType = FileType.gif
+        
+        fileManager.writeFileWithName(inputFileName, data: inputData, withType: inputFileType, to: inputDirectory)
+        let writtenData = fileManager.dataFromFileWithName(inputFileName, withType: inputFileType, from: inputDirectory)
+        
+        XCTAssertNotEqual(writtenData, nil, "Data from invalid file should be nil")
+    }
+    
+    func test_dataFromFileWithName_failure() {
+        let fileManager  = GiphyFileManager()
+        let inputFileName = "testFilename1"
+        let inputDirectory = DirectoryType.cache
+        let inputFileType = FileType.gif
+        
+        let writtenData = fileManager.dataFromFileWithName(inputFileName, withType: inputFileType, from: inputDirectory)
+        
+        XCTAssertEqual(writtenData, nil, "Data from invalid file should be nil")
     }
     
 }

@@ -33,7 +33,6 @@
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="s5A-sS-yme"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="mg0-4k-CRi"/>
                                 </connections>
                             </collectionView>
@@ -280,7 +279,6 @@
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="wXL-t7-KvH" id="Mjz-Wh-Nr9"/>
                                     <outlet property="delegate" destination="wXL-t7-KvH" id="Nvt-JN-TCu"/>
                                 </connections>
                             </collectionView>
@@ -364,6 +362,6 @@
         <image name="TrendingIcon" width="13" height="17"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2Uh-mp-5G1"/>
+        <segue reference="0U7-nG-mpL"/>
     </inferredMetricsTieBreakers>
 </document>

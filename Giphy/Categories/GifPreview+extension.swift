@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 import CoreData
 
-
 extension GifPreview {
     
     static public func saveToPersistance(_ giphyItem: GiphyData) {
@@ -24,7 +23,7 @@ extension GifPreview {
         })
     }
     
-    static func alreadyExists(context: NSManagedObjectContext, _ giphyItem: GiphyData) -> Bool{
+    static func alreadyExists(context: NSManagedObjectContext, _ giphyItem: GiphyData) -> Bool {
         let request: NSFetchRequest<NSFetchRequestResult> = GifPreview.fetchRequest()
         request.predicate = NSPredicate(format: "dataId = %@", giphyItem.dataId!)
         return try! context.count(for: request) > 0
@@ -43,13 +42,9 @@ extension GifPreview {
         newGiphy.size = giphyItem.image?.preview?.size
         newGiphy.height = giphyItem.image?.preview?.height
         newGiphy.width = giphyItem.image?.preview?.width
-        
-//        let downloadManager = DownloadManager()
-//        downloadManager.fetchData(fromURL: giphyItem.image?.preview?.url, withCompletionBlock: { (data) in
-            newGiphy.image = giphyItem.image?.preview?.image
+        newGiphy.image = giphyItem.image?.preview?.image
             
-            FullGif.saveFullGif(context, newGiphy, giphyItem)
-//        })
+        FullGif.saveFullGif(context, newGiphy, giphyItem)
     }
     
 }

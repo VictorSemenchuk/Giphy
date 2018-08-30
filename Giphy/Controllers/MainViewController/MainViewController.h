@@ -10,17 +10,19 @@
 #import "GiphyCollectionViewLayout.h"
 #import "GiphyCollectionViewCell.h"
 #import "IdentifierConstants.h"
-#import "Giphy-Swift.h"
 
+@protocol MainViewProtocol <NSObject>
+
+- (void)updateShowSavedButton:(UIImage *)image;
+
+@end
+
+@class MainViewPresenter;
 @interface MainViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *showSaved;
-
 @property (weak, nonatomic) IBOutlet UITextField *searhTextField;
-
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (nonatomic) NSMutableArray<GiphyData *> *items;
-@property (nonatomic) NSMutableArray<GiphyData *> *savedItems;
 @property (nonatomic) MainViewPresenter *presenter;
-@property (assign, nonatomic) BOOL showingSavedItems;
 
 @end

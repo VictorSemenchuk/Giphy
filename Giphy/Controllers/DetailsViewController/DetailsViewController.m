@@ -9,6 +9,7 @@
 #import "DetailsViewController.h"
 #import "DetailsViewController+DetailsViewPresenterDelegate.h"
 #import "UIColor+ThemeColors.h"
+#import "Giphy-Swift.h"
 
 @interface DetailsViewController ()
 
@@ -21,8 +22,6 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UIButton *shareButton;
 
-@property (nonatomic) DetailsViewPresenter *presenter;
-
 - (void)setupData;
 - (void)enableControls;
 
@@ -32,7 +31,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.presenter = [[DetailsViewPresenter alloc] initWithView:self];
     [self setupData];
 }
 
@@ -42,25 +40,26 @@
     self.imageContainerView.backgroundColor = [UIColor randomThemeColor];
     [self.activityIndicator startAnimating];
     
-    CGFloat tempHeight = [self.giphyItem.image.preview.height floatValue];
-    CGFloat tempWidth = [self.giphyItem.image.preview.width floatValue];
-    self.imageViewHeightConstraint.constant = tempHeight * self.imageView.bounds.size.width / tempWidth;
-    if ([self.presenter checkIfItemExists:self.giphyItem]) {
-        [self.presenter setSavingStatus:YES];
-        self.imageView.image = [self.presenter getExistingImage:self.giphyItem];
+    CGFloat tempHeight = [self.presenter.giphyItem.image.original.height floatValue];
+    CGFloat tempWidth = [self.presenter.giphyItem.image.original.width floatValue];
+    self.imageViewHeightConstraint.constant = tempHeight * (UIScreen.mainScreen.bounds.size.width - 20.0) / tempWidth;
+    if ([self.presenter checkIfItemIsExists:self.presenter.giphyItem]) {
+        [self.presenter setSavingStatus:YES by:self];
+        self.imageView.image = [self.presenter getExistingImage:self.presenter.giphyItem];
         [self.activityIndicator stopAnimating];
         [self enableControls];
     } else {
-        [self.presenter setSavingStatus:NO];
-        [self.presenter fetchOriginalImageForGiphyItem:self.giphyItem completion:^(UIImage * _Nullable image) {
+        [self.presenter setSavingStatus:NO by:self];
+        [self.presenter fetchOriginalImageForItem:self.presenter.giphyItem completion:^(UIImage * _Nullable image) {
             [self.activityIndicator stopAnimating];
             self.imageView.image = image;
             [self enableControls];
         }];
     }
-    self.titleLabel.text = self.giphyItem.title;
-    self.publishedLabel.text = [@"Published on " stringByAppendingString:[self.presenter convertDateWithInputDate:self.giphyItem.importDatetime]];
-    self.trandingView.hidden = [self.giphyItem.trendingDatetime isEqualToString:@"0000-00-00 00:00:00"];
+    self.titleLabel.text = self.presenter.giphyItem.title;
+    self.publishedLabel.text = [@"Published on " stringByAppendingString:[self.presenter convertDateWithInputDate:self.presenter.giphyItem.importDatetime]];
+    self.trandingView.hidden = [self.presenter.giphyItem.trendingDatetime isEqualToString:@"0000-00-00 00:00:00"];
+    [self.view setNeedsLayout];
 }
 
 - (void)enableControls {
@@ -71,20 +70,20 @@
 }
 
 - (IBAction)share:(id)sender {
-    [self.presenter shareGiphyItem:self.giphyItem image:self.imageView.image];
+    [self.presenter shareItem:self.presenter.giphyItem by:self];
 }
 
 - (IBAction)stopPlay:(id)sender {
-    [self.presenter stopPlayWithImageView:self.imageView];
+    [self.presenter startStopPlayingFor:self.imageView by:self];
 }
 
 - (IBAction)save:(id)sender {
     if (self.presenter.isSaved) {
-        [self.presenter removeItem:self.giphyItem];
+        [self.presenter removeItem:self.presenter.giphyItem];
     } else {
-        [self.presenter saveGiphyItem:self.giphyItem];
+        [self.presenter saveItem:self.presenter.giphyItem];
     }
-    [self.presenter toggleSavingStatus];
+    [self.presenter toggleSavingStatusBy:self];
 }
 
 @end

@@ -7,11 +7,12 @@
 //
 
 #import "MainViewController+GiphyCollectionViewLayout.h"
+#import "Giphy-Swift.h"
 
 @implementation MainViewController (GiphyCollectionViewLayout)
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView heightForContentAtIndexPath:(NSIndexPath *)indexPath withWidth:(CGFloat)width {
-    GiphyData *giphyItem = self.items[indexPath.row];
+    GiphyData *giphyItem = [self.presenter itemForIndexPath:indexPath];
     CGFloat tempHeight = [giphyItem.image.preview.height floatValue];
     CGFloat tempWidth = [giphyItem.image.preview.width floatValue];
     return tempHeight * width / tempWidth;

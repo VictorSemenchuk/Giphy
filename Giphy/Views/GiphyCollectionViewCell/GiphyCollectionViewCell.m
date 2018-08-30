@@ -38,7 +38,7 @@
 }
 
 - (void)setupViewsForGiphyItem:(GiphyData *)giphyItem sender:(NSObject *)sender {
-    if ([sender isKindOfClass:SearchResultsViewController.class] && ![giphyItem.trendingDatetime isEqualToString:@"0000-00-00 00:00:00"]) {
+    if ([sender isKindOfClass:SearchResultsViewController.class] && ![giphyItem.trendingDatetime isEqualToString:kTrendingDateFormat]) {
         self.trendingImage.hidden = NO;
     } else {
         self.trendingImage.hidden = YES;

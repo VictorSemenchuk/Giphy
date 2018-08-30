@@ -9,8 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#pragma mark - Entity fields
-
 NSString * const kCollectionViewCellIdentifier = @"GiphyCollectionViewCell";
 NSString * const kSearchResultSegueIdentifier = @"SearchResultSegueIdentifier";
 NSString * const kDetailsSegueIdentifier = @"DetailsSegueIdentifier";

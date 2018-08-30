@@ -15,9 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        if UserDefaults.standard.object(forKey: "ratingSetting") == nil {
-            UserDefaults.standard.set(0, forKey: "ratingSetting")
+        if UserDefaults.standard.object(forKey: kRatingSettingKey) == nil {
+            UserDefaults.standard.set(0, forKey: kRatingSettingKey)
         }
+        UIApplication.shared.statusBarStyle = .lightContent
         return true
     }
 

@@ -30,7 +30,7 @@ class PersistentService {
         return result
     }
     
-    static func getExistingImage(_ giphyItem: GiphyData) -> UIImage{
+    static func getExistingImage(_ giphyItem: GiphyData) -> UIImage {
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         let backgroundContext = appDelegate?.persistentContainer.newBackgroundContext()
         

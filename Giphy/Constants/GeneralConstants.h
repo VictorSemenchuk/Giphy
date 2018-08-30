@@ -30,4 +30,8 @@ extern NSString * const kPlayIconName;
 
 extern const float kPadding;
 
+#pragma mark Fetching
+
+extern const int kFetchingAmountLimit;
+
 #endif /* EntitiesConstants_h */

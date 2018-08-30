@@ -13,7 +13,7 @@ import Foundation
     
     static public var allCases: [RatingType] {
         var values: [RatingType] = []
-        var index = 1
+        var index = 0
         while let element = self.init(rawValue: index) {
             values.append(element)
             index += 1

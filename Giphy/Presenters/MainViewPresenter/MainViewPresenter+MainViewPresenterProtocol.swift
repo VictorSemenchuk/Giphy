@@ -13,7 +13,7 @@ extension MainViewPresenter: MainViewPresenterProtocol {
     
     func fetchItems(with offset: Int, for collectionView: UICollectionView) {
         let giphyService = GiphyService()
-        giphyService.fetchTrends(with: offset) { (items, error) in
+        giphyService.fetchTrends(with: offset, limit: Int(kFetchingAmountLimit)) { (items, error) in
             if let error = error {
                 print(error.localizedDescription)
             } else {
@@ -49,7 +49,7 @@ extension MainViewPresenter: MainViewPresenterProtocol {
         }
     }
     
-    func itemForIndexPath(_ indexPath: IndexPath) -> GiphyData {
+    func itemForIndexPath(_ indexPath: IndexPath) -> GiphyData? {
         let items = dataSource(showingSavedItemsStatus: self.showingSavedItems)
         return items[indexPath.row]
     }

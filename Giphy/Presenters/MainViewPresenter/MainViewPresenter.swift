@@ -14,7 +14,7 @@ import CoreData
     @objc func fetchItems(with offset: Int, for collectionView: UICollectionView)
     @objc func fetchSavedItems() -> [GiphyData]
     @objc func refetchSavedItems(for collectionView: UICollectionView)
-    @objc func itemForIndexPath(_ indexPath: IndexPath) -> GiphyData
+    @objc func itemForIndexPath(_ indexPath: IndexPath) -> GiphyData?
     @objc func toggleShowingSavedItemsFlag(view: MainViewProtocol, for collectionView: UICollectionView) -> Bool;
 }
 

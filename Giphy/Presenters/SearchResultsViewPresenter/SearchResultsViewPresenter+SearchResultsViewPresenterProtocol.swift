@@ -12,7 +12,7 @@ extension SearchResultsViewPresenter: SearchResultsViewPresenterProtocol {
     
     func fetchItems(_ searchRequest: String, with offset: Int, for collectionView: UICollectionView) {
         let giphyService = GiphyService()
-        giphyService.fetchItemsBySearchRequest(searchRequest, with: offset) { (items, error) in
+        giphyService.fetchItemsBySearchRequest(searchRequest, with: offset, limit: Int(kFetchingAmountLimit)) { (items, error) in
             if let error = error {
                 print(error.localizedDescription)
             } else {

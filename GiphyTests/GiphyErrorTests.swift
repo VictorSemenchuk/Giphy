@@ -11,13 +11,76 @@ import XCTest
 
 class GiphyErrorTests: XCTestCase {
     
-    func test_localizedDescriptionForErrorCode_success() {
+    func test_localizedDescriptionForDownloadError_success() {
         let inputErrorCode = GiphyErrorCode.downloadingError
         let inputError = GiphyError(code: inputErrorCode)
         
         let localizedDescription = inputError?.localizedDescription
         
         XCTAssertEqual(localizedDescription, "Downloading error")
+    }
+    
+    func test_localizedDescriptionForParsingError1_success() {
+        let inputErrorCode = GiphyErrorCode.parsingErrorUnknownDataSnapshot
+        let inputError = GiphyError(code: inputErrorCode)
+        
+        let localizedDescription = inputError?.localizedDescription
+        
+        XCTAssertEqual(localizedDescription, "Parsing error. Unknown data snapshot")
+    }
+    
+    func test_localizedDescriptionForParsingError2_success() {
+        let inputErrorCode = GiphyErrorCode.parsingErrorInvalidData
+        let inputError = GiphyError(code: inputErrorCode)
+        
+        let localizedDescription = inputError?.localizedDescription
+        
+        XCTAssertEqual(localizedDescription, "Parsing error. Invalid data")
+    }
+    
+    func test_localizedDescriptionForParsingError3_success() {
+        let inputErrorCode = GiphyErrorCode.parsingErrorFailureSetDataToModel
+        let inputError = GiphyError(code: inputErrorCode)
+        
+        let localizedDescription = inputError?.localizedDescription
+        
+        XCTAssertEqual(localizedDescription, "Parsing error. Can't set data to model")
+    }
+    
+    func test_localizedDescriptionForFetchingError_success() {
+        let inputErrorCode = GiphyErrorCode.fetchingError
+        let inputError = GiphyError(code: inputErrorCode)
+        
+        let localizedDescription = inputError?.localizedDescription
+        
+        XCTAssertEqual(localizedDescription, "Fetching error")
+    }
+    
+    func test_localizedDescriptionForGetAnimatedImageError_success() {
+        let inputErrorCode = GiphyErrorCode.dataErrorFailureGetAnimatedImage
+        let inputError = GiphyError(code: inputErrorCode)
+        
+        let localizedDescription = inputError?.localizedDescription
+        
+        XCTAssertEqual(localizedDescription, "Can't get animated image")
+    }
+    
+    func test_localizedDescriptionForNoInternetError_success() {
+        let inputErrorCode = GiphyErrorCode.noInternet
+        let inputError = GiphyError(code: inputErrorCode)
+        
+        let localizedDescription = inputError?.localizedDescription
+        
+        XCTAssertEqual(localizedDescription, "The Internet is turn off. Turn on cellular or Wi-Fi to access data")
+    }
+    
+    func test_localizedDescriptionForOtherError_success() {
+        let inputErrorCode = GiphyErrorCode.otherError
+        let inputError = GiphyError(code: inputErrorCode)
+        
+        let localizedDescription = inputError?.localizedDescription
+        
+        XCTAssertEqual(localizedDescription, "Unknow Error")
     }
 
 }

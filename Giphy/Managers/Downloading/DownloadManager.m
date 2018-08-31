@@ -24,8 +24,10 @@
     NSURLSessionDataTask* task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         dispatch_async(dispatch_get_global_queue(QOS_CLASS_UTILITY, 0), ^{
             if (error != nil) {
-                if ([error domain] == NSURLErrorDomain && error.code == NSURLErrorNotConnectedToInternet) {
+                if (error.code == NSURLErrorNotConnectedToInternet) {
                     completionBlock(nil, [GiphyError errorWithCode:kDownloadingError]);
+                } else if (error.code == -1002) {
+                    completionBlock(nil, [GiphyError errorWithCode:kNoResultsError]);
                 } else {
                     completionBlock(nil, [GiphyError errorWithCode:kDownloadingError]);
                 }

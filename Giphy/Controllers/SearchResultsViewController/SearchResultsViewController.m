@@ -9,6 +9,7 @@
 #import "SearchResultsViewController.h"
 #import "SearchResultsViewController+GiphyCollectionViewLayout.h"
 #import "SearchResultsViewController+SearchResultsViewProtocol.h"
+#import "SearchResultsViewController+FetchViewProtocol.h"
 #import "DetailsViewController.h"
 #import "Giphy-Swift.h"
 
@@ -31,7 +32,7 @@
     [self.presenter setSearchRequest:self.searchRequest by:self];
     self.collectionView.dataSource = self.presenter;
     self.collectionView.contentInset = UIEdgeInsetsMake(0.0, 5.0, 0.0, 5.0);
-    [self.presenter fetchItems:self.searchRequest with:0 for:self.collectionView];
+    [self.presenter fetchItems:self.searchRequest with:0 for:self.collectionView by:self];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

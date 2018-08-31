@@ -74,6 +74,15 @@ class GiphyErrorTests: XCTestCase {
         XCTAssertEqual(localizedDescription, "The Internet is turn off. Turn on cellular or Wi-Fi to access data")
     }
     
+    func test_localizedDescriptionForNoResultsError_success() {
+        let inputErrorCode = GiphyErrorCode.noResultsError
+        let inputError = GiphyError(code: inputErrorCode)
+        
+        let localizedDescription = inputError?.localizedDescription
+        
+        XCTAssertEqual(localizedDescription, "No results")
+    }
+    
     func test_localizedDescriptionForOtherError_success() {
         let inputErrorCode = GiphyErrorCode.otherError
         let inputError = GiphyError(code: inputErrorCode)

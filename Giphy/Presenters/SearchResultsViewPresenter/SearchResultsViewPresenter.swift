@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 @objc protocol SearchResultsViewPresenterProtocol: class {
-    @objc func fetchItems(_ searchRequest: String, with offset: Int, for collectionView: UICollectionView)
+    @objc func fetchItems(_ searchRequest: String, with offset: Int, for collectionView: UICollectionView, by view: FetchViewProtocol?)
     @objc func setSearchRequest(_ searchRequest: String, by view: SearchResultsViewProtocol)
 }
 

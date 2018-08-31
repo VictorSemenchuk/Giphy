@@ -11,14 +11,20 @@ import CoreData
 
 extension MainViewPresenter: MainViewPresenterProtocol {
     
-    func fetchItems(with offset: Int, for collectionView: UICollectionView) {
+    func fetchItems(with offset: Int, for collectionView: UICollectionView, by view: FetchViewProtocol?) {
         let giphyService = GiphyService()
+        view?.startActivityIndicator()
         giphyService.fetchTrends(with: offset, limit: Int(kFetchingAmountLimit)) { (items, error) in
             if let error = error {
                 print(error.localizedDescription)
+                DispatchQueue.main.async {
+                    view?.stopActivityIndicator()
+                    view?.showMessageLabelWithText(error.localizedDescription)
+                }
             } else {
                 DispatchQueue.main.async {
                     let indexPaths = self.itemsWasFetched(items!)
+                    view?.stopActivityIndicator()
                     collectionView.insertItems(at: indexPaths)
                 }
             }

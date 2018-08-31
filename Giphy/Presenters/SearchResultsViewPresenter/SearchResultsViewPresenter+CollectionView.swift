@@ -21,7 +21,7 @@ extension SearchResultsViewPresenter: UICollectionViewDataSource {
         let item = self.items[indexPath.row]
         
         if (indexPath.row == self.items.count - 10) {
-            self.fetchItems(self.searchRequest, with: indexPath.row + 10, for: collectionView)
+            self.fetchItems(self.searchRequest, with: indexPath.row + 10, for: collectionView, by: nil)
         }
         self.fetchPreviewImageForGiphyItem(item) { (image) in
             cell.imageView.image = image

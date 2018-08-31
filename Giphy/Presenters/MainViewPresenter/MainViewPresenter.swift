@@ -11,7 +11,7 @@ import UIKit
 import CoreData
 
 @objc protocol MainViewPresenterProtocol: class {
-    @objc func fetchItems(with offset: Int, for collectionView: UICollectionView)
+    @objc func fetchItems(with offset: Int, for collectionView: UICollectionView, by view: FetchViewProtocol?)
     @objc func fetchSavedItems() -> [GiphyData]
     @objc func refetchSavedItems(for collectionView: UICollectionView)
     @objc func itemForIndexPath(_ indexPath: IndexPath) -> GiphyData?

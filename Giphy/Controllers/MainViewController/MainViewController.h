@@ -14,6 +14,9 @@
 @protocol MainViewProtocol <NSObject>
 
 - (void)updateShowSavedButton:(UIImage *)image;
+- (void)startActivityIndicator;
+- (void)stopActivityIndicator;
+- (void)showMessageLabelWithText:(NSString *)text;
 
 @end
 
@@ -23,6 +26,9 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *showSaved;
 @property (weak, nonatomic) IBOutlet UITextField *searhTextField;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UILabel *messageLabel;
+
 @property (nonatomic) MainViewPresenter *presenter;
 
 @end

@@ -21,6 +21,9 @@
 @interface SearchResultsViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UILabel *messageLabel;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+
 @property (nonatomic) NSString *searchRequest;
 @property (nonatomic) SearchResultsViewPresenter *presenter;
 

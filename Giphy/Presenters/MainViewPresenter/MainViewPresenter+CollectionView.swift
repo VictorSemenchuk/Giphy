@@ -24,7 +24,7 @@ extension MainViewPresenter: UICollectionViewDataSource {
             cell.stopActivityIndicator()
         } else {
             if (indexPath.row == dataSource(showingSavedItemsStatus: self.showingSavedItems).count - 10) {
-                self.fetchItems(with: indexPath.row + 10, for: collectionView)
+                self.fetchItems(with: indexPath.row + 10, for: collectionView, by: nil)
             }
             self.fetchPreviewImageForGiphyItem(item) { (image) in
                 cell.imageView.image = image

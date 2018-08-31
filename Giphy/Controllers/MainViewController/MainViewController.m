@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "MainViewController+GiphyCollectionViewLayout.h"
 #import "MainViewController+MainViewProtocol.h"
+#import "MainViewController+FetchViewProtocol.h"
 #import "MainViewController+Appearance.h"
 #import "SearchResultsViewController.h"
 #import "DetailsViewController.h"
@@ -34,7 +35,7 @@
     self.presenter = [[MainViewPresenter alloc] init];
     self.collectionView.dataSource = self.presenter;
     [self.presenter registerCellsFor:self.collectionView];
-    [self.presenter fetchItemsWith:0 for:self.collectionView];
+    [self.presenter fetchItemsWith:0 for:self.collectionView by:self];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

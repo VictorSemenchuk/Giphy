@@ -9,7 +9,9 @@
 #import "SettingsTableViewController.h"
 #import "Giphy-Swift.h"
 
-@interface SettingsTableViewController () <SettingsViewPresenterDelegate>
+static NSString * const kTableViewCellIdentifier = @"tableViewIdentifier";
+
+@interface SettingsTableViewController ()
 
 @property (nonatomic) SettingsViewPresenter *presenter;
 
@@ -19,8 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.presenter = [[SettingsViewPresenter alloc] initWithView:self];
-    [self.tableView registerClass:UITableViewCell.class forCellReuseIdentifier:@"Cell"];
+    self.presenter = [[SettingsViewPresenter alloc] init];
+    [self.tableView registerClass:UITableViewCell.class forCellReuseIdentifier:kTableViewCellIdentifier];
 }
 
 #pragma mark - Table view data source
@@ -42,7 +44,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kTableViewCellIdentifier forIndexPath:indexPath];
     cell.backgroundColor = UIColor.blackColor;
     cell.textLabel.textColor = UIColor.whiteColor;
     switch (indexPath.section) {

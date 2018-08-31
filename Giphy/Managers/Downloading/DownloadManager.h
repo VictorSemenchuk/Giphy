@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GiphyError.h"
 
 @interface DownloadManager : NSObject
 
-- (void)fetchDataFromURL:(NSString *)stringUrl withCompletionBlock:(void(^)(NSData *))completionBlock;
+- (void)fetchDataFromURL:(NSString *)stringUrl withCompletionBlock:(void(^)(NSData *, GiphyError *))completionBlock;
 
 @end

@@ -10,10 +10,10 @@ import Foundation
 
 extension Date {
     
-    static func date(with format: String, from string: String) -> Date {
+    static func date(with format: String, from string: String) -> Date? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format;
-        return dateFormatter.date(from: string) ?? Date()
+        return dateFormatter.date(from: string)
     }
     
 }

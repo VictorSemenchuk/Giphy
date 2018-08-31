@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-extension FullGif{
+extension FullGif {
     
     static public func saveFullGif(_ context: NSManagedObjectContext, _ newGiphy:GifPreview , _ giphyItem: GiphyData) {
         newGiphy.fullGif = FullGif(context: context)

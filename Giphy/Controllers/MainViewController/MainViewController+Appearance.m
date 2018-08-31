@@ -21,6 +21,8 @@
     //collectionView
     self.collectionView.contentInset = UIEdgeInsetsMake(0.0, 5.0, 0.0, 5.0);
     self.collectionView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+    
+    
 }
 
 @end

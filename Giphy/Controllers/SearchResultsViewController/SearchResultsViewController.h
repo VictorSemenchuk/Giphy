@@ -10,13 +10,21 @@
 #import "GiphyCollectionViewLayout.h"
 #import "GiphyCollectionViewCell.h"
 #import "IdentifierConstants.h"
-#import "Giphy-Swift.h"
 
+@protocol SearchResultsViewProtocol <NSObject>
+
+- (void)setViewTitle:(NSString *)title;
+
+@end
+
+@class SearchResultsViewPresenter;
 @interface SearchResultsViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UILabel *messageLabel;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+
 @property (nonatomic) NSString *searchRequest;
-@property (nonatomic) NSMutableArray<GiphyData *> *items;
 @property (nonatomic) SearchResultsViewPresenter *presenter;
 
 @end

@@ -7,10 +7,12 @@
 //
 
 #import "DownloadManager.h"
+#import <SystemConfiguration/SystemConfiguration.h>
 
 @implementation DownloadManager
 
-- (void)fetchDataFromURL:(NSString *)stringUrl withCompletionBlock:(void (^)(NSData *))completionBlock {
+- (void)fetchDataFromURL:(NSString *)stringUrl withCompletionBlock:(void (^)(NSData *, GiphyError *))completionBlock {
+    
     NSURLRequest* request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:stringUrl] cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:20];
     
     NSURLSessionConfiguration* configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -21,7 +23,17 @@
     NSURLSession* session = [NSURLSession sessionWithConfiguration: configuration];
     NSURLSessionDataTask* task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         dispatch_async(dispatch_get_global_queue(QOS_CLASS_UTILITY, 0), ^{
-            completionBlock(data);
+            if (error != nil) {
+                if (error.code == NSURLErrorNotConnectedToInternet) {
+                    completionBlock(nil, [GiphyError errorWithCode:kDownloadingError]);
+                } else if (error.code == -1002) {
+                    completionBlock(nil, [GiphyError errorWithCode:kNoResultsError]);
+                } else {
+                    completionBlock(nil, [GiphyError errorWithCode:kDownloadingError]);
+                }
+            } else {
+                completionBlock(data, nil);
+            }
         });
     }];
     

@@ -16,7 +16,7 @@ class DataServiceTests: XCTestCase {
     override func setUp() {
         super.setUp()
         let urlPreview = "https://media1.giphy.com/media/14SAx6S02Io1ThOlOY/giphy-preview.gif?cid=e1bb72ff5b827be16c61305463455342"
-        let urlOriginal = "https://media1.giphy.com/media/14SAx6S02Io1ThOlOY/giphy.gif?cid=e1bb72ff5b827be16c61305463455342"
+        var urlOriginal = "https://media1.giphy.com/media/14SAx6S02Io1ThOlOY/giphy.gif?cid=e1bb72ff5b827be16c61305463455342"
         let metaPreview = GiphyImageMeta(url: urlPreview, size: "47815", width: "130", height: "73")
         let metaOriginal = GiphyImageMeta(url: urlOriginal, size: "1536071", width: "480", height: "270")
         let image = GiphyImage(original: metaOriginal, preview: metaPreview)
@@ -29,19 +29,45 @@ class DataServiceTests: XCTestCase {
     }
     
     override func tearDown() {
+        giphyDataMock = nil
         super.tearDown()
     }
     
-    func test_getAnimatedImage_success() {
+    func test_getAnimatedPreviewImage_success() {
         let dataService = DataService()
-        let expectation = self.expectation(description: "test_getAnimatedImage_success")
+        let expectation = self.expectation(description: "test_getAnimatedPreviewImage_success")
         var resultImage: UIImage?
-        dataService.getAnimatedPreviewImageFor(giphyData: giphyDataMock) { (image) in
+        dataService.getAnimatedPreviewImageFor(giphyData: giphyDataMock) { (image, error) in
             resultImage = image
             expectation.fulfill()
         }
         waitForExpectations(timeout: 10, handler: nil)
         XCTAssert(resultImage != nil, "Image should be not nil")
+    }
+    
+    func test_getAnimatedOriginalImage_success() {
+        let dataService = DataService()
+        let expectation = self.expectation(description: "test_getAnimatedOriginalImage_success")
+        var resultImage: UIImage?
+        dataService.getAnimatedOriginalImageFor(giphyData: giphyDataMock) { (image, error) in
+            resultImage = image
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: 10, handler: nil)
+        XCTAssert(resultImage != nil, "Image should be not nil")
+    }
+    
+    func test_getAnimatedOriginalImage_failure() {
+        let dataService = DataService()
+        let expectation = self.expectation(description: "test_getAnimatedOriginalImage_failure")
+        giphyDataMock.image?.original?.url = ""
+        var resultImage: UIImage?
+        dataService.getAnimatedOriginalImageFor(giphyData: giphyDataMock) { (image, error) in
+            resultImage = image
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: 10, handler: nil)
+        XCTAssert(resultImage == nil, "Image should be nil")
     }
     
 }

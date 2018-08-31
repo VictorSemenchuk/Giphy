@@ -14,7 +14,6 @@ extension UIImage {
             return UIImage(data: data)
         }
         
-        // Collect key frames and durations
         var frames: [(image: CGImage, delay: TimeInterval)] = []
         for i: Int in 0 ..< CGImageSourceGetCount(source) {
             guard let image = CGImageSourceCreateImageAtIndex(source, i, nil),
@@ -23,23 +22,21 @@ extension UIImage {
                 continue
             }
             
-            // Mimic WebKit approach to determine frame delay
             if let delay = gif["UnclampedDelayTime"] as? TimeInterval, delay > 0.0 {
-                frames.append((image, delay)) // Prefer "unclamped" delay time
+                frames.append((image, delay))
             } else if let delay = gif["DelayTime"] as? TimeInterval, delay > 0.0 {
                 frames.append((image, delay))
             } else {
-                frames.append((image, 0.1)) // WebKit default
+                frames.append((image, 0.1))
             }
         }
         
-        // Convert key frames to animated image
         var images: [UIImage] = []
         var duration: TimeInterval = 0.0
         for frame in frames {
             let image = UIImage(cgImage: frame.image)
             for _ in 0 ..< Int(frame.delay * 100.0) {
-                images.append(image) // Add fill frames
+                images.append(image)
             }
             duration += frame.delay
         }

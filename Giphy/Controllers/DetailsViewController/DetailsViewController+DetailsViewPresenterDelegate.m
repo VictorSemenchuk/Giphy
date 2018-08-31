@@ -10,23 +10,18 @@
 
 @implementation DetailsViewController (DetailsViewPresenterDelegate)
 
-- (void)setPlayIconForStopPlayButton {
-    [self.stopPlayButton setImage:[UIImage imageNamed:@"PlayIcon"] forState:UIControlStateNormal];
+- (void)showActivityViewController:(UIActivityViewController *)activityViewController {
+    activityViewController.popoverPresentationController.sourceView = self.view;
+    [self presentViewController:activityViewController animated:YES completion:nil];
 }
 
-- (void)setStopIconForStopPlayButton {
-    [self.stopPlayButton setImage:[UIImage imageNamed:@"StopIcon"] forState:UIControlStateNormal];
+- (void)setIconForStartStopPlayingButton:(UIImage *)image { 
+    [self.stopPlayButton setImage:image forState:UIControlStateNormal];
 }
 
-- (void)setSaveRemoveButtonForSavingStatus:(BOOL)savingStatus {
-    if (savingStatus) {
-        [self.saveButton setTitle:@"Remove" forState:UIControlStateNormal];
-        [self.saveButton setImage:[UIImage imageNamed:@"RemoveIcon"] forState:UIControlStateNormal];
-    } else {
-        [self.saveButton setTitle:@"Save" forState:UIControlStateNormal];
-        [self.saveButton setImage:[UIImage imageNamed:@"FavoriteIcon"] forState:UIControlStateNormal];
-    }
+- (void)updateSaveRemoveButton:(NSString *)title image:(UIImage *)image {
+    [self.saveButton setTitle:title forState:UIControlStateNormal];
+    [self.saveButton setImage:image forState:UIControlStateNormal];
 }
-
 
 @end

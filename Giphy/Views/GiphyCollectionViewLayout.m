@@ -7,6 +7,7 @@
 //
 
 #import "GiphyCollectionViewLayout.h"
+#import "GeneralConstants.h"
 
 @interface GiphyCollectionViewLayout ()
 
@@ -26,7 +27,7 @@
     self = [super initWithCoder:coder];
     if (self) {
         self.numberOfColumns = 2;
-        self.cellPadding = 5;
+        self.cellPadding = kPadding / 2;
         self.cache = [[NSMutableArray alloc] init];
         self.contentHeight = 0;
     }

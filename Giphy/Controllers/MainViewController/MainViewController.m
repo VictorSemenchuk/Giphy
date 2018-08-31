@@ -7,11 +7,13 @@
 //
 
 #import "MainViewController.h"
-#import "MainViewController+MainViewPresenterDelegate.h"
 #import "MainViewController+GiphyCollectionViewLayout.h"
+#import "MainViewController+MainViewProtocol.h"
+#import "MainViewController+FetchViewProtocol.h"
 #import "MainViewController+Appearance.h"
 #import "SearchResultsViewController.h"
 #import "DetailsViewController.h"
+#import "Giphy-Swift.h"
 
 @interface MainViewController ()
 
@@ -19,31 +21,29 @@
 
 @implementation MainViewController
 
+//MARK:- LifeCycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.items = [[NSMutableArray alloc] init];
-    self.savedItems = [[NSMutableArray alloc] init];
-    self.showingSavedItems = NO;
-    self.presenter = [[MainViewPresenter alloc] initWithView: self];
-    
-    [self.collectionView registerNib:[UINib nibWithNibName:@"GiphyCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:kCollectionViewCellIdentifier];
     GiphyCollectionViewLayout *layout = (GiphyCollectionViewLayout *)self.collectionView.collectionViewLayout;
     if (layout != nil) {
         layout.delegate = self;
     }
     [self setupViews];
-    [self.presenter fetchItemsWith:0];
+    
+    self.presenter = [[MainViewPresenter alloc] init];
+    self.collectionView.dataSource = self.presenter;
+    [self.presenter registerCellsFor:self.collectionView];
+    [self.presenter fetchItemsWith:0 for:self.collectionView by:self];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    if (self.showingSavedItems) {
-        [self.savedItems removeAllObjects];
-        self.savedItems = [NSMutableArray arrayWithArray:[self.presenter showSaved]];
-        [self.collectionView reloadData];
-    }
+    [self.presenter refetchSavedItemsFor:self.collectionView];
 }
+
+//MARK:- Segues
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:kSearchResultSegueIdentifier]) {
@@ -57,7 +57,7 @@
     } else if ([segue.identifier isEqualToString:kDetailsSegueIdentifier]) {
         DetailsViewController *detailVC = segue.destinationViewController;
         NSIndexPath *indexPath = sender;
-        detailVC.giphyItem = self.showingSavedItems ? self.savedItems[indexPath.row] : self.items[indexPath.row];
+        detailVC.presenter = [[DetailsViewPresenter alloc] initWith:[self.presenter itemForIndexPath:indexPath]];
     }
 }
 
@@ -71,15 +71,7 @@
 }
 
 - (IBAction)toggleSavedFlag:(id)sender {
-    self.showingSavedItems = !self.showingSavedItems;
-    if (self.showingSavedItems) {
-        self.savedItems = [NSMutableArray arrayWithArray:[self.presenter showSaved]];
-        [self.showSaved setImage: [UIImage imageNamed:@"TrendingIconLarge"]];
-    } else {
-        [self.savedItems removeAllObjects];
-        [self.showSaved setImage: [UIImage imageNamed:@"FavoriteIcon"]];
-    }
-    [self.collectionView reloadData];
+    [self.presenter toggleShowingSavedItemsFlagWithView:self for:self.collectionView];
 }
 
 @end

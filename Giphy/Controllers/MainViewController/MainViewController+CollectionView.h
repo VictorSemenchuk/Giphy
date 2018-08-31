@@ -8,6 +8,6 @@
 
 #import "MainViewController.h"
 
-@interface MainViewController (CollectionView) <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface MainViewController (CollectionView) <UICollectionViewDelegate>
 
 @end

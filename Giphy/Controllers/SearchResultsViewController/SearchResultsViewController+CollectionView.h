@@ -8,6 +8,6 @@
 
 #import "SearchResultsViewController.h"
 
-@interface SearchResultsViewController (CollectionView) <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface SearchResultsViewController (CollectionView) <UICollectionViewDelegate>
 
 @end

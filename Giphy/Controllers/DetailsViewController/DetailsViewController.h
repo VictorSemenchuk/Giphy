@@ -7,12 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Giphy-Swift.h"
+#import "GeneralConstants.h"
 
+@protocol DetailsViewProtocol
+
+- (void)showActivityViewController:(UIActivityViewController *)activityViewController;
+- (void)setIconForStartStopPlayingButton:(UIImage *)image;
+- (void)updateSaveRemoveButton:(NSString *)title image:(UIImage *)image;
+
+@end
+
+@class DetailsViewPresenter;
 @interface DetailsViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIButton *stopPlayButton;
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
-@property (nonatomic) GiphyData *giphyItem;
+
+@property (nonatomic) DetailsViewPresenter *presenter;
 
 @end

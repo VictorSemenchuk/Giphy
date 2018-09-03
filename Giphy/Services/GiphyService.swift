@@ -32,7 +32,7 @@ import Foundation
         let ratingCode = UserDefaults.standard.integer(forKey: kRatingSettingKey)
         if let ratingType = RatingType(rawValue: ratingCode) {
             let rating = Rating.stringDescription(typeFor: ratingType)
-            let url = "https://api.giphy.com/v1/gifs/search?api_key=\(apiKey)&q=\(searchRequest)&limit=\(limit)&offset=\(offset)&g=\(rating)"
+            let url = "https://api.giphy.com/v1/gifs/search?api_key=\(apiKey)&q=\(searchRequest)&limit=\(limit)&offset=\(offset)&rating=\(rating)"
             fetchData(from: url) { (data, error) in
                 completion(data, error)
             }

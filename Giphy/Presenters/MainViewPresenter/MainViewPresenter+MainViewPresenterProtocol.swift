@@ -32,8 +32,12 @@ extension MainViewPresenter: MainViewPresenterProtocol {
     }
     
     func fetchSavedItems() -> [GiphyData] {
-        let appDelegate = UIApplication.shared.delegate as? AppDelegate
-        let context:NSManagedObjectContext = (appDelegate?.persistentContainer.newBackgroundContext())!
+        var result:[GiphyData] = []
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return result
+        }
+        let context:NSManagedObjectContext = appDelegate.persistentContainer.newBackgroundContext()
+        
         let fetchRequest:NSFetchRequest<GifPreview> = GifPreview.fetchRequest()
         var temp:[GifPreview] = []
         do {
@@ -41,7 +45,6 @@ extension MainViewPresenter: MainViewPresenterProtocol {
         } catch {
             print("My Error: %@", error as NSError)
         }
-        var result:[GiphyData] = []
         for gifPreview in temp {
             result.append(GiphyData.init(with: gifPreview))
         }

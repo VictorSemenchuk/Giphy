@@ -13,9 +13,11 @@ import CoreData
 extension GifPreview {
     
     static public func saveToPersistance(_ giphyItem: GiphyData) {
-        let appDelegate =  UIApplication.shared.delegate as? AppDelegate
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
         
-        let context: NSManagedObjectContext = (appDelegate?.persistentContainer.newBackgroundContext())!
+        let context = appDelegate.persistentContainer.newBackgroundContext()
         
         context .performAndWait {
             if (alreadyExists(context: context, giphyItem)){
@@ -24,10 +26,6 @@ extension GifPreview {
                 saveGif(context: context, giphyItem)
             }
         }
-        
-//        appDelegate?.persistentContainer .performBackgroundTask({ (context) in
-//
-//        })
     }
     
     static func alreadyExists(context: NSManagedObjectContext, _ giphyItem: GiphyData) -> Bool {

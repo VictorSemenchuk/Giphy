@@ -44,8 +44,8 @@ class PersistentService {
         } catch {
             NSLog("My Error: %@", error as NSError)
         }
-        if ( result.count > 0 ){
-            return UIImage.animatedImage(data: (result.first?.fullGif?.image)!)!
+        if let imageData = result.first?.fullGif?.image {
+            return UIImage.animatedImage(data: imageData)!
         }
         return UIImage(imageLiteralResourceName: "TrendingIconLarge")
         
